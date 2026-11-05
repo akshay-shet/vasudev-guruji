@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { EnquiryForm, KeywordPair, PageHero, Section, usePageTitle } from '../components/Common'
+import { EnquiryForm, Eyebrow, KeywordPair, PageHero, Section, usePageTitle } from '../components/Common'
 import { Diamond } from '../components/Decor'
 import { Arrow, iconByName, Phone, WhatsApp } from '../components/Icons'
 import { services, type Service } from '../data/content'
@@ -69,12 +69,9 @@ export function Services() {
   return (
     <>
       <section className="mx-auto max-w-6xl px-4 pb-4 pt-6 text-center md:px-6 lg:pt-10">
-        <span className="inline-flex items-center gap-2 rounded-full bg-[#F2B91C] px-3 py-1 text-maroon shadow-sm">
-          <span className="svc-tag-kn font-kn text-[13px]" data-no-translate lang="kn">ಸೇವೆಗಳು</span>
-          <span className="svc-tag-kn h-3 w-px bg-maroon/40" />
-          <span className="font-cinzel text-[10.5px] font-semibold tracking-[0.18em]">OUR SERVICES</span>
-        </span>
-        <h1 className="mt-3 font-cormorant text-[34px] font-bold leading-tight text-maroon md:text-5xl">How Guruji Can Help</h1>
+        <Eyebrow kn="ಸೇವೆಗಳು" en="OUR SERVICES" />
+        <h1 className="section-title mt-3 !leading-tight"><KeywordPair heading en="How Guruji Can Help" kn="ಗುರೂಜಿಯವರ ಮಾರ್ಗದರ್ಶನ" /></h1>
+        <Diamond className="mx-auto mt-2 h-3 w-28" />
         <p className="mx-auto mt-2 max-w-xl text-lg text-ink/70">Choose the area of life where you seek clarity — Guruji will guide you with care.</p>
       </section>
       <Section className="!pt-4">
@@ -95,7 +92,7 @@ export function ServiceDetail() {
   if (!s) return <Services />
   return (
     <>
-      <PageHero compact title={s.short} keyword={s.title} />
+      <PageHero compact eyebrow={{ kn: 'ಸೇವೆಗಳು', en: 'OUR SERVICES' }} title={s.title} hi={s.kn} />
       <Section className="!pt-2">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
           <div>
@@ -119,7 +116,7 @@ export function ServiceDetail() {
         </div>
       </Section>
       <Section className="!pt-0">
-        <h2 className="text-center font-marcellus text-2xl text-maroon">Other services</h2>
+        <h2 className="text-center font-cormorant text-3xl font-bold italic text-maroon"><KeywordPair heading en="Other services" kn="ಇತರ ಸೇವೆಗಳು" /></h2>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {services.filter((x) => x.slug !== s.slug).map((x) => (
             <Link key={x.slug} to={`/services/${x.slug}`} className="btn-outline px-3.5 py-1.5 text-[14px]"><KeywordPair en={x.short} kn={x.kn} /></Link>

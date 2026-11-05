@@ -70,23 +70,23 @@ export function usePageTitle(title?: string) {
   }, [title])
 }
 
-/* ───────── Inner page hero banner ───────── */
-export function PageHero({ title, hi, subtitle, children, compact, keyword }: { title: string; hi?: string; subtitle?: string; children?: ReactNode; compact?: boolean; keyword?: string }) {
-  const t = useT()
+/* ───────── Inner page hero banner ─────────
+ * Every page header follows one pattern:  [ಕನ್ನಡ | ENGLISH] pill  →  "English — ಕನ್ನಡ" heading  →  subtitle. */
+export function PageHero({ title, hi, subtitle, children, compact, keyword, eyebrow }: { title: string; hi?: string; subtitle?: string; children?: ReactNode; compact?: boolean; keyword?: string; eyebrow?: { kn: string; en: string } }) {
   const kw = keyword ? services.find((s) => s.title === keyword) : undefined
   usePageTitle(kw ? `${title} · ${kw.title}` : title)
   return (
-    <section className={`relative overflow-hidden ${compact ? 'pb-2 pt-4 lg:pb-4 lg:pt-8' : 'pb-10 pt-6 lg:pb-14 lg:pt-14'}`}>
+    <section className={`relative overflow-hidden ${compact ? 'pb-2 pt-6 lg:pb-4 lg:pt-10' : 'pb-8 pt-6 lg:pb-12 lg:pt-12'}`}>
       <img src={import.meta.env.BASE_URL + 'img/hero-right.jpg'} alt="" className="scenery pointer-events-none absolute right-0 top-0 hidden h-full w-[34%] object-cover object-left opacity-90 lg:block"
         style={{ maskImage: 'linear-gradient(to left, #000 40%, transparent)', WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent)' }} />
       <img src={import.meta.env.BASE_URL + 'img/hero-left.jpg'} alt="" className="scenery pointer-events-none absolute left-0 top-0 hidden h-full w-[12%] object-cover object-right opacity-90 lg:block"
         style={{ maskImage: 'linear-gradient(to right, #000 50%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 50%, transparent)' }} />
-      <div className="relative mx-auto max-w-3xl px-5 text-center">
-        <p className="font-deva text-lg text-maroon/90">{site.shloka}</p>
-        <h1 className="mt-2 font-cormorant text-[40px] font-bold italic leading-tight md:text-6xl"><span className="gold-text">{t(title, hi)}</span></h1>
-        <Diamond className="mx-auto mt-2 h-3 w-32" />
+      <div className="relative mx-auto max-w-4xl px-5 text-center">
+        {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}
+        <h1 className="section-title !leading-tight">{hi ? <KeywordPair heading en={title} kn={hi} /> : title}</h1>
+        <Diamond className="mx-auto mt-2 h-3 w-28" />
         {kw && <p className="mt-2 text-[15px] font-semibold text-golddark md:text-base"><Link to={`/services/${kw.slug}`} className="hover:underline"><KeywordPair en={kw.title} kn={kw.kn} /></Link></p>}
-        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-xl text-ink/85">{subtitle}</p>}
+        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/80 md:text-xl">{subtitle}</p>}
         {children}
       </div>
     </section>

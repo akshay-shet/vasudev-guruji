@@ -19,7 +19,7 @@ export function Shop() {
   const link = whatsappLink(['🙏 Hari Om, I would like to enquire about:', ...items.map((i) => `• ${i.p.name} × ${i.q}`), '', 'Name:', 'Place:'].join('\n'))
   return (
     <>
-      <PageHero keyword="Gemstone Recommendation Services" title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" subtitle="Energised rudraksha, yantras, certified gemstones and puja items. Enquire on WhatsApp and Guruji’s office will guide you." />
+      <PageHero eyebrow={{ kn: 'ಅಂಗಡಿ', en: 'SHOP' }} keyword="Gemstone Recommendation Services" title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" subtitle="Energised rudraksha, yantras, certified gemstones and puja items. Enquire on WhatsApp and Guruji’s office will guide you." />
       <Section>
         <div className="mb-5 flex flex-wrap justify-center gap-2">
           {cats.map((c) => <button key={c} onClick={() => setCat(c)} className={cat === c ? 'btn-gold px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base' : 'btn-outline px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base'} aria-pressed={cat === c}>{c}</button>)}
@@ -78,7 +78,7 @@ export function Contact() {
   ]
   return (
     <>
-      <PageHero compact keyword="Live Astrologer Chat & Call" title="Contact Guruji’s Office" hi="ಸಂಪರ್ಕಿಸಿ" />
+      <PageHero compact eyebrow={{ kn: 'ಸಂಪರ್ಕ', en: 'CONTACT' }} keyword="Live Astrologer Chat & Call" title="Contact Guruji’s Office" hi="ಗುರೂಜಿಯವರ ಕಚೇರಿ ಸಂಪರ್ಕ" />
       <section className="mx-auto w-full max-w-6xl px-4 pb-10 md:px-6">
         {/* quick contact strip */}
         <div className="grid grid-cols-2 gap-2.5 md:grid-cols-4 md:gap-4">
@@ -126,9 +126,9 @@ export function Contact() {
 }
 
 /* ───────── Legal ───────── */
-const legal: Record<string, { title: string; body: [string, string][] }> = {
+const legal: Record<string, { title: string; kn: string; body: [string, string][] }> = {
   privacy: {
-    title: 'Privacy Policy',
+    title: 'Privacy Policy', kn: 'ಗೌಪ್ಯತಾ ನೀತಿ',
     body: [
       ['Information we collect', 'When you submit an enquiry, your name, phone number, birth details and message are placed into a WhatsApp message that you send yourself. This website does not store these details on a server.'],
       ['How we use it', 'Your details are used only to respond to your enquiry, prepare your chart and arrange consultations. We never sell or share your personal data.'],
@@ -138,7 +138,7 @@ const legal: Record<string, { title: string; body: [string, string][] }> = {
     ],
   },
   terms: {
-    title: 'Terms & Conditions',
+    title: 'Terms & Conditions', kn: 'ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು',
     body: [
       ['Use of this website', 'Content is provided for spiritual and educational purposes. By using the site you agree to use it lawfully and respectfully.'],
       ['Consultations', 'Readings are given based on the birth details you provide. Accuracy depends on the correctness of those details.'],
@@ -147,7 +147,7 @@ const legal: Record<string, { title: string; body: [string, string][] }> = {
     ],
   },
   disclaimer: {
-    title: 'Disclaimer',
+    title: 'Disclaimer', kn: 'ಹಕ್ಕು ನಿರಾಕರಣೆ',
     body: [
       ['Nature of guidance', 'Vedic astrology (Jyotisha) offers spiritual and traditional guidance. It is not a substitute for medical, legal or psychological advice from qualified professionals.'],
       ['No guarantees', 'Predictions and remedies are given in good faith; outcomes depend on many factors including one’s own effort (purushartha) and divine grace. No specific result is guaranteed.'],
@@ -163,7 +163,7 @@ export function Legal() {
   const doc = legal[page] ?? legal.privacy
   return (
     <>
-      <PageHero title={doc.title} subtitle={`Last updated ${new Date(2026, 10, 1).toLocaleDateString(loc, { month: 'long', year: 'numeric' })}`} />
+      <PageHero eyebrow={{ kn: 'ಕಾನೂನು', en: 'LEGAL' }} title={doc.title} hi={doc.kn} subtitle={`Last updated ${new Date(2026, 10, 1).toLocaleDateString(loc, { month: 'long', year: 'numeric' })}`} />
       <Section>
         <div className="card mx-auto max-w-3xl p-6 md:p-10">
           {doc.body.map(([h, p]) => (
@@ -183,7 +183,7 @@ export function Legal() {
 
 export function NotFound() {
   return (
-    <PageHero title="Page not found" subtitle="The path you seek is not here — but every path leads home.">
+    <PageHero title="Page not found" hi="ಪುಟ ಸಿಗಲಿಲ್ಲ" subtitle="The path you seek is not here — but every path leads home.">
       <Link to="/" className="btn-gold mt-6 px-7 py-2.5">Return home</Link>
     </PageHero>
   )

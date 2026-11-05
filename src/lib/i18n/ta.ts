@@ -680,6 +680,22 @@ const exact: Record<string, string> = {
   'items selected': 'பொருட்கள் தேர்ந்தெடுக்கப்பட்டன',
   'Clear': 'அழிக்கவும்',
   'Enquire on WhatsApp': 'வாட்ஸ்அப்பில் விசாரிக்கவும்',
+
+  // ── Locations ──
+  'ABOUT GURUJI': 'குருஜி பற்றி',
+  'GUNA MILAN': 'குண மிலன்',
+  'SHOP': 'கடை',
+  'EVENTS': 'நிகழ்ச்சிகள்',
+  'VIDEOS': 'காணொளிகள்',
+  'RESOURCES': 'வளங்கள்',
+  'CONTACT': 'தொடர்பு',
+  'LEGAL': 'சட்டம்',
+  'PARAMPARA': 'பரம்பரை',
+  '8 KOOTAS': 'எட்டு கூடங்கள்',
+  'MANTRAS': 'மந்திரங்கள்',
+  'CALCULATOR': 'கணிப்பான்',
+  'The Ashtakoota': 'அஷ்டகூடம்',
+  'Japa Mala': 'ஜபமாலை',
 }
 
 const phrases: Record<string, string> = {
@@ -742,6 +758,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { EnquiryForm, Eyebrow, KeywordPair, Section, usePageTitle } from '../components/Common'
+import { Diamond } from '../components/Decor'
 import { Arrow, WhatsApp } from '../components/Icons'
 import { homas, type Homa as HomaT } from '../data/content'
 import { whatsappLink } from '../data/site'
@@ -49,7 +50,8 @@ export default function HomaPage() {
     <>
       <section className="mx-auto max-w-4xl px-4 pb-2 pt-6 text-center md:px-6 lg:pt-10">
         <Eyebrow kn="ಹೋಮಗಳು" en="SACRED FIRE RITUALS" />
-        <h1 className="mt-3 font-cormorant text-[34px] font-bold leading-tight text-maroon md:text-5xl"><KeywordPair heading en="Homa & Havan Services" kn="ಹೋಮ ಮತ್ತು ಹವನ ಸೇವೆಗಳು" /></h1>
+        <h1 className="section-title mt-3 !leading-tight"><KeywordPair heading en="Homa & Havan Services" kn="ಹೋಮ ಮತ್ತು ಹವನ ಸೇವೆಗಳು" /></h1>
+        <Diamond className="mx-auto mt-2 h-3 w-28" />
         <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/75">Each homa is performed by Guruji with Vedic priests, with the sankalpa taken in your name, gotra and nakshatra — at the ashram, at your home, or online with live video.</p>
       </section>
       <Section className="!pt-6">

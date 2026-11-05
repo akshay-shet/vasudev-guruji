@@ -7,7 +7,7 @@ import { site } from '../data/site'
 export default function About() {
   return (
     <>
-      <PageHero keyword="Trusted Astrologer for Life Problems" title="About Guruji" hi="ಗುರೂಜಿ ಬಗ್ಗೆ" subtitle={site.shortBio} />
+      <PageHero eyebrow={{ kn: 'ಗುರೂಜಿ', en: 'ABOUT GURUJI' }} keyword="Trusted Astrologer for Life Problems" title="About Guruji" hi="ಗುರೂಜಿ ಬಗ್ಗೆ" subtitle={site.shortBio} />
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
@@ -51,7 +51,7 @@ export default function About() {
       </Section>
 
       <Section>
-        <SectionTitle sub="The tradition that shapes Guruji’s teaching.">Lineage &amp; Parampara</SectionTitle>
+        <SectionTitle eyebrow={{ kn: 'ಪರಂಪರೆ', en: 'PARAMPARA' }} kn="ಗುರು ಪರಂಪರೆ" sub="The tradition that shapes Guruji’s teaching.">Lineage &amp; Parampara</SectionTitle>
         <ol className="relative mx-auto max-w-3xl border-l-2 border-goldlight pl-8">
           {site.lineage.map((l, i) => (
             <li key={l.title} className="relative mb-8">

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { usePrefs } from '../lib/prefs'
-import { EnquiryForm, PageHero, Section, SectionTitle } from '../components/Common'
+import { EnquiryForm, Eyebrow, KeywordPair, PageHero, Section, SectionTitle } from '../components/Common'
 import { Diamond } from '../components/Decor'
 import { gunaMilan, rashiFromNakshatra } from '../lib/astro'
 import { nakshatras, rashis } from '../data/vedic'
@@ -42,10 +42,11 @@ export function Kundali() {
   ] as const
   return (
     <>
-      <PageHero keyword="Marriage Matching & Kundali Milan" title="Kundali Matching" hi="ಕುಂಡಲಿ ಹೊಂದಾಣಿಕೆ" subtitle="The traditional Ashtakoota Guna Milan — eight factors (kootas) adding up to 36 gunas — used to assess marriage compatibility from the Moon nakshatras of the couple." />
+      <PageHero eyebrow={{ kn: 'ಗುಣ ಮಿಲನ', en: 'GUNA MILAN' }} keyword="Marriage Matching & Kundali Milan" title="Kundali Matching" hi="ಕುಂಡಲಿ ಹೊಂದಾಣಿಕೆ" subtitle="The traditional Ashtakoota Guna Milan — eight factors (kootas) adding up to 36 gunas — used to assess marriage compatibility from the Moon nakshatras of the couple." />
       <Section>
         <div className="card p-5 md:p-8">
-          <h2 className="text-center font-cormorant text-3xl font-bold italic">Guna Milan Calculator</h2>
+          <div className="text-center"><Eyebrow kn="ಲೆಕ್ಕಾಚಾರ" en="CALCULATOR" /></div>
+          <h2 className="mt-3 text-center font-cormorant text-3xl font-bold italic text-maroon md:text-4xl"><KeywordPair heading en="Guna Milan Calculator" kn="ಗುಣ ಮಿಲನ ಲೆಕ್ಕಾಚಾರ" /></h2>
           <Diamond className="mx-auto mt-1 h-3 w-24" />
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <NakPicker label="Boy" value={boy} onChange={setBoy} />
@@ -82,7 +83,7 @@ export function Kundali() {
         </div>
       </Section>
       <Section>
-        <SectionTitle sub="Total 36 gunas. 18+ is generally acceptable; 25+ is very good; Nadi and Bhakoot doshas need special attention.">The Ashtakoota — 8 Kootas</SectionTitle>
+        <SectionTitle eyebrow={{ kn: 'ಎಂಟು ಕೂಟಗಳು', en: '8 KOOTAS' }} kn="ಅಷ್ಟಕೂಟ" sub="Total 36 gunas. 18+ is generally acceptable; 25+ is very good; Nadi and Bhakoot doshas need special attention.">The Ashtakoota</SectionTitle>
         <div className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
           {kootaInfo.map(([n, p, d], i) => (
             <div key={n} className="card p-3 sm:p-4">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { PageHero, Section, SectionTitle } from '../components/Common'
+import { PageHero, Section, SectionTitle, KeywordPair } from '../components/Common'
 import { Diamond, Diya } from '../components/Decor'
 import { mantras } from '../data/content'
 
@@ -22,7 +22,7 @@ function JapaMala() {
   }, [])
   return (
     <div id="japa" className="card scroll-mt-28 p-6 text-center md:p-8">
-      <h2 className="font-cormorant text-3xl font-bold italic">Japa Mala — 108</h2>
+      <h2 className="font-cormorant text-3xl font-bold italic text-maroon"><KeywordPair heading en="Japa Mala" kn="ಜಪ ಮಾಲೆ" /></h2>
       <Diamond className="mx-auto mt-1 h-3 w-24" />
       <select aria-label="Choose mantra" className="input mx-auto mt-4 max-w-sm text-center" value={mantra} onChange={(e) => setMantra(+e.target.value)}>
         {mantras.map((m, i) => <option key={m.name} value={i}>{m.name}</option>)}
@@ -52,7 +52,7 @@ function DiyaLighting() {
   const total = lit.filter(Boolean).length
   return (
     <div id="diya" className="card scroll-mt-28 p-6 text-center md:p-8">
-      <h2 className="font-cormorant text-3xl font-bold italic">Light a Diya</h2>
+      <h2 className="font-cormorant text-3xl font-bold italic text-maroon"><KeywordPair heading en="Light a Diya" kn="ದೀಪ ಬೆಳಗಿಸಿ" /></h2>
       <Diamond className="mx-auto mt-1 h-3 w-24" />
       <p className="mx-auto mt-3 max-w-xl text-lg">Offer a light with a prayer in your heart. Tap each diya to light it — one for each of the Navagraha.</p>
       <p className="mt-2 font-deva text-lg text-maroon">ಶುಭಂ ಕರೋತಿ ಕಲ್ಯಾಣಮ್ ಆರೋಗ್ಯಂ ಧನಸಮ್ಪದಾ ।</p>
@@ -76,9 +76,9 @@ function DiyaLighting() {
 export default function Mantras() {
   return (
     <>
-      <PageHero keyword="Vedic Astrology Services" title="Mantras, Japa & Diya" hi="ಮಂತ್ರ, ಜಪ ಮತ್ತು ದೀಪ" subtitle="Sacred sound purifies the mind. Chant with devotion, count with the mala and offer a light." />
+      <PageHero eyebrow={{ kn: 'ಸಂಪನ್ಮೂಲಗಳು', en: 'RESOURCES' }} keyword="Vedic Astrology Services" title="Mantras, Japa & Diya" hi="ಮಂತ್ರ, ಜಪ ಮತ್ತು ದೀಪ" subtitle="Sacred sound purifies the mind. Chant with devotion, count with the mala and offer a light." />
       <Section>
-        <SectionTitle>Sacred Mantras</SectionTitle>
+        <SectionTitle eyebrow={{ kn: 'ಮಂತ್ರಗಳು', en: 'MANTRAS' }} kn="ಪವಿತ್ರ ಮಂತ್ರಗಳು">Sacred Mantras</SectionTitle>
         <div className="grid gap-5 md:grid-cols-2">
           {mantras.map((m) => (
             <article key={m.name} className="card p-6">
