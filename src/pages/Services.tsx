@@ -1,0 +1,132 @@
+import { Link, useParams } from 'react-router-dom'
+import { EnquiryForm, KeywordPair, PageHero, Section, usePageTitle } from '../components/Common'
+import { Diamond } from '../components/Decor'
+import { Arrow, iconByName, Phone, WhatsApp } from '../components/Icons'
+import { services, type Service } from '../data/content'
+import { site, whatsappLink } from '../data/site'
+
+const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
+
+/** Temple-scene banner with Guruji's portrait and the service name in gold. */
+export function ServiceBanner({ s, large = false }: { s: Service; large?: boolean }) {
+  const I = iconByName[s.icon]
+  return (
+    <div className={`relative overflow-hidden ${large ? 'aspect-[16/8] rounded-2xl' : 'aspect-[16/8.4] rounded-xl'}`}
+      style={{ padding: 2.5, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
+      <div className={`relative h-full w-full overflow-hidden ${large ? 'rounded-[14px]' : 'rounded-[10px]'}`}>
+        <img src={img('hero-desktop.jpg')} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[88%_38%] scale-125" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(58,20,6,.88) 0%, rgba(90,32,8,.72) 42%, rgba(60,22,8,.35) 75%, rgba(40,14,4,.55) 100%)' }} />
+        <img src={img('guruji-portrait.jpg')} alt="" loading="lazy" className="absolute bottom-0 left-[2%] h-[96%] w-[42%] object-cover object-top"
+          style={{ maskImage: 'linear-gradient(to right, #000 70%, transparent), linear-gradient(to top, #000 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 72%, transparent)' }} />
+        <div className="absolute inset-y-0 right-[4%] flex w-[55%] flex-col items-end justify-center text-right">
+          <I size={large ? 34 : 22} className="mb-1 hidden text-goldlight/90 sm:block" />
+          <span className="font-cormorant font-bold italic leading-[1.05] text-[#F7D88A] drop-shadow-[0_2px_4px_rgba(0,0,0,.6)]"
+            style={{ fontSize: large ? 'clamp(24px,3.4vw,44px)' : 'clamp(11px,1.9vw,24px)' }}>{s.short}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/** Poster card (like the Homa posters): Guruji in a temple frame, service name on a maroon-gold plaque. */
+export function ServicePoster({ s }: { s: Service }) {
+  const I = iconByName[s.icon]
+  return (
+    <div className="relative aspect-[4/5] overflow-hidden rounded-lg sm:rounded-xl" style={{ padding: 2, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
+      <div className="relative h-full w-full overflow-hidden rounded-[6px] sm:rounded-[10px]" style={{ background: '#3A1408' }}>
+        <img src={img('hero-desktop.jpg')} alt="" loading="lazy" className="absolute inset-0 h-full w-full scale-150 object-cover object-[86%_40%] opacity-80" />
+        <img src={img('guruji-portrait.jpg')} alt="" loading="lazy" className="absolute inset-x-0 top-0 h-[82%] w-full object-cover object-[50%_8%]"
+          style={{ maskImage: 'linear-gradient(to bottom,#000 72%,transparent)', WebkitMaskImage: 'linear-gradient(to bottom,#000 72%,transparent)' }} />
+        <span className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-goldlight/80 bg-maroon/85 text-goldlight shadow sm:right-2.5 sm:top-2.5 sm:h-9 sm:w-9"><I size={15} /></span>
+        {/* plaque */}
+        <div className="absolute inset-x-[5%] bottom-[5%] flex min-h-[26%] flex-col items-center justify-center rounded-md px-1 py-1 text-center sm:rounded-lg"
+          style={{ background: 'linear-gradient(180deg,#8E2412,#5E160A)', boxShadow: 'inset 0 0 0 1.5px #D9AA52, inset 0 0 0 3px #5E160A, inset 0 0 0 4px #D9AA52aa, 0 4px 10px rgba(0,0,0,.45)' }}>
+          <span className="font-cormorant font-bold leading-[1.05] text-[#F7D88A] drop-shadow-[0_1px_2px_rgba(0,0,0,.6)]" style={{ fontSize: 'clamp(12px, 3.6vw, 21px)' }}>{s.short}</span>
+          <span className="mt-0.5 text-[9px] leading-none text-goldlight sm:text-[12px]" aria-hidden>❀</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function ServiceCard({ s }: { s: Service }) {
+  return (
+    <Link to={`/services/${s.slug}`} className="group flex w-full flex-col rounded-xl bg-paper p-1 shadow-[0_10px_26px_-14px_rgba(147,96,15,.5)] ring-1 ring-goldlight/60 transition hover:-translate-y-1 sm:rounded-2xl sm:p-1.5">
+      <ServicePoster s={s} />
+      <div className="flex flex-1 flex-col items-center px-1 pb-2 pt-1.5 text-center sm:px-3 sm:pb-4 sm:pt-2">
+        <h3 className="font-marcellus text-[12px] leading-tight text-maroon sm:text-[18px] sm:leading-snug">
+          <KeywordPair stacked en={s.title} kn={s.kn} className="[&>span:last-child]:text-[10.5px] [&>span:last-child]:text-golddark sm:[&>span:last-child]:text-[13.5px]" />
+        </h3>
+        <p className="mt-1.5 hidden text-[15px] leading-snug text-ink/70 lg:block">{s.desc}</p>
+        <span className="mt-auto hidden items-center gap-1 pt-2 font-marcellus text-[14px] text-[#B0321A] group-hover:gap-2 sm:inline-flex">Know more <Arrow size={14} /></span>
+      </div>
+    </Link>
+  )
+}
+
+export function Services() {
+  usePageTitle('Astrology Services')
+  return (
+    <>
+      <section className="mx-auto max-w-6xl px-4 pb-4 pt-6 text-center md:px-6 lg:pt-10">
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#F2B91C] px-3 py-1 text-maroon shadow-sm">
+          <span className="svc-tag-kn font-kn text-[13px]" data-no-translate lang="kn">ಸೇವೆಗಳು</span>
+          <span className="svc-tag-kn h-3 w-px bg-maroon/40" />
+          <span className="font-cinzel text-[10.5px] font-semibold tracking-[0.18em]">OUR SERVICES</span>
+        </span>
+        <h1 className="mt-3 font-cormorant text-[34px] font-bold leading-tight text-maroon md:text-5xl">How Guruji Can Help</h1>
+        <p className="mx-auto mt-2 max-w-xl text-lg text-ink/70">Choose the area of life where you seek clarity — Guruji will guide you with care.</p>
+      </section>
+      <Section className="!pt-4">
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-2 sm:gap-5">
+          {services.map((s) => (
+            <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"><ServiceCard s={s} /></div>
+          ))}
+        </div>
+      </Section>
+      <Section className="!pt-2"><div className="mx-auto max-w-4xl"><EnquiryForm title="Ask Guruji" /></div></Section>
+    </>
+  )
+}
+
+export function ServiceDetail() {
+  const { slug } = useParams()
+  const s = services.find((x) => x.slug === slug)
+  if (!s) return <Services />
+  return (
+    <>
+      <PageHero compact title={s.short} keyword={s.title} />
+      <Section className="!pt-2">
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+          <div>
+            <ServiceBanner s={s} large />
+            <div className="card mt-5 p-5 md:p-6">
+              <p className="font-cinzel text-[11px] font-semibold uppercase tracking-[0.14em] text-[#B0321A]">{s.label}</p>
+              <p className="mt-2 text-lg leading-relaxed">{s.about}</p>
+              <Diamond className="my-4 h-3 w-24" />
+              <ul className="space-y-2 text-lg">
+                {s.points.map((p) => <li key={p} className="flex gap-2.5"><span className="text-gold">✦</span>{p}</li>)}
+              </ul>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a href={site.phoneHref} className="btn-gold px-5 py-2"><Phone size={18} /> Call Guruji</a>
+                <a href={whatsappLink(`🙏 Hari Om Guruji, I would like guidance on: ${s.title}`)} target="_blank" rel="noopener" className="btn-outline px-5 py-2">
+                  <WhatsApp size={18} className="text-[#1DA851]" /> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <EnquiryForm compact defaultTopic={s.topic} title="Send an Enquiry" />
+        </div>
+      </Section>
+      <Section className="!pt-0">
+        <h2 className="text-center font-marcellus text-2xl text-maroon">Other services</h2>
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {services.filter((x) => x.slug !== s.slug).map((x) => (
+            <Link key={x.slug} to={`/services/${x.slug}`} className="btn-outline px-3.5 py-1.5 text-[14px]"><KeywordPair en={x.short} kn={x.kn} /></Link>
+          ))}
+        </div>
+        <div className="mt-6 text-center"><Link to="/services" className="btn-gold px-6 py-2">All services <Arrow size={16} /></Link></div>
+      </Section>
+    </>
+  )
+}

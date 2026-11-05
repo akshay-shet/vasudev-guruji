@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640">
+  <defs>
+    <linearGradient id="saffron" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB347"/><stop offset=".6" stop-color="#F08A1C"/><stop offset="1" stop-color="#C9650B"/>
+    </linearGradient>
+    <linearGradient id="shawl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF5"/><stop offset=".7" stop-color="#F6E8C8"/><stop offset="1" stop-color="#E8D2A0"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C98E62"/><stop offset="1" stop-color="#A86F48"/>
+    </linearGradient>
+    <linearGradient id="beard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D9D4CC"/><stop offset="1" stop-color="#8E877E"/>
+    </linearGradient>
+  </defs>
+  <!-- legs / lap -->
+  <path d="M60 600c20-70 110-110 240-110s220 40 240 110c-70 30-160 40-240 40S130 630 60 600z" fill="url(#shawl)" stroke="#D9AA52" stroke-width="3"/>
+  <path d="M90 598c60 14 140 20 210 20s150-6 210-20" fill="none" stroke="#C58B2D" stroke-width="6" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <!-- body -->
+  <path d="M170 300c10-60 60-90 130-90s120 30 130 90l30 230H140z" fill="url(#saffron)"/>
+  <!-- shawl over left shoulder -->
+  <path d="M150 320c10-70 60-108 120-110l-20 330H130z" fill="url(#shawl)" stroke="#D9AA52" stroke-width="3"/>
+  <path d="M168 330c8-50 40-80 86-92" fill="none" stroke="#C58B2D" stroke-width="5" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <!-- rudraksha mala -->
+  <path d="M250 225c10 90 40 150 50 170 10-20 40-80 50-170" fill="none" stroke="#7A3B12" stroke-width="9" stroke-dasharray="1 11" stroke-linecap="round"/>
+  <!-- hands -->
+  <ellipse cx="300" cy="500" rx="70" ry="22" fill="url(#skin)"/>
+  <!-- neck & head -->
+  <rect x="275" y="170" width="50" height="50" rx="20" fill="url(#skin)"/>
+  <ellipse cx="300" cy="125" rx="62" ry="74" fill="url(#skin)"/>
+  <path d="M238 120c-4-60 30-92 62-92s66 32 62 92c-10-32-30-50-62-50s-52 18-62 50z" fill="#4A3A30"/>
+  <circle cx="300" cy="44" r="22" fill="#4A3A30"/>
+  <!-- beard -->
+  <path d="M242 140c4 70 30 110 58 116 28-6 54-46 58-116-14 26-34 36-58 36s-44-10-58-36z" fill="url(#beard)"/>
+  <!-- tilak -->
+  <path d="M280 84h40M282 92h36M284 100h32" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="300" cy="96" r="5" fill="#C0141C"/>
+  <!-- closed, smiling eyes -->
+  <path d="M268 122q10 6 20 0M312 122q10 6 20 0" fill="none" stroke="#3A2412" stroke-width="3" stroke-linecap="round"/>
+</svg>
