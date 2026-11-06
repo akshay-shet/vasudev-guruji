@@ -352,69 +352,54 @@ export function SideOrnaments() {
   )
 }
 
-/* ───────── Divine portrait frame (About page) ─────────
- * A temple-shrine (ogee / onion) arch, as seen over sanctum doorways:
- * a maroon velvet back panel with a gold dotted inlay, a golden kalasha finial at the crown,
- * a marigold garland tracing the arch, mango leaves at the apex, a soft aura behind,
- * and a maroon-and-gold name plaque at the foot. */
-const OGEE = 'M-160 470V178C-160 112-84 92-44 62C-17 42 0 22 0 0C0 22 17 42 44 62C84 92 160 112 160 178V470Z'
+/* ───────── Portrait frame (About page) ─────────
+ * Fine-line arch in the site's gold: a cream mount with a double rule, a four-point sparkle at the crown,
+ * the photo in an inner arch, a name band with a sparkle divider, and two echo outlines behind. */
+const arch = (x: number, y: number, w: number, h: number) => `M${x} ${y + h}V${y + w / 2}A${w / 2} ${w / 2} 0 0 1 ${x + w} ${y + w / 2}V${y + h}Z`
+const sparkle = (cx: number, cy: number, r: number) => `M${cx} ${cy - r}Q${cx + r * 0.16} ${cy - r * 0.16} ${cx + r} ${cy}Q${cx + r * 0.16} ${cy + r * 0.16} ${cx} ${cy + r}Q${cx - r * 0.16} ${cy + r * 0.16} ${cx - r} ${cy}Q${cx - r * 0.16} ${cy - r * 0.16} ${cx} ${cy - r}Z`
 
 export function DivinePortrait({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
-  const id = 'dp' + useId().replace(/:/g, '')
+  const id = 'pf' + useId().replace(/:/g, '')
+  const gold = `url(#${id}g)`
   return (
-    <figure className={`relative mx-auto w-full max-w-[430px] ${className}`}>
-      {/* aura */}
-      <div className="pointer-events-none absolute left-1/2 top-[42%] aspect-square w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
-        style={{ background: 'radial-gradient(circle, rgba(255,205,110,.5) 0%, rgba(255,225,160,.22) 40%, transparent 66%)' }} />
-      <svg viewBox="-200 -40 400 616" className="relative block w-full drop-shadow-[0_30px_40px_rgba(110,26,11,.35)]" role="img" aria-label={alt}>
+    <figure className={`relative mx-auto w-full max-w-[400px] ${className}`}>
+      <div className="pointer-events-none absolute left-1/2 top-[40%] aspect-square w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
+        style={{ background: 'radial-gradient(circle, rgba(255,214,130,.38) 0%, rgba(255,230,170,.16) 42%, transparent 66%)' }} />
+      <svg viewBox="0 0 400 624" className="relative block w-full" role="img" aria-label={alt}>
         <defs>
           <linearGradient id={id + 'g'} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#FBE7A8" /><stop offset=".35" stopColor="#C58B2D" /><stop offset=".55" stopColor="#F6DA8E" /><stop offset="1" stopColor="#8A5A0E" />
+            <stop offset="0" stopColor="#D9AA52" /><stop offset=".5" stopColor="#A8741F" /><stop offset="1" stopColor="#D9AA52" />
           </linearGradient>
-          <radialGradient id={id + 'v'} cx=".5" cy=".35" r=".75">
-            <stop offset="0" stopColor="#9C2A14" /><stop offset=".65" stopColor="#6E1A0B" /><stop offset="1" stopColor="#45100A" />
-          </radialGradient>
-          <clipPath id={id + 'c'}><path d={OGEE} transform="translate(0 46)" /></clipPath>
+          <clipPath id={id + 'c'}><path d={arch(40, 40, 320, 440)} /></clipPath>
+          <filter id={id + 's'} x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="14" floodColor="#7A2410" floodOpacity=".18" /></filter>
         </defs>
 
-        {/* velvet back panel */}
-        <path d={OGEE} transform="translate(0 4) scale(1.14 1.1)" fill={`url(#${id}v)`} stroke={`url(#${id}g)`} strokeWidth="3.5" />
-        <path d={OGEE} transform="translate(0 15) scale(1.08 1.065)" fill="none" stroke="#E7C26A" strokeWidth="2.2" strokeDasharray="0 7" strokeLinecap="round" opacity=".9" />
+        {/* echo outlines behind */}
+        <path d={arch(6, 22, 388, 596)} fill="none" stroke={gold} strokeWidth="1" opacity=".35" />
+        <path d={arch(6, 14, 388, 596)} fill="none" stroke={gold} strokeWidth="1" opacity=".55" />
 
-        {/* kalasha finial */}
-        <g transform="translate(0 12)">
-          <path d="M0-46c-6 6-6 12 0 16 6-4 6-10 0-16z" fill="#F2A33A" stroke="#8A5A0E" strokeWidth="1" />
-          <path d="M-9-29h18l-3 6h-12z" fill={`url(#${id}g)`} />
-          <path d="M-14-22c0 14 6 20 14 20s14-6 14-20z" fill={`url(#${id}g)`} stroke="#8A5A0E" strokeWidth="1" />
-          <path d="M-10 0h20l3 6h-26z" fill={`url(#${id}g)`} />
-        </g>
+        {/* mount */}
+        <path d={arch(6, 6, 388, 596)} fill="#FFFBF1" stroke={gold} strokeWidth="1.8" filter={`url(#${id}s)`} className="frame-mount" />
+        <path d={arch(18, 18, 364, 572)} fill="none" stroke={gold} strokeWidth=".9" />
 
-        {/* photo in the arch */}
-        <image href={src} x="-160" y="46" width="320" height="470" preserveAspectRatio="xMidYMin slice" clipPath={`url(#${id}c)`} />
+        {/* photo */}
+        <image href={src} x="40" y="40" width="320" height="440" preserveAspectRatio="xMidYMin slice" clipPath={`url(#${id}c)`} />
+        <path d={arch(40, 40, 320, 440)} fill="none" stroke={gold} strokeWidth="1.4" />
+        <path d={arch(46, 46, 308, 428)} fill="none" stroke="#FFF6DC" strokeOpacity=".7" strokeWidth=".8" />
 
-        {/* gold frame of the opening */}
-        <path d={OGEE} transform="translate(0 46)" fill="none" stroke={`url(#${id}g)`} strokeWidth="7" />
-        <path d={OGEE} transform="translate(0 46)" fill="none" stroke="#6E1A0B" strokeWidth="1.2" />
+        {/* crown sparkle on the inner rule */}
+        <circle cx="200" cy="18" r="10" fill="#FFFBF1" className="frame-mount" />
+        <path d={sparkle(200, 18, 9)} fill={gold} />
+        <path d={sparkle(200, 29, 3)} fill={gold} opacity=".7" />
 
-        {/* marigold garland tracing the arch */}
-        <path d={OGEE} transform="translate(0 46) scale(1.035 1.02)" fill="none" stroke="#F08A12" strokeWidth="9" strokeDasharray="0 10" strokeLinecap="round" />
-        <path d={OGEE} transform="translate(0 46) scale(1.035 1.02)" fill="none" stroke="#FFC93C" strokeWidth="5" strokeDasharray="0 10" strokeDashoffset="5" strokeLinecap="round" />
-
-        {/* mango leaves at the apex */}
-        <g transform="translate(0 50)">
-          {[-38, -19, 0, 19, 38].map((r, i) => (
-            <path key={i} transform={`rotate(${r})`} d="M0 0C6 10 6 22 0 30C-6 22-6 10 0 0z" fill="#3E8E3A" stroke="#21581F" strokeWidth=".8" />
-          ))}
-          <circle r="6" fill="#B0321A" stroke="#F6DA8E" strokeWidth="2" />
-        </g>
+        {/* name band */}
+        <text x="200" y="530" textAnchor="middle" fontFamily="'Cormorant Garamond', serif" fontStyle="italic" fontWeight="700" fontSize="31" fill="#7A2410" className="frame-name">Vasudev Guruji</text>
+        <line x1="112" y1="552" x2="186" y2="552" stroke="#C58B2D" strokeWidth="1" />
+        <line x1="214" y1="552" x2="288" y2="552" stroke="#C58B2D" strokeWidth="1" />
+        <circle cx="108" cy="552" r="1.8" fill={gold} /><circle cx="292" cy="552" r="1.8" fill={gold} />
+        <path d={sparkle(200, 552, 7)} fill={gold} />
+        <text x="200" y="580" textAnchor="middle" fontFamily="'Tiro Kannada', serif" fontSize="15" fill="#93600F" data-no-translate="">ವಾಸುದೇವ ಗುರೂಜಿ</text>
       </svg>
-
-      {/* name plaque */}
-      <figcaption className="absolute bottom-[1.5%] left-1/2 w-[64%] -translate-x-1/2 rounded-lg px-3 py-2 text-center"
-        style={{ background: 'linear-gradient(180deg,#8E2412,#5E160A)', boxShadow: 'inset 0 0 0 1.5px #D9AA52, inset 0 0 0 4px #5E160A, inset 0 0 0 5px #D9AA52aa, 0 10px 22px -10px rgba(0,0,0,.55)' }}>
-        <span className="block font-cormorant text-[22px] font-bold leading-tight text-[#F7D88A] sm:text-[24px]" data-no-translate="">Vasudev Guruji</span>
-        <span className="block font-kn text-[13px] leading-tight text-goldlight" data-no-translate="">ವಾಸುದೇವ ಗುರೂಜಿ</span>
-      </figcaption>
     </figure>
   )
 }

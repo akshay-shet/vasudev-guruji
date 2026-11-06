@@ -197,3 +197,6 @@ html[data-theme='night'] .text-\[\#B0321A\] { color: #F4A47C; }
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .page-hero + section { padding-top: .75rem !important; }
 }
+
+html[data-theme='night'] .frame-mount { fill: #231C45; }
+html[data-theme='night'] .frame-name { fill: #F6D696; }
