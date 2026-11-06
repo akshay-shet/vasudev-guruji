@@ -19,7 +19,7 @@ export const site = {
   address: 'Near Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Mandya District, Karnataka 571438, India',
   /** Text used for the Google Maps embed on the Contact page. */
   mapQuery: 'Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Karnataka 571438',
-  officeHours: 'Daily 6:00 AM – 12:00 PM (IST)',
+  officeHours: 'Daily 10:00 AM – 6:00 PM (IST)',
 
   /** Guruji's portrait (public/img/guruji-portrait.jpg). Replace the file to change it. */
   photo: import.meta.env.BASE_URL + 'img/guruji-portrait.jpg',

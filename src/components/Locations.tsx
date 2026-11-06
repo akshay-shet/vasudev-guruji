@@ -33,7 +33,7 @@ export function Locations({ heading = true }: { heading?: boolean }) {
             <p className="flex items-center gap-1.5 font-cinzel text-[12px] tracking-[0.18em] text-goldlight"><Pin size={14} /> {main.state.toUpperCase()}</p>
             <h3 className="mt-1 font-cormorant text-4xl font-bold leading-tight text-[#F7D88A]"><KeywordPair en={main.city} kn={main.kn} className="[&_.text-gold]:text-goldlight" /></h3>
             <p className="mt-2 text-[16.5px] leading-snug text-white/90">{main.address}</p>
-            <p className="mt-2 text-[15.5px] leading-snug text-white/75">{main.note}</p>
+            <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-goldlight/50 bg-white/10 px-3 py-1 text-[15.5px] leading-snug text-[#F7D88A]"><span aria-hidden>🛕</span>{main.note}</p>
             <div className="mt-4 flex flex-wrap gap-2.5">
               <a href={main.map} target="_blank" rel="noopener" className="btn-gold px-5 py-2"><Pin size={16} /> Get Directions</a>
               <a href={site.phoneHref} className="inline-flex items-center gap-2 rounded-full border border-goldlight/70 px-5 py-2 font-marcellus text-goldlight hover:bg-white/10"><Phone size={16} /> {site.phone}</a>
@@ -52,7 +52,7 @@ export function Locations({ heading = true }: { heading?: boolean }) {
                 <div className="relative min-w-0 flex-1">
                   <p className="font-cinzel text-[11px] font-semibold tracking-[0.16em] text-[#B0321A]">{p.state.toUpperCase()}</p>
                   <h3 className="font-cormorant text-[26px] font-bold leading-tight text-maroon"><KeywordPair en={p.city} kn={p.kn} className="[&>span:last-child]:text-[0.7em] [&>span:last-child]:text-golddark max-sm:[&>span:nth-child(2)]:hidden max-sm:[&>span:last-child]:block" /></h3>
-                  <p className="mt-0.5 text-[15px] leading-snug text-ink/[.82]">{p.note}</p>
+                  <p className="mt-1 flex items-center gap-1.5 text-[15.5px] font-semibold leading-snug text-golddark"><span aria-hidden className="text-[14px]">🛕</span>{p.note}</p>
                 </div>
                 <a href={p.map} target="_blank" rel="noopener" aria-label={`Directions to ${p.city}`}
                   className="relative flex shrink-0 flex-col items-center gap-1 rounded-xl border border-goldlight bg-paper px-3 py-2 font-marcellus text-[13px] text-golddark transition hover:bg-goldlight/20">

@@ -62,7 +62,7 @@ export default function About() {
           ))}
         </ol>
         <div className="mt-4 flex flex-wrap justify-center gap-3">
-          <Link to="/discourses" className="btn-gold px-6 py-2.5">Watch Videos <Arrow size={18} /></Link>
+          <Link to="/gallery" className="btn-gold px-6 py-2.5">Watch Videos <Arrow size={18} /></Link>
           <Link to="/contact" className="btn-outline px-6 py-2.5">Contact Guruji’s Office</Link>
         </div>
       </Section>

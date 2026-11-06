@@ -265,7 +265,7 @@ const exact: Record<string, string> = {
   'Open in Google Maps': 'गूगल मॅप्समध्ये उघडा',
   'Visit the Ashram': 'आश्रमाला भेट द्या',
   'OFFICE HOURS': 'कार्यालयीन वेळ',
-  'Daily 6:00 AM – 12:00 PM (IST)': 'दररोज सकाळी 6:00 – दुपारी 12:00',
+  'Daily 10:00 AM – 6:00 PM (IST)': 'दररोज सकाळी 10:00 – सायंकाळी 6:00',
   'GETTING HERE': 'येथे कसे पोहोचावे',
   'Beside the Kaveri at Ganjam, about 16 km from Mysuru and 125 km from Bengaluru.': 'गंजाम येथे कावेरीच्या काठी, म्हैसूरपासून सुमारे 16 कि.मी. आणि बंगळूरुपासून 125 कि.मी.',
   'Please message on WhatsApp before visiting so the office can confirm Guruji’s availability.': 'भेट देण्यापूर्वी कृपया व्हॉट्सॲपवर संदेश पाठवा, म्हणजे कार्यालय गुरुजींची उपलब्धता निश्चित करू शकेल.',
@@ -706,7 +706,7 @@ const exact: Record<string, string> = {
   'How can I contact Guruji?': 'गुरुजींशी संपर्क कसा साधावा?',
   'You can call or WhatsApp Guruji’s office on +91 90359 59911, or write to {email}. Use the buttons below.': 'गुरुजींच्या कार्यालयाला +91 90359 59911 वर कॉल किंवा व्हॉट्सॲप करा, किंवा {email} वर लिहा. खालील बटणे वापरा.',
   'What are the office hours?': 'कार्यालयाची वेळ काय आहे?',
-  'Guruji’s office is open daily from 6:00 AM to 12:00 PM (IST). Please message on WhatsApp before visiting.': 'गुरुजींचे कार्यालय दररोज सकाळी 6:00 ते दुपारी 12:00 पर्यंत उघडे असते. भेटीपूर्वी कृपया व्हॉट्सॲपवर संदेश पाठवा.',
+  'Guruji’s office is open daily from 10:00 AM to 6:00 PM (IST). Please message on WhatsApp before visiting.': 'गुरुजींचे कार्यालय दररोज सकाळी 10:00 ते सायंकाळी 6:00 पर्यंत उघडे असते. भेटीपूर्वी कृपया व्हॉट्सॲपवर संदेश पाठवा.',
   'Where is Guruji’s main centre?': 'गुरुजींचे मुख्य केंद्र कुठे आहे?',
   'The main centre is near Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Mandya District, Karnataka 571438. Please message before visiting so the office can confirm Guruji’s availability.': 'मुख्य केंद्र श्री निमिषांबा मंदिर दासोह भवनाजवळ, गंजाम, श्रीरंगपट्टण, मंड्या जिल्हा, कर्नाटक 571438 येथे आहे. गुरुजींची उपलब्धता निश्चित करण्यासाठी भेटीपूर्वी संदेश पाठवा.',
   'Where else is Guruji available?': 'गुरुजी आणखी कुठे उपलब्ध आहेत?',
@@ -823,6 +823,32 @@ const exact: Record<string, string> = {
   'Prepared under the guidance of Vasudev Guruji': 'वासुदेव गुरुजींच्या मार्गदर्शनाखाली तयार केलेले',
   'What is the Life Line Horoscope book?': 'जीवन रेषा कुंडली पुस्तक म्हणजे काय?',
   'It is an 80–100 page personal book on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'हे तुमच्या संपूर्ण जीवनावरील 80–100 पानांचे वैयक्तिक पुस्तक आहे — व्यक्तिमत्त्व, नातेसंबंध, करिअर, संपत्ती, आरोग्य आणि आध्यात्मिक मार्ग, वर्षनिहाय भविष्यासह — जे वासुदेव गुरुजींच्या मार्गदर्शनाखाली तुमच्या वैदिक जन्मकुंडलीवरून तयार केले जाते. विशेष ऑफर: ₹999/- ऐवजी ₹499/-. खाली व्हॉट्सॲपवर ऑर्डर करा.',
+
+  // ── Locations ──
+  'Sri Nimishambha Temple': 'श्री निमिषांबा मंदिर',
+  'ISKCON Temple': 'इस्कॉन मंदिर',
+  'Sri Male Mahadeshwara Swamy Devasthana': 'श्री मले महादेश्वर स्वामी देवस्थान',
+  'Maa Kamakhya Devi Temple': 'माँ कामाख्या देवी मंदिर',
+  'Sri Maha Pratyangira Devi Temple': 'श्री महा प्रत्यंगिरा देवी मंदिर',
+  'View on Google': 'गूगलवर पाहा',
+
+  // ── Locations ──
+  'Gallery': 'गॅलरी',
+  'GALLERY': 'गॅलरी',
+  'Celebrity Images': 'मान्यवरांसोबत',
+  'Photos': 'छायाचित्रे',
+  'Guruji at a podcast interview': 'पॉडकास्ट मुलाखतीत गुरुजी',
+  'Samruddhi Astro Center, Kollegala': 'समृद्धी ज्योतिष केंद्र, कोळ्ळेगाल',
+  'Life Line Horoscope book': 'जीवन रेषा कुंडली पुस्तक',
+  'Maa Kamakhya Devi Temple, Guwahati': 'माँ कामाख्या देवी मंदिर, गुवाहाटी',
+  'Gallery — Photos & Videos': 'गॅलरी — छायाचित्रे आणि व्हिडिओ',
+  'More photos and videos are added regularly.': 'नवीन छायाचित्रे आणि व्हिडिओ नियमितपणे जोडले जातात.',
+  'Share yours with the office': 'तुमची छायाचित्रे कार्यालयासोबत शेअर करा',
+  'Gallery sections': 'गॅलरी विभाग',
+  'Previous': 'मागील',
+  'Next': 'पुढील',
+  'VIDEO': 'व्हिडिओ',
+  'Guruji’s videos, photos and celebrity moments are in the Gallery, and the latest discourse also plays on the home page.': 'गुरुजींचे व्हिडिओ, छायाचित्रे आणि मान्यवरांसोबतचे क्षण गॅलरीत आहेत, आणि नवीनतम प्रवचन मुखपृष्ठावरही चालते.',
 }
 
 const phrases: Record<string, string> = {
@@ -885,6 +911,10 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'पेरंडपल्ली',
   'Directions to': 'मार्ग:',
   'Business, Money & Negative Energy — Guruji Answers': 'व्यवसाय, पैसा आणि नकारात्मक ऊर्जा — गुरुजींची उत्तरे',
+
+  // ── Locations ──
+
+  // ── Locations ──
 
   // ── Locations ──
 

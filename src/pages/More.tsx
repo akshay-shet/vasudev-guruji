@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { EnquiryForm, PageHero, Section } from '../components/Common'
-import { Mail, Phone, Pin, WhatsApp } from '../components/Icons'
+import { Arrow, Mail, Phone, Pin, WhatsApp } from '../components/Icons'
 import { Locations } from '../components/Locations'
 import { products, type Product } from '../data/content'
 import { site, whatsappLink } from '../data/site'
@@ -68,6 +68,9 @@ export function Shop() {
 }
 
 /* ───────── Contact ───────── */
+/** Photo of the centre on the Contact page — opens this Google listing. */
+const centrePhotoLink = 'https://www.google.com/search?client=ms-android-samsung-rvo1&hs=LdHW&sca_esv=b3f9128d827c892f&hl=en-IN&cs=1&sxsrf=AKL5yDixRKnF45QA7GhNvHTfDsd2NFsIkA%3A1793948773056&kgmid=%2Fg%2F11x_dx57m1&q=Samruddhi%20Astro%20Center&shem=epsd1%2Cltae%2Crimspwouoe&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm1%2F4&kgs=5f3afa48479be324'
+
 export function Contact() {
   const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapQuery)}`
   const cards = [
@@ -97,10 +100,19 @@ export function Contact() {
         <div className="mt-4 grid gap-4 md:mt-6 md:gap-6 lg:grid-cols-[1fr_1.25fr]">
           {/* map + visit info */}
           <div className="flex flex-col gap-4 md:gap-6">
-            <div className="card relative min-h-[240px] flex-1 overflow-hidden !rounded-2xl">
-              <iframe title="Map to the ashram" className="absolute inset-0 h-full w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&output=embed`} />
-            </div>
+            <a href={centrePhotoLink} target="_blank" rel="noopener" aria-label="Samruddhi Astro Center on Google"
+              className="card group relative block min-h-[240px] flex-1 overflow-hidden !rounded-2xl">
+              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.jpg'} alt="Samruddhi Astro Center, Kollegala" loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
+                <span>
+                  <span className="block font-cormorant text-[24px] font-bold leading-tight text-[#F7D88A]" data-no-translate="">Samruddhi Astro Center</span>
+                  <span className="flex items-center gap-1 text-[14px] text-white/90"><Pin size={14} /> Kollegala</span>
+                </span>
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-1.5 font-marcellus text-[14px] text-maroon shadow">View on Google <Arrow size={13} /></span>
+              </span>
+            </a>
             <div className="card !rounded-2xl p-4 md:p-5">
               <h2 className="font-marcellus text-lg text-maroon">Visit the Ashram</h2>
               <p className="mt-1 flex gap-2 text-[15px] leading-snug"><Pin size={16} className="mt-0.5 shrink-0 text-gold" />{site.address}</p>

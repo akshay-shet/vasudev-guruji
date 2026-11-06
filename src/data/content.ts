@@ -11,7 +11,7 @@ export const nav: NavItem[] = [
   { label: 'Guna Milan', hi: 'ಗುಣ ಮಿಲನ', to: '/kundali-matching' },
   { label: 'Shop', hi: 'ಅಂಗಡಿ', to: '/shop' },
   { label: 'Events', hi: 'ಕಾರ್ಯಕ್ರಮಗಳು', to: '/events' },
-  { label: 'Videos', hi: 'ವೀಡಿಯೊಗಳು', to: '/discourses' },
+  { label: 'Gallery', hi: 'ಗ್ಯಾಲರಿ', to: '/gallery' },
   { label: 'Resources', hi: 'ಸಂಪನ್ಮೂಲಗಳು', to: '/mantras' },
   { label: 'Contact', hi: 'ಸಂಪರ್ಕ', to: '/contact' },
 ]
@@ -159,7 +159,7 @@ export const reviews: Review[] = [
 ]
 
 export const tiles = [
-  { icon: 'lotus', label: 'Spiritual', label2: 'Discourses', hi: 'ಆಧ್ಯಾತ್ಮಿಕ ಪ್ರವಚನ', to: '/discourses' },
+  { icon: 'lotus', label: 'Spiritual', label2: 'Discourses', hi: 'ಆಧ್ಯಾತ್ಮಿಕ ಪ್ರವಚನ', to: '/gallery' },
   { icon: 'book', label: 'Scriptures', label2: '& Wisdom', hi: 'ಶಾಸ್ತ್ರ ಮತ್ತು ಜ್ಞಾನ', to: '/mantras' },
   { icon: 'meditate', label: 'Life', label2: 'Guidance', hi: 'ಜೀವನ ಮಾರ್ಗದರ್ಶನ', to: '/contact' },
   { icon: 'seva', label: 'Seva', label2: '(Service to Society)', hi: 'ಸೇವೆ', to: '/events', small: true },
@@ -212,18 +212,18 @@ export const homas: Homa[] = [
 ]
 
 /* ───────── Locations where Guruji is available ───────── */
-export interface Place { slug: string; city: string; kn: string; state: string; address?: string; map: string; main?: boolean; note: string }
+export interface Place { slug: string; city: string; kn: string; state: string; address?: string; map: string; main?: boolean; /** Temple the centre is at / near */ note: string }
 export const places: Place[] = [
   { slug: 'mandya', city: 'Mandya', kn: 'ಮಂಡ್ಯ', state: 'Karnataka', main: true,
     address: 'Near Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Mandya District, Karnataka 571438, India',
     map: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Karnataka 571438'),
-    note: 'Guruji’s main centre beside the Kaveri at Srirangapatna. Visit by appointment for consultations, homas and satsang.' },
+    note: 'Sri Nimishambha Temple' },
   { slug: 'bengaluru', city: 'Bengaluru', kn: 'ಬೆಂಗಳೂರು', state: 'Karnataka', map: 'https://maps.app.goo.gl/DbdrteosCRNRoA1n6?g_st=aw',
-    note: 'Consult Guruji in person on scheduled visits, or by phone and video any day.' },
+    note: 'ISKCON Temple' },
   { slug: 'kollegala', city: 'Kollegala', kn: 'ಕೊಳ್ಳೇಗಾಲ', state: 'Karnataka', map: 'https://maps.app.goo.gl/nTiKYugMhFvqaMia7?g_st=aw',
-    note: 'Jathaka reading, family problems and negative-energy remedies, by appointment.' },
+    note: 'Sri Male Mahadeshwara Swamy Devasthana' },
   { slug: 'guwahati', city: 'Guwahati', kn: 'ಗುವಾಹಟಿ', state: 'Assam', map: 'https://maps.app.goo.gl/ViF3UqYdf6kSoYUMA?g_st=aw',
-    note: 'For devotees in the North-East — homas and consultations during Guruji’s visits.' },
+    note: 'Maa Kamakhya Devi Temple' },
   { slug: 'perandapalli', city: 'Perandapalli', kn: 'ಪೆರಂಡಪಲ್ಲಿ', state: 'Tamil Nadu', map: 'https://maps.app.goo.gl/bbj7LkdMAPzQvSsv5?g_st=aw',
-    note: 'Consultations in Tamil, Kannada, Telugu and English, by appointment.' },
+    note: 'Sri Maha Pratyangira Devi Temple' },
 ]

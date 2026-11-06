@@ -47,7 +47,7 @@ export const faqs: Faq[] = [
 
   { id: 'hours', q: 'What are the office hours?',
     keys: ['hours', 'timing', 'timings', 'office time', 'open', 'opening', 'closed', 'what time', 'ಸಮಯ', 'समय'],
-    a: 'Guruji’s office is open daily from 6:00 AM to 12:00 PM (IST). Please message on WhatsApp before visiting.',
+    a: 'Guruji’s office is open daily from 10:00 AM to 6:00 PM (IST). Please message on WhatsApp before visiting.',
     contact: true },
 
   { id: 'location', q: 'Where is Guruji’s main centre?',
@@ -136,9 +136,9 @@ export const faqs: Faq[] = [
     link: { to: '/events', label: 'Events' } },
 
   { id: 'videos', q: 'Where can I watch Guruji’s discourses?',
-    keys: ['videos', 'discourse', 'discourses', 'talk', 'talks', 'youtube', 'watch', 'pravachana', 'speech', 'ಪ್ರವಚನ', 'ವೀಡಿಯೊ', 'प्रवचन'],
-    a: 'Guruji’s talks on the Gita, Jyotisha and sadhana are on the Videos page, and the latest discourse plays on the home page.',
-    link: { to: '/discourses', label: 'Videos' } },
+    keys: ['videos', 'gallery', 'photos', 'photo', 'celebrity', 'celebrities', 'discourse', 'discourses', 'talk', 'talks', 'youtube', 'watch', 'pravachana', 'speech', 'ಪ್ರವಚನ', 'ವೀಡಿಯೊ', 'प्रवचन'],
+    a: 'Guruji’s videos, photos and celebrity moments are in the Gallery, and the latest discourse also plays on the home page.',
+    link: { to: '/gallery', label: 'Gallery' } },
 
   { id: 'mantra', q: 'Which mantra should I chant?',
     keys: ['mantra', 'mantras', 'chant', 'chanting', 'japa', 'jap', 'gayatri', 'shloka', 'sloka', 'prayer', 'meditation', 'peace', 'diya', 'ಮಂತ್ರ', 'ಜಪ', 'मंत्र', 'जाप'],

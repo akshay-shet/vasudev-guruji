@@ -7,8 +7,8 @@ export default function LifeLinePage() {
     <>
       <PageHero compact eyebrow={{ kn: 'ಗುರೂಜಿ ವಿಶೇಷ', en: 'GURUJI SPECIAL' }} title={lifeline.title.en} hi={lifeline.title.kn} />
       <Section className="!pt-4">
-        <div className="card grid items-center gap-8 p-5 sm:p-8 lg:grid-cols-[minmax(240px,330px)_1fr] lg:gap-12">
-          <div className="mx-auto w-[60%] max-w-[320px] sm:w-[42%] lg:w-full"><LifeLineBook /></div>
+        <div className="card grid items-center gap-8 p-5 sm:p-8 lg:grid-cols-[minmax(280px,380px)_1fr] lg:gap-12">
+          <div className="mx-auto w-[86%] max-w-[360px] sm:w-[58%] lg:w-full"><LifeLineBook /></div>
           <div>
             <h2 className="font-cormorant text-[28px] font-bold italic leading-tight text-maroon sm:text-[34px]"><BiText t={lifeline.tagline} knClass="text-[0.66em] mt-1" /></h2>
             <p className="mt-3 text-[17px] leading-relaxed text-ink/[.9] sm:text-[18px]"><BiText t={lifeline.intro} knClass="text-[0.9em] mt-2 leading-relaxed" /></p>

@@ -97,7 +97,7 @@ function JourneyPanel() {
   const t = useT()
   const items = [
     { icon: Lotus, label: t('Meditate', 'ಧ್ಯಾನ'), to: '/mantras' },
-    { icon: Book, label: t('Learn', 'ಕಲಿಯಿರಿ'), to: '/discourses' },
+    { icon: Book, label: t('Learn', 'ಕಲಿಯಿರಿ'), to: '/gallery' },
     { icon: Sprout, label: t('Practice', 'ಅಭ್ಯಾಸ'), to: '/mantras#japa' },
     { icon: Heart, label: t('Serve', 'ಸೇವೆ'), to: '/events' },
   ]

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { lifeline, lifelineOrderLink, type Bi } from '../data/lifeline'
-import { site } from '../data/site'
 import { usePrefs } from '../lib/prefs'
 import { Diamond } from './Decor'
 import { Arrow, Chevron, iconByName, WhatsApp } from './Icons'
@@ -24,33 +23,14 @@ export function BiText({ t, className = '', knClass = '', inline = false }: { t:
   )
 }
 
-/** The "Life Line Horoscope" book — a maroon & gold hard-cover drawn in CSS with Guruji's portrait. */
+/** The "Life Line Horoscope" book poster (public/img/lifeline-poster.jpg — replace the file to change it). */
 export function LifeLineBook({ className = '' }: { className?: string }) {
   return (
-    <div className={`relative mx-auto aspect-[3/4] w-full max-w-[300px] ${className}`} style={{ perspective: '1200px', containerType: 'inline-size' }}>
-      <div className="absolute inset-y-[2.5%] right-[-3.5%] w-[8%] rounded-r-md" aria-hidden
-        style={{ background: 'repeating-linear-gradient(90deg,#FFFDF5 0 2px,#E9DDC2 2px 3px)', boxShadow: '4px 6px 14px -6px rgba(0,0,0,.45)' }} />
-      <div className="relative h-full w-full overflow-hidden rounded-[6px_14px_14px_6px] shadow-[0_24px_40px_-18px_rgba(60,15,5,.75)]"
-        style={{ transform: 'rotateY(-10deg)', transformOrigin: 'left center', background: 'radial-gradient(120% 90% at 60% 30%,#9A2A14 0%,#6E1A0B 55%,#4A0F06 100%)' }}>
-        <div className="absolute inset-y-0 left-0 w-[9%]" aria-hidden style={{ background: 'linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.05) 70%,rgba(255,220,150,.25))' }} />
-        <div className="absolute inset-[6%] left-[13%] rounded-[8px]" aria-hidden style={{ boxShadow: 'inset 0 0 0 1.5px #E7C26A, inset 0 0 0 5px transparent, inset 0 0 0 6px #E7C26A88' }} />
-        <div className="absolute inset-[6%] left-[13%] flex flex-col items-center px-[6%] py-[7%] text-center" data-no-translate="">
-          <p className="font-kn text-[4.2cqw] text-[#F2CF7E]">॥ ಶ್ರೀ ॥</p>
-          <div className="relative mt-[4%] aspect-square w-[52%] rounded-full p-[3px]" style={{ background: 'conic-gradient(#F6DA8E,#C58B2D,#F2CF7E,#93600F,#F6DA8E)' }}>
-            <img src={site.photo} alt="" className="h-full w-full rounded-full object-cover object-top" loading="lazy" />
-          </div>
-          <h3 className="mt-[7%] font-cormorant text-[10.5cqw] font-bold italic leading-[1.02] text-[#F7D88A] drop-shadow-[0_2px_3px_rgba(0,0,0,.5)]">Life Line<br />Horoscope</h3>
-          <p className="mt-[2%] font-kn text-[4.6cqw] text-[#F2CF7E]">ಜೀವನ ರೇಖೆ ಜಾತಕ</p>
-          <span className="mt-[3%] block h-px w-1/2 bg-gradient-to-r from-transparent via-[#E7C26A] to-transparent" aria-hidden />
-          <p className="mt-[3%] font-cormorant text-[4.4cqw] italic leading-tight text-[#F6E3B4]">Complete Blueprint of Your Life</p>
-          <p className="mt-auto font-marcellus text-[4.4cqw] text-[#F7D88A]">Vasudev Guruji</p>
-        </div>
-        <div className="pointer-events-none absolute inset-0" aria-hidden style={{ background: 'linear-gradient(115deg,transparent 30%,rgba(255,240,200,.16) 45%,transparent 60%)' }} />
+    <div className={`relative mx-auto w-full max-w-[360px] ${className}`}>
+      <div className="rounded-2xl p-[3px] shadow-[0_24px_44px_-20px_rgba(60,15,5,.7)]" style={{ background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
+        <img src={import.meta.env.BASE_URL + 'img/lifeline-poster.jpg'} alt="Life Line Horoscope book by Vasudev Guruji"
+          width={1199} height={1312} loading="lazy" className="block aspect-[1199/1312] w-full rounded-[14px] object-cover" />
       </div>
-      <span className="absolute -right-3 -top-3 flex h-[68px] w-[68px] rotate-12 flex-col items-center justify-center rounded-full bg-[#F2B91C] text-center text-maroon shadow-lg ring-2 ring-paper">
-        <span className="font-cinzel text-[9px] font-semibold leading-none tracking-wider">SAVE</span>
-        <span className="font-marcellus text-[18px] leading-tight">₹{lifeline.originalPrice - lifeline.offerPrice}</span>
-      </span>
     </div>
   )
 }
@@ -196,8 +176,8 @@ export function LifeLineSlider() {
     <div className="card overflow-hidden p-4 sm:p-6 lg:p-8" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => { touch.current = e.touches[0].clientX; setPaused(true) }}
       onTouchEnd={(e) => { if (touch.current != null) { const dx = e.changedTouches[0].clientX - touch.current; if (Math.abs(dx) > 45) go(dx < 0 ? 1 : -1) } touch.current = null }}>
-      <div className="grid items-center gap-6 lg:grid-cols-[minmax(240px,320px)_1fr] lg:gap-10">
-        <div className="mx-auto w-[56%] max-w-[300px] sm:w-[40%] lg:w-full"><LifeLineBook /></div>
+      <div className="grid items-center gap-6 lg:grid-cols-[minmax(280px,370px)_1fr] lg:gap-10">
+        <div className="mx-auto w-[86%] max-w-[360px] sm:w-[58%] lg:w-full"><LifeLineBook /></div>
         <div className="min-w-0">
           {/* all slides share one grid cell, so the box always keeps the height of the first (fullest) slide */}
           <div className="grid" aria-live="polite">

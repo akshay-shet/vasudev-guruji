@@ -265,7 +265,7 @@ const exact: Record<string, string> = {
   'Open in Google Maps': 'கூகுள் மேப்ஸில் திறக்கவும்',
   'Visit the Ashram': 'ஆசிரமத்திற்கு வாருங்கள்',
   'OFFICE HOURS': 'அலுவலக நேரம்',
-  'Daily 6:00 AM – 12:00 PM (IST)': 'தினமும் காலை 6:00 – மதியம் 12:00',
+  'Daily 10:00 AM – 6:00 PM (IST)': 'தினமும் காலை 10:00 – மாலை 6:00',
   'GETTING HERE': 'இங்கு வருவது எப்படி',
   'Beside the Kaveri at Ganjam, about 16 km from Mysuru and 125 km from Bengaluru.': 'கஞ்சாமில் காவிரிக் கரையில், மைசூருவிலிருந்து சுமார் 16 கி.மீ. மற்றும் பெங்களூருவிலிருந்து 125 கி.மீ.',
   'Please message on WhatsApp before visiting so the office can confirm Guruji’s availability.': 'வருகைக்கு முன் தயவுசெய்து வாட்ஸ்அப்பில் செய்தி அனுப்புங்கள், அப்போது அலுவலகம் குருஜியின் இருப்பை உறுதிசெய்யும்.',
@@ -705,7 +705,7 @@ const exact: Record<string, string> = {
   'How can I contact Guruji?': 'குருஜியை எப்படித் தொடர்புகொள்வது?',
   'You can call or WhatsApp Guruji’s office on +91 90359 59911, or write to {email}. Use the buttons below.': 'குருஜியின் அலுவலகத்தை +91 90359 59911 என்ற எண்ணில் அழைக்கவும் அல்லது வாட்ஸ்அப் செய்யவும், அல்லது {email} க்கு எழுதவும். கீழே உள்ள பொத்தான்களைப் பயன்படுத்தவும்.',
   'What are the office hours?': 'அலுவலக நேரம் என்ன?',
-  'Guruji’s office is open daily from 6:00 AM to 12:00 PM (IST). Please message on WhatsApp before visiting.': 'குருஜியின் அலுவலகம் தினமும் காலை 6:00 முதல் மதியம் 12:00 வரை திறந்திருக்கும். வருவதற்கு முன் தயவுசெய்து வாட்ஸ்அப்பில் செய்தி அனுப்பவும்.',
+  'Guruji’s office is open daily from 10:00 AM to 6:00 PM (IST). Please message on WhatsApp before visiting.': 'குருஜியின் அலுவலகம் தினமும் காலை 10:00 முதல் மாலை 6:00 வரை திறந்திருக்கும். வருவதற்கு முன் தயவுசெய்து வாட்ஸ்அப்பில் செய்தி அனுப்பவும்.',
   'Where is Guruji’s main centre?': 'குருஜியின் முதன்மை மையம் எங்கே உள்ளது?',
   'The main centre is near Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Mandya District, Karnataka 571438. Please message before visiting so the office can confirm Guruji’s availability.': 'முதன்மை மையம் ஸ்ரீ நிமிஷாம்பா கோயில் தாசோஹ பவன் அருகில், கஞ்சாம், ஸ்ரீரங்கப்பட்டணா, மண்டியா மாவட்டம், கர்நாடகா 571438 இல் உள்ளது. குருஜி இருப்பதை உறுதிசெய்ய வருவதற்கு முன் செய்தி அனுப்பவும்.',
   'Where else is Guruji available?': 'குருஜி வேறு எங்கே கிடைப்பார்?',
@@ -822,6 +822,32 @@ const exact: Record<string, string> = {
   'Prepared under the guidance of Vasudev Guruji': 'வாசுதேவ குருஜியின் வழிகாட்டுதலில் தயாரிக்கப்பட்டது',
   'What is the Life Line Horoscope book?': 'வாழ்க்கை ரேகை ஜாதகப் புத்தகம் என்றால் என்ன?',
   'It is an 80–100 page personal book on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'இது உங்கள் முழு வாழ்க்கை பற்றிய 80–100 பக்க தனிப்பட்ட புத்தகம் — ஆளுமை, உறவுகள், தொழில், செல்வம், உடல்நலம் மற்றும் ஆன்மீகப் பாதை, ஆண்டு வாரியான பலன்களுடன் — வாசுதேவ குருஜியின் வழிகாட்டுதலில் உங்கள் வைதிக ஜனன ஜாதகத்திலிருந்து தயாரிக்கப்படுகிறது. சிறப்புச் சலுகை: ₹999/- க்குப் பதில் ₹499/-. கீழே வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்.',
+
+  // ── Locations ──
+  'Sri Nimishambha Temple': 'ஸ்ரீ நிமிஷாம்பா கோயில்',
+  'ISKCON Temple': 'இஸ்கான் கோயில்',
+  'Sri Male Mahadeshwara Swamy Devasthana': 'ஸ்ரீ மலை மாதேஸ்வர சுவாமி தேவஸ்தானம்',
+  'Maa Kamakhya Devi Temple': 'மா காமாக்யா தேவி கோயில்',
+  'Sri Maha Pratyangira Devi Temple': 'ஸ்ரீ மகா பிரத்யங்கிரா தேவி கோயில்',
+  'View on Google': 'கூகுளில் பார்க்கவும்',
+
+  // ── Locations ──
+  'Gallery': 'காட்சியகம்',
+  'GALLERY': 'காட்சியகம்',
+  'Celebrity Images': 'பிரபலங்களுடன்',
+  'Photos': 'படங்கள்',
+  'Guruji at a podcast interview': 'பாட்காஸ்ட் நேர்காணலில் குருஜி',
+  'Samruddhi Astro Center, Kollegala': 'சம்ருத்தி ஜோதிட மையம், கொள்ளேகால்',
+  'Life Line Horoscope book': 'வாழ்க்கை ரேகை ஜாதகப் புத்தகம்',
+  'Maa Kamakhya Devi Temple, Guwahati': 'மா காமாக்யா தேவி கோயில், குவாஹாத்தி',
+  'Gallery — Photos & Videos': 'காட்சியகம் — படங்கள் மற்றும் காணொளிகள்',
+  'More photos and videos are added regularly.': 'புதிய படங்களும் காணொளிகளும் தொடர்ந்து சேர்க்கப்படுகின்றன.',
+  'Share yours with the office': 'உங்களுடையதை அலுவலகத்துடன் பகிருங்கள்',
+  'Gallery sections': 'காட்சியகப் பிரிவுகள்',
+  'Previous': 'முந்தையது',
+  'Next': 'அடுத்தது',
+  'VIDEO': 'காணொளி',
+  'Guruji’s videos, photos and celebrity moments are in the Gallery, and the latest discourse also plays on the home page.': 'குருஜியின் காணொளிகள், படங்கள் மற்றும் பிரபலங்களுடனான தருணங்கள் காட்சியகத்தில் உள்ளன, சமீபத்திய சொற்பொழிவு முகப்புப் பக்கத்திலும் ஒளிபரப்பாகிறது.',
 }
 
 const phrases: Record<string, string> = {
@@ -884,6 +910,10 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
+
+  // ── Locations ──
 
   // ── Locations ──
 

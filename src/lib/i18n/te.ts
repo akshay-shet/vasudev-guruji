@@ -265,7 +265,7 @@ const exact: Record<string, string> = {
   'Open in Google Maps': 'గూగుల్ మ్యాప్స్‌లో తెరవండి',
   'Visit the Ashram': 'ఆశ్రమాన్ని సందర్శించండి',
   'OFFICE HOURS': 'కార్యాలయ సమయాలు',
-  'Daily 6:00 AM – 12:00 PM (IST)': 'ప్రతిరోజు ఉదయం 6:00 – మధ్యాహ్నం 12:00',
+  'Daily 10:00 AM – 6:00 PM (IST)': 'ప్రతిరోజు ఉదయం 10:00 – సాయంత్రం 6:00',
   'GETTING HERE': 'ఇక్కడికి చేరుకోవడం',
   'Beside the Kaveri at Ganjam, about 16 km from Mysuru and 125 km from Bengaluru.': 'గంజాం వద్ద కావేరి తీరంలో, మైసూరు నుండి సుమారు 16 కి.మీ. మరియు బెంగళూరు నుండి 125 కి.మీ.',
   'Please message on WhatsApp before visiting so the office can confirm Guruji’s availability.': 'సందర్శించే ముందు దయచేసి వాట్సాప్‌లో సందేశం పంపండి, తద్వారా కార్యాలయం గురూజీ వారి లభ్యతను నిర్ధారిస్తుంది.',
@@ -706,7 +706,7 @@ const exact: Record<string, string> = {
   'How can I contact Guruji?': 'గురూజీని ఎలా సంప్రదించాలి?',
   'You can call or WhatsApp Guruji’s office on +91 90359 59911, or write to {email}. Use the buttons below.': 'గురూజీ కార్యాలయానికి +91 90359 59911 కు కాల్ లేదా వాట్సాప్ చేయండి, లేదా {email} కు రాయండి. క్రింది బటన్‌లను ఉపయోగించండి.',
   'What are the office hours?': 'కార్యాలయ సమయం ఏమిటి?',
-  'Guruji’s office is open daily from 6:00 AM to 12:00 PM (IST). Please message on WhatsApp before visiting.': 'గురూజీ కార్యాలయం ప్రతిరోజు ఉదయం 6:00 నుండి మధ్యాహ్నం 12:00 వరకు తెరిచి ఉంటుంది. సందర్శించే ముందు దయచేసి వాట్సాప్‌లో సందేశం పంపండి.',
+  'Guruji’s office is open daily from 10:00 AM to 6:00 PM (IST). Please message on WhatsApp before visiting.': 'గురూజీ కార్యాలయం ప్రతిరోజు ఉదయం 10:00 నుండి సాయంత్రం 6:00 వరకు తెరిచి ఉంటుంది. సందర్శించే ముందు దయచేసి వాట్సాప్‌లో సందేశం పంపండి.',
   'Where is Guruji’s main centre?': 'గురూజీ ప్రధాన కేంద్రం ఎక్కడ ఉంది?',
   'The main centre is near Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Mandya District, Karnataka 571438. Please message before visiting so the office can confirm Guruji’s availability.': 'ప్రధాన కేంద్రం శ్రీ నిమిషాంబ ఆలయ దాసోహ భవనం దగ్గర, గంజాం, శ్రీరంగపట్టణ, మండ్య జిల్లా, కర్ణాటక 571438 లో ఉంది. గురూజీ లభ్యతను నిర్ధారించుకోవడానికి సందర్శించే ముందు సందేశం పంపండి.',
   'Where else is Guruji available?': 'గురూజీ ఇంకా ఎక్కడ అందుబాటులో ఉంటారు?',
@@ -823,6 +823,32 @@ const exact: Record<string, string> = {
   'Prepared under the guidance of Vasudev Guruji': 'వాసుదేవ గురూజీ మార్గదర్శనంలో సిద్ధం చేయబడింది',
   'What is the Life Line Horoscope book?': 'జీవన రేఖ జాతక పుస్తకం అంటే ఏమిటి?',
   'It is an 80–100 page personal book on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'ఇది మీ సంపూర్ణ జీవితంపై 80–100 పేజీల వ్యక్తిగత పుస్తకం — వ్యక్తిత్వం, సంబంధాలు, వృత్తి, సంపద, ఆరోగ్యం మరియు ఆధ్యాత్మిక మార్గం, సంవత్సరం వారీ జ్యోతిష్యంతో — వాసుదేవ గురూజీ మార్గదర్శనంలో మీ వైదిక జన్మ కుండలి నుండి సిద్ధం చేయబడుతుంది. ప్రత్యేక ఆఫర్: ₹999/- బదులు ₹499/-. క్రింద వాట్సాప్‌లో ఆర్డర్ చేయండి.',
+
+  // ── Locations ──
+  'Sri Nimishambha Temple': 'శ్రీ నిమిషాంబ ఆలయం',
+  'ISKCON Temple': 'ఇస్కాన్ ఆలయం',
+  'Sri Male Mahadeshwara Swamy Devasthana': 'శ్రీ మలె మహదేశ్వర స్వామి దేవస్థానం',
+  'Maa Kamakhya Devi Temple': 'మా కామాఖ్యా దేవి ఆలయం',
+  'Sri Maha Pratyangira Devi Temple': 'శ్రీ మహా ప్రత్యంగిరా దేవి ఆలయం',
+  'View on Google': 'గూగుల్‌లో చూడండి',
+
+  // ── Locations ──
+  'Gallery': 'గ్యాలరీ',
+  'GALLERY': 'గ్యాలరీ',
+  'Celebrity Images': 'ప్రముఖులతో',
+  'Photos': 'చిత్రాలు',
+  'Guruji at a podcast interview': 'పాడ్‌కాస్ట్ ఇంటర్వ్యూలో గురూజీ',
+  'Samruddhi Astro Center, Kollegala': 'సమృద్ధి జ్యోతిష కేంద్రం, కొల్లేగాల',
+  'Life Line Horoscope book': 'జీవన రేఖ జాతక పుస్తకం',
+  'Maa Kamakhya Devi Temple, Guwahati': 'మా కామాఖ్యా దేవి ఆలయం, గువాహటి',
+  'Gallery — Photos & Videos': 'గ్యాలరీ — చిత్రాలు మరియు వీడియోలు',
+  'More photos and videos are added regularly.': 'కొత్త చిత్రాలు మరియు వీడియోలు క్రమం తప్పకుండా జోడించబడతాయి.',
+  'Share yours with the office': 'మీవాటిని కార్యాలయంతో పంచుకోండి',
+  'Gallery sections': 'గ్యాలరీ విభాగాలు',
+  'Previous': 'మునుపటి',
+  'Next': 'తదుపరి',
+  'VIDEO': 'వీడియో',
+  'Guruji’s videos, photos and celebrity moments are in the Gallery, and the latest discourse also plays on the home page.': 'గురూజీ వీడియోలు, చిత్రాలు మరియు ప్రముఖులతో క్షణాలు గ్యాలరీలో ఉన్నాయి, తాజా ప్రవచనం హోమ్ పేజీలో కూడా ప్లే అవుతుంది.',
 }
 
 const phrases: Record<string, string> = {
@@ -885,6 +911,10 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'పెరండపల్లి',
   'Directions to': 'దారి:',
   'Business, Money & Negative Energy — Guruji Answers': 'వ్యాపారం, డబ్బు మరియు ప్రతికూల శక్తి — గురూజీ సమాధానాలు',
+
+  // ── Locations ──
+
+  // ── Locations ──
 
   // ── Locations ──
 

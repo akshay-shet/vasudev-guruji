@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import { FloatingContact, Footer } from './components/Common'
 import { SideOrnaments, Stars, TempleIntro } from './components/Decor'
@@ -11,7 +11,8 @@ import LifeLinePage from './pages/LifeLine'
 import { Kundali } from './pages/Jyotisha'
 import Mantras from './pages/Mantras'
 import { ServiceDetail, Services } from './pages/Services'
-import { Discourses, Events } from './pages/Media'
+import { Events } from './pages/Media'
+import GalleryPage from './pages/Gallery'
 import { Contact, Legal, NotFound, Shop } from './pages/More'
 
 function ScrollManager() {
@@ -47,7 +48,8 @@ export default function App() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/kundali-matching" element={<Kundali />} />
           <Route path="/mantras" element={<Mantras />} />
-          <Route path="/discourses" element={<Discourses />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/discourses" element={<Navigate to="/gallery" replace />} />
           <Route path="/events" element={<Events />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
