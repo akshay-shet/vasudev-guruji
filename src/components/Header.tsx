@@ -10,7 +10,7 @@ import { Chevron, Close, Menu, MoonIcon, Search, Sun } from './Icons'
 
 /* ───────── Search index ───────── */
 const pages = [
-  ['Home', '/'], ['About Guruji', '/about'], ['Homa — Sacred Fire Rituals', '/homa'], ['Guna Milan — Kundali Matching', '/kundali-matching'], ['Shop — Rudraksha, Yantras, Gemstones', '/shop'],
+  ['Home', '/'], ['About Guruji', '/about'], ['Life Line Horoscope', '/life-line-horoscope'], ['Homa — Sacred Fire Rituals', '/homa'], ['Guna Milan — Kundali Matching', '/kundali-matching'], ['Shop — Rudraksha, Yantras, Gemstones', '/shop'],
   ['Events & Programs', '/events'], ['Videos & Discourses', '/discourses'], ['Mantras & Japa Mala', '/mantras'], ['Light a Diya', '/mantras#diya'],
   ['Contact', '/contact'], ['Privacy Policy', '/legal/privacy'], ['Terms & Conditions', '/legal/terms'], ['Disclaimer', '/legal/disclaimer'],
 ] as const

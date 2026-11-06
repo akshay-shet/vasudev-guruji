@@ -5,6 +5,7 @@ export interface NavItem { label: string; hi: string; to: string; children?: { l
 export const nav: NavItem[] = [
   { label: 'Home', hi: 'ಮುಖಪುಟ', to: '/' },
   { label: 'About Guruji', hi: 'ಗುರೂಜಿ ಬಗ್ಗೆ', to: '/about' },
+  { label: 'Life Line Report', hi: 'ಜೀವನ ರೇಖೆ ವರದಿ', to: '/life-line-horoscope' },
   { label: 'Services', hi: 'ಸೇವೆಗಳು', to: '/services' },
   { label: 'Homa', hi: 'ಹೋಮ', to: '/homa' },
   { label: 'Guna Milan', hi: 'ಗುಣ ಮಿಲನ', to: '/kundali-matching' },

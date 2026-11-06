@@ -6,6 +6,7 @@ import { Arrow, Book, Heart, Lotus, Phone, Play, Sprout, Star, WhatsApp } from '
 import { ServiceCard } from './Services'
 import { homas, reviews, services, tiles } from '../data/content'
 import { HomaTile } from './Homa'
+import { LifeLineSlider } from '../components/LifeLine'
 import { site, whatsappLink, type Topic } from '../data/site'
 import { usePrefs, useT } from '../lib/prefs'
 import RashiChakra from '../components/RashiChakra'
@@ -306,6 +307,12 @@ export default function Home() {
             <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"><ServiceCard s={s} /></div>
           ))}
         </div>
+      </Section>
+
+      <Section>
+        <SectionTitle eyebrow={{ kn: 'ಗುರೂಜಿ ವಿಶೇಷ', en: 'GURUJI SPECIAL' }} kn="ಜೀವನ ರೇಖೆ ಜಾತಕ"
+          sub="A personal book on your life, prepared from your complete Vedic birth chart under the guidance of Vasudev Guruji.">Life Line Horoscope</SectionTitle>
+        <LifeLineSlider />
       </Section>
 
       <Section>

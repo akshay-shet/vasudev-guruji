@@ -30,6 +30,11 @@ export const faqs: Faq[] = [
     keys: ['hi', 'hello', 'hey', 'namaste', 'namaskara', 'namaskaram', 'hari om', 'pranam', 'ನಮಸ್ಕಾರ', 'ಹರಿ ಓಂ', 'नमस्ते', 'प्रणाम'],
     a: '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guruji, his services, homas, Guna Milan, events, the shop or how to reach him.' },
 
+  { id: 'lifeline', q: 'What is the Life Line Horoscope report?',
+    keys: ['life line', 'lifeline', 'life report', 'full life report', 'horoscope report', 'detailed report', 'report', 'blueprint', 'pdf', 'yearly prediction', 'yearly predictions', '499', '999', 'ಜೀವನ ರೇಖೆ', 'ವರದಿ'],
+    a: 'It is an 80–100 page personal report on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.',
+    contact: true, link: { to: '/life-line-horoscope', label: 'Life Line Report' } },
+
   { id: 'about', q: 'Who is Vasudev Guruji?',
     keys: ['who is', 'about guruji', 'vasudev', 'background', 'lineage', 'parampara', 'teacher', 'biography', 'ಗುರೂಜಿ', 'ಯಾರು'],
     a: 'Vasudev Guruji is a Vedic astrologer and spiritual teacher who has devoted his life to the Vedas, the Bhagavad Gita and Jyotisha. He guides seekers and families through birth-chart readings, Kundali matching, homas and discourses.',
@@ -145,7 +150,7 @@ export const faqs: Faq[] = [
 export const FAQ_FALLBACK = 'Please call or WhatsApp Guruji’s office directly — we will be happy to help. 🙏'
 
 /** Chips shown when the chat opens. */
-export const FAQ_START = ['contact', 'hours', 'location', 'homas', 'gunamilan', 'price']
+export const FAQ_START = ['lifeline', 'contact', 'hours', 'location', 'homas', 'gunamilan']
 
 const norm = (s: string) => ' ' + s.toLowerCase().replace(/[^\p{L}\p{M}\p{N}]+/gu, ' ').trim() + ' '
 

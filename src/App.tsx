@@ -7,6 +7,7 @@ import { useReveal } from './lib/useReveal'
 import Home from './pages/Home'
 import HomaPage from './pages/Homa'
 import About from './pages/About'
+import LifeLinePage from './pages/LifeLine'
 import { Kundali } from './pages/Jyotisha'
 import Mantras from './pages/Mantras'
 import { ServiceDetail, Services } from './pages/Services'
@@ -39,6 +40,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/life-line-horoscope" element={<LifeLinePage />} />
           <Route path="/homa" element={<HomaPage />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
