@@ -148,16 +148,33 @@ export function BookContents({ small = false }: { small?: boolean }) {
   )
 }
 
+/** Compact life-areas grid for the slider: icon + English & Kannada title only. */
+function AreasMini() {
+  return (
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      {lifeline.areas.map((a) => {
+        const I = iconByName[a.icon]
+        return (
+          <div key={a.title.en} className="flex items-start gap-2 rounded-xl border border-goldlight/70 bg-paper px-2.5 py-2">
+            <I size={18} className="mt-0.5 shrink-0 text-golddark" />
+            <b className="font-marcellus text-[14.5px] font-normal leading-tight text-maroon sm:text-[15.5px]"><BiText t={a.title} knClass="text-[0.82em] mt-0.5" /></b>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 const slides = [
   { key: 'blueprint', eyebrow: 'GURUJI SPECIAL', title: lifeline.tagline, body: () => (
     <p className="text-[17px] leading-relaxed text-ink/[.9]"><BiText t={lifeline.intro} knClass="text-[0.9em] mt-2 leading-relaxed" /></p>
   ) },
-  { key: 'areas', eyebrow: 'WHAT IT COVERS', title: lifeline.labels.coverage, body: () => <LifeLineAreas compact /> },
+  { key: 'areas', eyebrow: 'WHAT IT COVERS', title: lifeline.labels.coverage, body: () => <AreasMini /> },
   { key: 'contents', eyebrow: 'INSIDE THE BOOK', title: lifeline.labels.contents, body: () => (
-    <ol className="grid gap-x-5 gap-y-1 sm:grid-cols-2">
+    <ol className="grid gap-x-5 sm:grid-cols-2">
       {lifeline.chapters.map((c, i) => (
-        <li key={c.en} className="flex items-baseline gap-2 border-b border-dotted border-[#C58B2D]/40 py-1 text-[14.5px] leading-snug">
-          <span className="w-7 shrink-0 font-cinzel text-[11px] font-semibold text-[#B0321A]">{ROMAN[i]}</span><span>{c.en}</span>
+        <li key={c.en} className="flex items-baseline gap-2 border-b border-dotted border-[#C58B2D]/40 py-[3px] text-[14px] leading-snug">
+          <span className="w-7 shrink-0 font-cinzel text-[10.5px] font-semibold text-[#B0321A]">{ROMAN[i]}</span><span className="truncate">{c.en}</span>
         </li>
       ))}
     </ol>
@@ -175,7 +192,6 @@ export function LifeLineSlider() {
     const t = window.setTimeout(() => go(1), 9000)
     return () => clearTimeout(t)
   }, [i, paused])
-  const s = slides[i]
   return (
     <div className="card overflow-hidden p-4 sm:p-6 lg:p-8" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => { touch.current = e.touches[0].clientX; setPaused(true) }}
@@ -183,10 +199,15 @@ export function LifeLineSlider() {
       <div className="grid items-center gap-6 lg:grid-cols-[minmax(240px,320px)_1fr] lg:gap-10">
         <div className="mx-auto w-[56%] max-w-[300px] sm:w-[40%] lg:w-full"><LifeLineBook /></div>
         <div className="min-w-0">
-          <div key={s.key} className="min-h-[300px] animate-[fadein_.5s_ease] sm:min-h-[340px]" aria-live="polite">
-            <p className="font-cinzel text-[11px] font-semibold tracking-[0.18em] text-[#B0321A]">{s.eyebrow}</p>
-            <h3 className="mb-3 mt-1 font-cormorant text-[26px] font-bold italic leading-tight text-maroon sm:text-[32px]"><BiText t={s.title} knClass="text-[0.68em] mt-1" /></h3>
-            {s.body()}
+          {/* all slides share one grid cell, so the box always keeps the height of the first (fullest) slide */}
+          <div className="grid" aria-live="polite">
+            {slides.map((x, n) => (
+              <div key={x.key} className={`col-start-1 row-start-1 transition-opacity duration-500 ${n === i ? 'opacity-100' : 'pointer-events-none invisible opacity-0'}`} aria-hidden={n !== i}>
+                <p className="font-cinzel text-[11px] font-semibold tracking-[0.18em] text-[#B0321A]">{x.eyebrow}</p>
+                <h3 className="mb-3 mt-1 font-cormorant text-[26px] font-bold italic leading-tight text-maroon sm:text-[32px]"><BiText t={x.title} knClass="text-[0.68em] mt-1" /></h3>
+                {x.body()}
+              </div>
+            ))}
           </div>
           <div className="mt-4 flex items-center gap-3">
             <button onClick={() => go(-1)} className="pill h-9 w-9" aria-label="Previous slide"><Chevron size={14} className="rotate-90" /></button>
