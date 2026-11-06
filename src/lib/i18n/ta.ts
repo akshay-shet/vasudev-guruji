@@ -810,6 +810,9 @@ const exact: Record<string, string> = {
   'Next slide': 'அடுத்த ஸ்லைடு',
   'What is the Life Line Horoscope report?': 'வாழ்க்கை ரேகை ஜாதக அறிக்கை என்றால் என்ன?',
   'It is an 80–100 page personal report on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'இது உங்கள் முழு வாழ்க்கை பற்றிய 80–100 பக்க தனிப்பட்ட அறிக்கை — ஆளுமை, உறவுகள், தொழில், செல்வம், உடல்நலம் மற்றும் ஆன்மீகப் பாதை, ஆண்டு வாரியான பலன்களுடன் — வாசுதேவ குருஜியின் வழிகாட்டுதலில் உங்கள் வைதிக ஜனன ஜாதகத்திலிருந்து தயாரிக்கப்படுகிறது. சிறப்புச் சலுகை: ₹999/- க்குப் பதில் ₹499/-. கீழே வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்.',
+
+  // ── Locations ──
+  'The Book': 'புத்தகம்',
 }
 
 const phrases: Record<string, string> = {
@@ -872,6 +875,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 
