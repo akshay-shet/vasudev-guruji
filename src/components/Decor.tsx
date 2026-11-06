@@ -253,3 +253,66 @@ export function Stars() {
     </div>
   )
 }
+
+/* ───────── Side ornaments: fill the empty left & right margins on wide screens ─────────
+ * Fixed behind the page content, only where the margin is wide enough (xl+).
+ * Per side: a slowly turning gold line-mandala peeking in from the edge, a vertical temple border
+ * with lotus & diamond motifs, a swaying bell at the top and a lit diya at the bottom (left). */
+const SIDE_BORDER = `url("data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns='http://www.w3.org/2000/svg' width='34' height='150' viewBox='0 0 34 150'><g fill='none' stroke='#C58B2D' stroke-opacity='.6'>` +
+  `<path d='M13 0v150M21 0v150' stroke-width='.8'/>` +
+  `<path d='M17 30l8 11-8 11-8-11z' fill='#F6DA8E' fill-opacity='.55' stroke-width='1'/><circle cx='17' cy='41' r='1.7' fill='#C58B2D'/>` +
+  `<path d='M17 118c5-6 5-11 0-16-5 5-5 10 0 16zM17 118c6-4 10-4 12 0-4 3-8 3-12 0zM17 118c-6-4-10-4-12 0 4 3 8 3 12 0z' fill='#F6DA8E' fill-opacity='.5' stroke-width='.8'/>` +
+  `<circle cx='17' cy='86' r='2.2' fill='#E7C26A' stroke-width='.6'/></g></svg>`,
+)}")`
+
+function LineMandala({ className = '' }: { className?: string }) {
+  const n24 = Array.from({ length: 24 })
+  const n12 = Array.from({ length: 12 })
+  return (
+    <svg viewBox="-200 -200 400 400" className={className} aria-hidden>
+      <g fill="none" stroke="#C58B2D">
+        <circle r="196" strokeWidth="1.6" strokeOpacity=".7" />
+        <circle r="186" strokeWidth=".7" strokeOpacity=".6" strokeDasharray="2 5" />
+        <circle r="150" strokeWidth=".9" strokeOpacity=".6" />
+        <circle r="104" strokeWidth=".8" strokeOpacity=".55" />
+        <circle r="56" strokeWidth=".8" strokeOpacity=".55" />
+        {n24.map((_, i) => <path key={'a' + i} transform={`rotate(${i * 15})`} d="M0-150c16-14 20-26 0-36-20 10-16 22 0 36z" strokeWidth=".9" strokeOpacity=".65" fill="#F6DA8E" fillOpacity=".12" />)}
+        {n24.map((_, i) => <path key={'b' + i} transform={`rotate(${i * 15 + 7.5})`} d="M0-104q18-22 0-46q-18 24 0 46z" strokeWidth=".7" strokeOpacity=".5" />)}
+        {n12.map((_, i) => <path key={'c' + i} transform={`rotate(${i * 30})`} d="M0-56q22-20 0-48q-22 28 0 48z" strokeWidth=".8" strokeOpacity=".55" fill="#F6DA8E" fillOpacity=".1" />)}
+        {n24.map((_, i) => <circle key={'d' + i} transform={`rotate(${i * 15 + 7.5})`} cx="0" cy="-168" r="2.2" fill="#E7C26A" fillOpacity=".7" stroke="none" />)}
+      </g>
+    </svg>
+  )
+}
+
+export function SideOrnaments() {
+  const side = (right: boolean) => {
+    const pos = right ? { right: 0 } : { left: 0 }
+    return (
+      <div className="absolute inset-y-0" style={{ ...pos, width: 'var(--gutter)' }}>
+        {/* soft saffron glow along the edge */}
+        <div className="absolute inset-0" style={{ background: `linear-gradient(${right ? 'to left' : 'to right'}, rgba(242,185,28,.10), rgba(242,207,126,.06) 55%, transparent)` }} />
+        {/* mandala peeking in from the edge */}
+        <div className="absolute top-1/2 -translate-y-1/2 opacity-60" style={{ [right ? 'right' : 'left']: 'calc(var(--md) / -2)', width: 'var(--md)', height: 'var(--md)' }}>
+          <LineMandala className="h-full w-full animate-spin-slow" />
+        </div>
+        {/* vertical temple border */}
+        <div className="absolute bottom-0 top-[86px] w-[34px]" style={{ [right ? 'right' : 'left']: 'calc(var(--gutter) * .62 - 17px)', backgroundImage: SIDE_BORDER, backgroundRepeat: 'repeat-y',
+          maskImage: 'linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)' }} />
+        {/* bell under the header */}
+        <div className="absolute top-[70px] h-[150px] w-[46px]" style={{ [right ? 'right' : 'left']: 'calc(var(--gutter) * .62 - 23px)' }}>
+          <Bell className="h-full w-full" chain={90} delay={right ? 1.2 : 0} />
+        </div>
+        {/* lit diya at the bottom (left only — the contact buttons sit bottom-right) */}
+        {!right && <div className="absolute bottom-4 h-14 w-14" style={{ left: 'calc(var(--gutter) * .62 - 28px)' }}><Diya className="h-full w-full" /></div>}
+      </div>
+    )
+  }
+  return (
+    <div className="side-ornaments pointer-events-none fixed inset-0 z-0 hidden min-[1300px]:block" aria-hidden>
+      {side(false)}
+      {side(true)}
+    </div>
+  )
+}

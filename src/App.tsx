@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import { FloatingContact, Footer } from './components/Common'
-import { Stars, TempleIntro } from './components/Decor'
+import { SideOrnaments, Stars, TempleIntro } from './components/Decor'
 import { useReveal } from './lib/useReveal'
 import Home from './pages/Home'
 import HomaPage from './pages/Homa'
@@ -32,6 +32,7 @@ export default function App() {
   return (
     <>
       <Stars />
+      <SideOrnaments />
       <TempleIntro />
       <ScrollManager />
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[200] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2">Skip to content</a>

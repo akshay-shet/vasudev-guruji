@@ -174,3 +174,7 @@ html:not([lang='en']) .arch span { white-space: normal !important; overflow-wrap
 html[lang='ta'] .arch > span, html[lang='ml'] .arch > span { font-size: min(0.86em, calc(var(--u, 99px) * 2.45)); }
 
 html:not([lang='en']) .svc-tag-kn { display: none; }
+
+/* Side ornaments — width of the empty margin beside the 72rem content column */
+.side-ornaments { --gutter: max(0px, calc((100vw - 72rem) / 2)); --md: clamp(320px, calc(var(--gutter) * 2.6), 620px); }
+html[data-theme='night'] .side-ornaments { opacity: .8; }
