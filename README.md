@@ -26,12 +26,12 @@ Other content: `src/data/content.ts` (services, events, shop products, discourse
 
 ## Deploy
 
-- **Vercel** (recommended — needed for the AI chat): import the folder, framework “Vite”. Add environment variable `OPENAI_API_KEY` (and optionally `OPENAI_MODEL`, default `gpt-4o-mini`). `api/chat.ts` becomes `/api/chat`. The chatbot answers only Guruji/website questions and shows Call + WhatsApp buttons for personal or sensitive situations. Its knowledge base is generated from `src/data` by `npm run kb` (runs automatically on build).
-- **Netlify**: build `npm run build`, publish `dist` (`netlify.toml` included). The AI chat falls back to a WhatsApp message on Netlify.
+- **Vercel** (recommended): import the repo, framework “Vite”, click Deploy. No environment variables are needed.
+- **Netlify**: build `npm run build`, publish `dist` (`netlify.toml` included).
 
 ## Pages
 
-Home · About · Services (+ each topic with enquiry form) · Kundali Matching (36 Guna calculator) · Vimshottari Dasha calculator · Rashis · Nakshatras · Navagraha · Daily Horoscope · Mantras, Japa Mala (108) & Diya · Discourses · Events (countdown) · Shop (WhatsApp orders) · Reviews · AI Chat · Contact · Privacy / Terms / Refund / Disclaimer.
+Home · About · Services (+ each topic with enquiry form) · Kundali Matching (36 Guna calculator) · Vimshottari Dasha calculator · Rashis · Nakshatras · Navagraha · Daily Horoscope · Mantras, Japa Mala (108) & Diya · Discourses · Events (countdown) · Shop (WhatsApp orders) · Reviews · Q&A chat (src/data/faq.ts — edit questions & answers there; no API key) · Contact · Privacy / Terms / Disclaimer.
 
 ## Language
 
