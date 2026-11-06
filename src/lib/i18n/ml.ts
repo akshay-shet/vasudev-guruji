@@ -43,7 +43,7 @@ const exact: Record<string, string> = {
   'Guruji’s Assistant': 'ഗുരുജിയുടെ സഹായി',
   'Guruji’s AI assistant': 'ഗുരുജിയുടെ എഐ സഹായി',
   'AI · general guidance only': 'എഐ · പൊതുവായ മാർഗ്ഗനിർദ്ദേശം മാത്രം',
-  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guna Milan, mantras, events, the shop or how to reach the ashram.': '🙏 ഹരി ഓം! ഞാൻ ഗുരുജിയുടെ വെബ്സൈറ്റ് സഹായിയാണ്. ഗുണ മിലൻ, മന്ത്രങ്ങൾ, പരിപാടികൾ, കട, അല്ലെങ്കിൽ ആശ്രമത്തിൽ എത്തിച്ചേരേണ്ട വഴി എന്നിവയെക്കുറിച്ച് ചോദിക്കൂ.',
+  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guruji, his services, homas, Guna Milan, events, the shop or how to reach him.': '🙏 ഹരി ഓം! ഞാൻ ഗുരുജിയുടെ വെബ്സൈറ്റ് സഹായിയാണ്. ഗുരുജി, അദ്ദേഹത്തിന്റെ സേവനങ്ങൾ, ഹോമങ്ങൾ, ഗുണ മിലൻ, പരിപാടികൾ, കട, അദ്ദേഹത്തെ ബന്ധപ്പെടേണ്ട വിധം എന്നിവയെക്കുറിച്ച് ചോദിക്കൂ.',
   'How does Guna Milan work?': 'ഗുണ മിലൻ എങ്ങനെ പ്രവർത്തിക്കുന്നു?',
   'Which mantra for peace?': 'ശാന്തിക്കായി ഏത് മന്ത്രം?',
   'Upcoming events?': 'വരാനിരിക്കുന്ന പരിപാടികൾ?',
@@ -54,7 +54,7 @@ const exact: Record<string, string> = {
   'Prefer a person? Chat with the office on WhatsApp': 'ഒരു വ്യക്തിയോട് സംസാരിക്കണോ? വാട്ട്സ്ആപ്പിൽ ഓഫീസുമായി ചാറ്റ് ചെയ്യുക',
   'Close chat': 'ചാറ്റ് അടയ്ക്കുക',
   'Type your question…': 'നിങ്ങളുടെ ചോദ്യം ടൈപ്പ് ചെയ്യുക…',
-  'The assistant is not available right now. Please message Guruji’s office on WhatsApp — we will be happy to help. 🙏': 'സഹായി ഇപ്പോൾ ലഭ്യമല്ല. ദയവായി വാട്ട്സ്ആപ്പിൽ ഗുരുജിയുടെ ഓഫീസിലേക്ക് സന്ദേശം അയയ്ക്കുക — സഹായിക്കാൻ ഞങ്ങൾക്ക് സന്തോഷമേയുള്ളൂ. 🙏',
+  'The assistant is not available right now. Please call or WhatsApp Guruji’s office directly — we will be happy to help. 🙏': 'സഹായി ഇപ്പോൾ ലഭ്യമല്ല. ദയവായി ഗുരുജിയുടെ ഓഫീസിലേക്ക് നേരിട്ട് വിളിക്കുകയോ വാട്ട്സ്ആപ്പ് ചെയ്യുകയോ ചെയ്യൂ — സഹായിക്കാൻ സന്തോഷം. 🙏',
 
   // ── Home ──
   'Choose a topic and ask Guruji — your question opens in WhatsApp.': 'ഒരു വിഷയം തിരഞ്ഞെടുത്ത് ഗുരുജിയോട് ചോദിക്കുക — നിങ്ങളുടെ ചോദ്യം വാട്ട്സ്ആപ്പിൽ തുറക്കും.',
@@ -277,7 +277,7 @@ const exact: Record<string, string> = {
   'How we use it': 'ഞങ്ങൾ അത് എങ്ങനെ ഉപയോഗിക്കുന്നു',
   'Your details are used only to respond to your enquiry, prepare your chart and arrange consultations. We never sell or share your personal data.': 'നിങ്ങളുടെ അന്വേഷണത്തിന് മറുപടി നൽകാനും ജാതകം തയ്യാറാക്കാനും കൂടിക്കാഴ്ചകൾ ക്രമീകരിക്കാനും മാത്രമാണ് നിങ്ങളുടെ വിവരങ്ങൾ ഉപയോഗിക്കുന്നത്. നിങ്ങളുടെ വ്യക്തിപരമായ വിവരങ്ങൾ ഞങ്ങൾ ഒരിക്കലും വിൽക്കുകയോ പങ്കിടുകയോ ചെയ്യില്ല.',
   'AI assistant': 'എഐ സഹായി',
-  'Messages typed in the AI chat are sent to our AI provider (Anthropic) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'എഐ ചാറ്റിൽ ടൈപ്പ് ചെയ്യുന്ന സന്ദേശങ്ങൾ മറുപടി തയ്യാറാക്കാൻ മാത്രം ഞങ്ങളുടെ എഐ സേവനദാതാവിന് (ആന്ത്രോപിക്) അയയ്ക്കുന്നു, നിങ്ങളെ തിരിച്ചറിയാൻ ഉപയോഗിക്കുന്നില്ല. ദയവായി ചാറ്റിൽ സ്വകാര്യമായ വ്യക്തിഗത വിവരങ്ങൾ പങ്കിടരുത്.',
+  'Messages typed in the AI chat are sent to our AI provider (OpenAI) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'എഐ ചാറ്റിൽ ടൈപ്പ് ചെയ്യുന്ന സന്ദേശങ്ങൾ മറുപടി തയ്യാറാക്കാൻ മാത്രം ഞങ്ങളുടെ എഐ സേവനദാതാവിന് (ഓപ്പൺഎഐ) അയയ്ക്കുന്നു, നിങ്ങളെ തിരിച്ചറിയാൻ ഉപയോഗിക്കുന്നില്ല. ദയവായി ചാറ്റിൽ സ്വകാര്യമായ വ്യക്തിഗത വിവരങ്ങൾ പങ്കിടരുത്.',
   'Cookies & storage': 'കുക്കികളും സംഭരണവും',
   'We store only your language and theme preference in your browser. No advertising trackers are used.': 'നിങ്ങളുടെ ബ്രൗസറിൽ ഭാഷയും തീമും സംബന്ധിച്ച താൽപ്പര്യം മാത്രമാണ് ഞങ്ങൾ സൂക്ഷിക്കുന്നത്. പരസ്യ ട്രാക്കറുകളൊന്നും ഉപയോഗിക്കുന്നില്ല.',
   'Your rights': 'നിങ്ങളുടെ അവകാശങ്ങൾ',
@@ -696,6 +696,8 @@ const exact: Record<string, string> = {
   'CALCULATOR': 'കണക്കുകൂട്ടൽ',
   'The Ashtakoota': 'അഷ്ടകൂടം',
   'Japa Mala': 'ജപമാല',
+  'Which homa removes obstacles?': 'ഏത് ഹോമമാണ് തടസ്സങ്ങൾ നീക്കുന്നത്?',
+  'Where is Guruji available?': 'ഗുരുജി എവിടെ ലഭ്യമാണ്?',
 }
 
 const phrases: Record<string, string> = {

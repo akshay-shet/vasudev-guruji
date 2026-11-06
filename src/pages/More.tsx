@@ -132,7 +132,7 @@ const legal: Record<string, { title: string; kn: string; body: [string, string][
     body: [
       ['Information we collect', 'When you submit an enquiry, your name, phone number, birth details and message are placed into a WhatsApp message that you send yourself. This website does not store these details on a server.'],
       ['How we use it', 'Your details are used only to respond to your enquiry, prepare your chart and arrange consultations. We never sell or share your personal data.'],
-      ['AI assistant', 'Messages typed in the AI chat are sent to our AI provider (Anthropic) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.'],
+      ['AI assistant', 'Messages typed in the AI chat are sent to our AI provider (OpenAI) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.'],
       ['Cookies & storage', 'We store only your language and theme preference in your browser. No advertising trackers are used.'],
       ['Your rights', `You may ask us to delete any information you have shared by writing to ${site.email}.`],
     ],

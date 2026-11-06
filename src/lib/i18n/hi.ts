@@ -43,7 +43,7 @@ const exact: Record<string, string> = {
   'Guruji’s Assistant': 'गुरुजी के सहायक',
   'Guruji’s AI assistant': 'गुरुजी के एआई सहायक',
   'AI · general guidance only': 'एआई · केवल सामान्य मार्गदर्शन',
-  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guna Milan, mantras, events, the shop or how to reach the ashram.': '🙏 हरि ॐ! मैं गुरुजी की वेबसाइट का सहायक हूँ। गुण मिलान, मंत्र, कार्यक्रम, दुकान या आश्रम तक पहुँचने के बारे में पूछें।',
+  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guruji, his services, homas, Guna Milan, events, the shop or how to reach him.': '🙏 हरि ॐ! मैं गुरुजी की वेबसाइट का सहायक हूँ। गुरुजी, उनकी सेवाओं, होम, गुण मिलान, कार्यक्रमों, दुकान या उनसे संपर्क करने के बारे में पूछें।',
   'How does Guna Milan work?': 'गुण मिलान कैसे काम करता है?',
   'Which mantra for peace?': 'शांति के लिए कौन-सा मंत्र?',
   'Upcoming events?': 'आगामी कार्यक्रम?',
@@ -54,7 +54,7 @@ const exact: Record<string, string> = {
   'Prefer a person? Chat with the office on WhatsApp': 'किसी व्यक्ति से बात करना चाहते हैं? व्हाट्सऐप पर कार्यालय से चैट करें',
   'Close chat': 'चैट बंद करें',
   'Type your question…': 'अपना प्रश्न लिखें…',
-  'The assistant is not available right now. Please message Guruji’s office on WhatsApp — we will be happy to help. 🙏': 'सहायक अभी उपलब्ध नहीं है। कृपया व्हाट्सऐप पर गुरुजी के कार्यालय को संदेश भेजें — हमें आपकी सहायता करके प्रसन्नता होगी। 🙏',
+  'The assistant is not available right now. Please call or WhatsApp Guruji’s office directly — we will be happy to help. 🙏': 'सहायक अभी उपलब्ध नहीं है। कृपया गुरुजी के कार्यालय को सीधे कॉल या व्हाट्सऐप करें — हमें मदद करके खुशी होगी। 🙏',
 
   // ── Home ──
   'Choose a topic and ask Guruji — your question opens in WhatsApp.': 'विषय चुनें और गुरुजी से पूछें — आपका प्रश्न व्हाट्सऐप में खुलेगा।',
@@ -277,7 +277,7 @@ const exact: Record<string, string> = {
   'How we use it': 'हम इसका उपयोग कैसे करते हैं',
   'Your details are used only to respond to your enquiry, prepare your chart and arrange consultations. We never sell or share your personal data.': 'आपके विवरण केवल आपकी पूछताछ का उत्तर देने, कुंडली तैयार करने और परामर्श की व्यवस्था के लिए उपयोग होते हैं। हम आपकी व्यक्तिगत जानकारी कभी नहीं बेचते और न ही साझा करते हैं।',
   'AI assistant': 'एआई सहायक',
-  'Messages typed in the AI chat are sent to our AI provider (Anthropic) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'एआई चैट में लिखे गए संदेश केवल उत्तर तैयार करने के लिए हमारे एआई सेवा-प्रदाता (एंथ्रोपिक) को भेजे जाते हैं और आपकी पहचान के लिए उपयोग नहीं होते। कृपया चैट में संवेदनशील व्यक्तिगत जानकारी साझा न करें।',
+  'Messages typed in the AI chat are sent to our AI provider (OpenAI) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'एआई चैट में लिखे गए संदेश केवल उत्तर तैयार करने के लिए हमारे एआई सेवा-प्रदाता (ओपनएआई) को भेजे जाते हैं और आपकी पहचान के लिए उपयोग नहीं होते। कृपया चैट में संवेदनशील व्यक्तिगत जानकारी साझा न करें।',
   'Cookies & storage': 'कुकीज़ और संग्रहण',
   'We store only your language and theme preference in your browser. No advertising trackers are used.': 'हम आपके ब्राउज़र में केवल आपकी भाषा और थीम की पसंद संग्रहीत करते हैं। किसी विज्ञापन ट्रैकर का उपयोग नहीं होता।',
   'Your rights': 'आपके अधिकार',
@@ -697,6 +697,8 @@ const exact: Record<string, string> = {
   'CALCULATOR': 'गणक',
   'The Ashtakoota': 'अष्टकूट',
   'Japa Mala': 'जपमाला',
+  'Which homa removes obstacles?': 'कौन सा होम बाधाएँ दूर करता है?',
+  'Where is Guruji available?': 'गुरुजी कहाँ उपलब्ध हैं?',
 }
 
 const phrases: Record<string, string> = {

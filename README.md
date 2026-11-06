@@ -26,7 +26,7 @@ Other content: `src/data/content.ts` (services, events, shop products, discourse
 
 ## Deploy
 
-- **Vercel** (recommended — needed for the AI chat): import the folder, framework “Vite”. Add environment variable `ANTHROPIC_API_KEY` (and optionally `ANTHROPIC_MODEL`). `api/chat.ts` becomes `/api/chat`.
+- **Vercel** (recommended — needed for the AI chat): import the folder, framework “Vite”. Add environment variable `OPENAI_API_KEY` (and optionally `OPENAI_MODEL`, default `gpt-4o-mini`). `api/chat.ts` becomes `/api/chat`. The chatbot answers only Guruji/website questions and shows Call + WhatsApp buttons for personal or sensitive situations. Its knowledge base is generated from `src/data` by `npm run kb` (runs automatically on build).
 - **Netlify**: build `npm run build`, publish `dist` (`netlify.toml` included). The AI chat falls back to a WhatsApp message on Netlify.
 
 ## Pages

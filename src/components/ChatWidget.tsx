@@ -1,13 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
-import { whatsappLink } from '../data/site'
+import { site, whatsappLink } from '../data/site'
 import { usePrefs } from '../lib/prefs'
 import { translateText } from '../lib/translateDom'
 import { LotusLogo } from './Decor'
-import { Chat as ChatIcon, Close, WhatsApp } from './Icons'
+import { Chat as ChatIcon, Close, Phone, WhatsApp } from './Icons'
 
-interface Msg { role: 'user' | 'assistant'; content: string; ai?: boolean }
-const GREETING: Msg = { role: 'assistant', content: '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guna Milan, mantras, events, the shop or how to reach the ashram.' }
-const suggestions = ['How does Guna Milan work?', 'Which mantra for peace?', 'Upcoming events?', 'How to reach the ashram?']
+interface Msg { role: 'user' | 'assistant'; content: string; ai?: boolean; contact?: boolean }
+const GREETING: Msg = { role: 'assistant', content: '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guruji, his services, homas, Guna Milan, events, the shop or how to reach him.' }
+/** Direct Call + WhatsApp buttons shown under a reply when the assistant hands over to Guruji. */
+function ContactButtons() {
+  return (
+    <div className="mt-2 flex flex-wrap gap-1.5">
+      <a href={site.phoneHref} className="btn-gold px-3 py-1.5 text-[14px]"><Phone size={15} /> Call Guruji</a>
+      <a href={whatsappLink('🙏 Hari Om Guruji, I need your guidance.')} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 rounded-full bg-[#1DA851] px-3 py-1.5 text-[14px] font-semibold text-white shadow"><WhatsApp size={15} /> WhatsApp</a>
+    </div>
+  )
+}
+
+const suggestions = ['Which homa removes obstacles?', 'How does Guna Milan work?', 'Where is Guruji available?', 'Upcoming events?']
 
 /** Floating AI chat — opens as a popup on the same page. */
 export function ChatWidget() {
@@ -36,9 +46,9 @@ export function ChatWidget() {
       const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lang, messages: next.slice(1).map(({ role, content }) => ({ role, content })).slice(-12) }) })
       if (!r.ok) throw new Error(String(r.status))
       const data = await r.json()
-      setMsgs((m) => [...m, { role: 'assistant', content: data.reply || '…', ai: true }])
+      setMsgs((m) => [...m, { role: 'assistant', content: data.reply || '…', ai: true, contact: !!data.contact }])
     } catch {
-      setMsgs((m) => [...m, { role: 'assistant', content: 'The assistant is not available right now. Please message Guruji’s office on WhatsApp — we will be happy to help. 🙏' }])
+      setMsgs((m) => [...m, { role: 'assistant', content: 'The assistant is not available right now. Please call or WhatsApp Guruji’s office directly — we will be happy to help. 🙏', contact: true }])
     } finally { setBusy(false) }
   }
 
@@ -65,8 +75,11 @@ export function ChatWidget() {
 
           <div className="flex-1 space-y-2.5 overflow-y-auto p-3" aria-live="polite">
             {msgs.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : ''}`} data-no-translate={m.ai || m.role === 'user' ? '' : undefined}>
-                <p className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3.5 py-2 text-[16px] leading-snug ${m.role === 'user' ? 'rounded-br-md bg-gold text-white' : 'rounded-bl-md border border-goldlight bg-paper'}`}>{m.content}</p>
+              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : ''}`}>
+                <div className="max-w-[85%]">
+                  <p data-no-translate={m.ai || m.role === 'user' ? '' : undefined} className={`whitespace-pre-wrap rounded-2xl px-3.5 py-2 text-[16px] leading-snug ${m.role === 'user' ? 'rounded-br-md bg-gold text-white' : 'rounded-bl-md border border-goldlight bg-paper'}`}>{m.content}</p>
+                  {m.contact && <ContactButtons />}
+                </div>
               </div>
             ))}
             {busy && <p className="px-1 text-sm text-ink/[.88]">Typing…</p>}

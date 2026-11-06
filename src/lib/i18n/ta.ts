@@ -43,7 +43,7 @@ const exact: Record<string, string> = {
   'Guruji’s Assistant': 'குருஜியின் உதவியாளர்',
   'Guruji’s AI assistant': 'குருஜியின் செயற்கை நுண்ணறிவு உதவியாளர்',
   'AI · general guidance only': 'செயற்கை நுண்ணறிவு · பொது வழிகாட்டுதல் மட்டுமே',
-  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guna Milan, mantras, events, the shop or how to reach the ashram.': '🙏 ஹரி ஓம்! நான் குருஜியின் இணையதள உதவியாளர். குண மிலன், மந்திரங்கள், நிகழ்ச்சிகள், கடை அல்லது ஆசிரமத்தை அடையும் வழி பற்றி என்னிடம் கேளுங்கள்.',
+  '🙏 Hari Om! I am Guruji’s website assistant. Ask me about Guruji, his services, homas, Guna Milan, events, the shop or how to reach him.': '🙏 ஹரி ஓம்! நான் குருஜியின் இணையதள உதவியாளர். குருஜி, அவரது சேவைகள், ஹோமங்கள், குண மிலன், நிகழ்ச்சிகள், கடை அல்லது அவரைத் தொடர்புகொள்வது பற்றி கேளுங்கள்.',
   'How does Guna Milan work?': 'குண மிலன் எவ்வாறு செயல்படுகிறது?',
   'Which mantra for peace?': 'அமைதிக்கு எந்த மந்திரம்?',
   'Upcoming events?': 'வரவிருக்கும் நிகழ்ச்சிகள்?',
@@ -54,7 +54,7 @@ const exact: Record<string, string> = {
   'Prefer a person? Chat with the office on WhatsApp': 'ஒருவருடன் பேச விரும்புகிறீர்களா? வாட்ஸ்அப்பில் அலுவலகத்துடன் உரையாடுங்கள்',
   'Close chat': 'உரையாடலை மூடுக',
   'Type your question…': 'உங்கள் கேள்வியைத் தட்டச்சு செய்யுங்கள்…',
-  'The assistant is not available right now. Please message Guruji’s office on WhatsApp — we will be happy to help. 🙏': 'உதவியாளர் இப்போது கிடைக்கவில்லை. தயவுசெய்து வாட்ஸ்அப்பில் குருஜியின் அலுவலகத்திற்குச் செய்தி அனுப்புங்கள் — உதவ மகிழ்ச்சியடைவோம். 🙏',
+  'The assistant is not available right now. Please call or WhatsApp Guruji’s office directly — we will be happy to help. 🙏': 'உதவியாளர் இப்போது கிடைக்கவில்லை. தயவுசெய்து குருஜியின் அலுவலகத்தை நேரடியாக அழைக்கவும் அல்லது வாட்ஸ்அப் செய்யவும் — உதவ மகிழ்ச்சி. 🙏',
 
   // ── Home ──
   'Choose a topic and ask Guruji — your question opens in WhatsApp.': 'ஒரு தலைப்பைத் தேர்ந்தெடுத்து குருஜியிடம் கேளுங்கள் — உங்கள் கேள்வி வாட்ஸ்அப்பில் திறக்கும்.',
@@ -277,7 +277,7 @@ const exact: Record<string, string> = {
   'How we use it': 'அதை எவ்வாறு பயன்படுத்துகிறோம்',
   'Your details are used only to respond to your enquiry, prepare your chart and arrange consultations. We never sell or share your personal data.': 'உங்கள் விசாரணைக்குப் பதிலளிக்கவும், ஜாதகம் தயாரிக்கவும், ஆலோசனைகளை ஏற்பாடு செய்யவும் மட்டுமே உங்கள் விவரங்கள் பயன்படுத்தப்படுகின்றன. உங்கள் தனிப்பட்ட தரவை நாங்கள் ஒருபோதும் விற்பதோ பகிர்வதோ இல்லை.',
   'AI assistant': 'செயற்கை நுண்ணறிவு உதவியாளர்',
-  'Messages typed in the AI chat are sent to our AI provider (Anthropic) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'செயற்கை நுண்ணறிவு உரையாடலில் தட்டச்சு செய்யப்படும் செய்திகள், பதிலை உருவாக்க மட்டுமே எங்கள் சேவை வழங்குநருக்கு (ஆந்த்ரோபிக்) அனுப்பப்படுகின்றன; உங்களை அடையாளம் காணப் பயன்படுத்தப்படுவதில்லை. தயவுசெய்து உரையாடலில் உணர்திறன் மிக்க தனிப்பட்ட தகவல்களைப் பகிர வேண்டாம்.',
+  'Messages typed in the AI chat are sent to our AI provider (OpenAI) only to generate a reply and are not used to identify you. Please do not share sensitive personal information in the chat.': 'செயற்கை நுண்ணறிவு உரையாடலில் தட்டச்சு செய்யப்படும் செய்திகள், பதிலை உருவாக்க மட்டுமே எங்கள் சேவை வழங்குநருக்கு (ஓப்பன்ஏஐ) அனுப்பப்படுகின்றன; உங்களை அடையாளம் காணப் பயன்படுத்தப்படுவதில்லை. தயவுசெய்து உரையாடலில் உணர்திறன் மிக்க தனிப்பட்ட தகவல்களைப் பகிர வேண்டாம்.',
   'Cookies & storage': 'குக்கீகள் மற்றும் சேமிப்பு',
   'We store only your language and theme preference in your browser. No advertising trackers are used.': 'உங்கள் உலாவியில் மொழி மற்றும் தோற்ற விருப்பத்தை மட்டுமே சேமிக்கிறோம். விளம்பரக் கண்காணிப்பான்கள் எதுவும் பயன்படுத்தப்படுவதில்லை.',
   'Your rights': 'உங்கள் உரிமைகள்',
@@ -696,6 +696,8 @@ const exact: Record<string, string> = {
   'CALCULATOR': 'கணிப்பான்',
   'The Ashtakoota': 'அஷ்டகூடம்',
   'Japa Mala': 'ஜபமாலை',
+  'Which homa removes obstacles?': 'எந்த ஹோமம் தடைகளை நீக்கும்?',
+  'Where is Guruji available?': 'குருஜி எங்கே கிடைப்பார்?',
 }
 
 const phrases: Record<string, string> = {
