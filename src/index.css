@@ -181,3 +181,19 @@ html[data-theme='night'] .side-ornaments .chakra-bg { fill: #1F1940; }
 html[data-theme='night'] .side-ornaments .chakra-inner { fill: #2A2152; }
 /* Night mode: the deep red accent text is hard to read on the dark sky — lighten it */
 html[data-theme='night'] .text-\[\#B0321A\] { color: #F4A47C; }
+
+/* ───────── Compact page headers on phones ─────────
+ * Inner-page headers used to fill the whole first screen on Android. Below 768px they shrink to
+ * roughly a third of the screen so the page's real content starts right away. */
+@media (max-width: 767px) {
+  .page-hero { padding-top: .75rem !important; padding-bottom: .25rem !important; }
+  .page-hero h1 { font-size: 28px !important; line-height: 1.12 !important; margin-top: .5rem; }
+  html:not([lang='en']) .page-hero h1 { line-height: 1.3 !important; }
+  .page-hero h1 [lang='kn'] { font-size: .7em !important; margin-top: .15rem !important; }
+  .page-hero > div > div:first-child, .page-hero > span:first-child { margin-bottom: .25rem; }
+  .page-hero svg { margin-top: .35rem; }
+  .page-hero .hero-kw { display: none; }
+  .page-hero .hero-sub { font-size: 15.5px !important; line-height: 1.45; margin-top: .4rem !important;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .page-hero + section { padding-top: .75rem !important; }
+}

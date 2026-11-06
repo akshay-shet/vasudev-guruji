@@ -68,11 +68,11 @@ export function Services() {
   usePageTitle('Astrology Services')
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 pb-4 pt-6 text-center md:px-6 lg:pt-10">
+      <section className="page-hero mx-auto max-w-6xl px-4 pb-4 pt-6 text-center md:px-6 lg:pt-10">
         <Eyebrow kn="ಸೇವೆಗಳು" en="OUR SERVICES" />
         <h1 className="section-title mt-3 !leading-tight"><KeywordPair heading en="How Guruji Can Help" kn="ಗುರೂಜಿಯವರ ಮಾರ್ಗದರ್ಶನ" /></h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
-        <p className="mx-auto mt-2 max-w-xl text-lg text-ink/[.82]">Choose the area of life where you seek clarity — Guruji will guide you with care.</p>
+        <p className="hero-sub mx-auto mt-2 max-w-xl text-lg text-ink/[.82]">Choose the area of life where you seek clarity — Guruji will guide you with care.</p>
       </section>
       <Section className="!pt-4">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-2 sm:gap-5">

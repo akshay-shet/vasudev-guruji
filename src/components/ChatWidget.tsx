@@ -55,8 +55,8 @@ export function ChatWidget() {
   return (
     <>
       <button onClick={() => setOpen((o) => !o)} aria-label={open ? 'Close chat' : 'Open chat'} data-id="ai-toggle" aria-expanded={open} title="Ask a question"
-        className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-goldlight bg-paper text-golddark shadow-lg transition hover:scale-105">
-        {open ? <Close size={24} /> : <ChatIcon size={28} />}
+        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-goldlight bg-paper text-golddark shadow-lg transition hover:scale-105 sm:h-14 sm:w-14">
+        {open ? <Close size={22} /> : <ChatIcon size={25} />}
       </button>
 
       {open && (

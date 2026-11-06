@@ -76,7 +76,7 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
   const kw = keyword ? services.find((s) => s.title === keyword) : undefined
   usePageTitle(kw ? `${title} · ${kw.title}` : title)
   return (
-    <section className={`relative overflow-hidden ${compact ? 'pb-2 pt-6 lg:pb-4 lg:pt-10' : 'pb-8 pt-6 lg:pb-12 lg:pt-12'}`}>
+    <section className={`page-hero relative overflow-hidden ${compact ? 'pb-2 pt-6 lg:pb-4 lg:pt-10' : 'pb-8 pt-6 lg:pb-12 lg:pt-12'}`}>
       <img src={import.meta.env.BASE_URL + 'img/hero-right.jpg'} alt="" className="scenery pointer-events-none absolute right-0 top-0 hidden h-full w-[34%] object-cover object-left opacity-90 lg:block"
         style={{ maskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', maskComposite: 'intersect', WebkitMaskComposite: 'source-in' }} />
       <img src={import.meta.env.BASE_URL + 'img/hero-left.jpg'} alt="" className="scenery pointer-events-none absolute left-0 top-0 hidden h-full w-[12%] object-cover object-right opacity-90 lg:block"
@@ -85,8 +85,8 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
         {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}
         <h1 className="section-title !leading-tight">{hi ? <KeywordPair heading en={title} kn={hi} /> : title}</h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
-        {kw && <p className="mt-2 text-[15px] font-semibold text-golddark md:text-base"><Link to={`/services/${kw.slug}`} className="hover:underline"><KeywordPair en={kw.title} kn={kw.kn} /></Link></p>}
-        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/[.88] md:text-xl">{subtitle}</p>}
+        {kw && <p className="hero-kw mt-2 text-[15px] font-semibold text-golddark md:text-base"><Link to={`/services/${kw.slug}`} className="hover:underline"><KeywordPair en={kw.title} kn={kw.kn} /></Link></p>}
+        {subtitle && <p className="hero-sub mx-auto mt-3 max-w-2xl text-lg text-ink/[.88] md:text-xl">{subtitle}</p>}
         {children}
       </div>
     </section>
@@ -171,12 +171,12 @@ export function EnquiryForm({ defaultTopic = 'Other', title = 'Send an Enquiry',
 /* ───────── Floating WhatsApp + Call ───────── */
 export function FloatingContact() {
   return (
-    <div className="fixed bottom-4 right-4 z-[60] flex flex-col gap-3">
+    <div className="fixed bottom-3 right-3 z-[60] flex flex-col gap-2 sm:bottom-4 sm:right-4 sm:gap-3">
       <ChatWidget />
-      <a href={site.phoneHref} aria-label={`Call ${site.phone}`} className="btn-gold h-14 w-14 !rounded-full shadow-lg"><Phone size={24} /></a>
+      <a href={site.phoneHref} aria-label={`Call ${site.phone}`} className="btn-gold h-12 w-12 !rounded-full shadow-lg sm:h-14 sm:w-14"><Phone size={22} /></a>
       <a href={whatsappLink('🙏 Hari Om Guruji, I would like to make an enquiry.')} target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-        className="flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition hover:scale-105" style={{ background: 'linear-gradient(180deg,#3BE07A,#1DA851)' }}>
-        <WhatsApp size={30} />
+        className="flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition hover:scale-105 sm:h-14 sm:w-14" style={{ background: 'linear-gradient(180deg,#3BE07A,#1DA851)' }}>
+        <WhatsApp size={27} />
       </a>
     </div>
   )
