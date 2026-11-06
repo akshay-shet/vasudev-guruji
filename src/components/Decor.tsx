@@ -266,51 +266,86 @@ const SIDE_BORDER = `url("data:image/svg+xml,${encodeURIComponent(
   `<circle cx='17' cy='86' r='2.2' fill='#E7C26A' stroke-width='.6'/></g></svg>`,
 )}")`
 
-function LineMandala({ className = '' }: { className?: string }) {
-  const n24 = Array.from({ length: 24 })
-  const n12 = Array.from({ length: 12 })
+/** Shri Chakra medallion: 16- and 8-petal lotus rings around nine interlocking triangles and the bindu. */
+function ChakraMedallion({ className = '' }: { className?: string }) {
+  const id = 'ck' + useId().replace(/:/g, '')
+  const p16 = Array.from({ length: 16 })
+  const p8 = Array.from({ length: 8 })
+  const dots = Array.from({ length: 32 })
+  // 4 upward (Shiva) and 5 downward (Shakti) triangles, as [apexY, baseY, halfWidth]
+  const up: [number, number, number][] = [[-62, 34, 56], [-44, 46, 50], [-30, 20, 36], [-14, 30, 30]]
+  const down: [number, number, number][] = [[64, -36, 58], [50, -46, 52], [36, -22, 40], [24, -30, 30], [12, -16, 18]]
   return (
     <svg viewBox="-200 -200 400 400" className={className} aria-hidden>
-      <g fill="none" stroke="#C58B2D">
-        <circle r="196" strokeWidth="1.6" strokeOpacity=".7" />
-        <circle r="186" strokeWidth=".7" strokeOpacity=".6" strokeDasharray="2 5" />
-        <circle r="150" strokeWidth=".9" strokeOpacity=".6" />
-        <circle r="104" strokeWidth=".8" strokeOpacity=".55" />
-        <circle r="56" strokeWidth=".8" strokeOpacity=".55" />
-        {n24.map((_, i) => <path key={'a' + i} transform={`rotate(${i * 15})`} d="M0-150c16-14 20-26 0-36-20 10-16 22 0 36z" strokeWidth=".9" strokeOpacity=".65" fill="#F6DA8E" fillOpacity=".12" />)}
-        {n24.map((_, i) => <path key={'b' + i} transform={`rotate(${i * 15 + 7.5})`} d="M0-104q18-22 0-46q-18 24 0 46z" strokeWidth=".7" strokeOpacity=".5" />)}
-        {n12.map((_, i) => <path key={'c' + i} transform={`rotate(${i * 30})`} d="M0-56q22-20 0-48q-22 28 0 48z" strokeWidth=".8" strokeOpacity=".55" fill="#F6DA8E" fillOpacity=".1" />)}
-        {n24.map((_, i) => <circle key={'d' + i} transform={`rotate(${i * 15 + 7.5})`} cx="0" cy="-168" r="2.2" fill="#E7C26A" fillOpacity=".7" stroke="none" />)}
+      <defs>
+        <radialGradient id={id + 'bg'}>
+          <stop offset="0" stopColor="#FFF9EC" /><stop offset=".72" stopColor="#FFF1D2" /><stop offset="1" stopColor="#FCE6B6" />
+        </radialGradient>
+        <linearGradient id={id + 'g'} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#E9C46A" /><stop offset=".5" stopColor="#B7832B" /><stop offset="1" stopColor="#E9C46A" />
+        </linearGradient>
+      </defs>
+      <circle r="198" fill={`url(#${id}bg)`} className="chakra-bg" />
+      {/* outer lotus rings turn slowly */}
+      <g className="animate-spin-slow" style={{ transformOrigin: '0 0', transformBox: 'view-box' }} fill="none" stroke={`url(#${id}g)`}>
+        <circle r="194" strokeWidth="3" />
+        <circle r="186" strokeWidth="1" />
+        {dots.map((_, i) => <circle key={'d' + i} transform={`rotate(${i * 11.25})`} cy="-178" r="2.6" fill="#D4A245" stroke="none" />)}
+        <circle r="170" strokeWidth="1.2" />
+        {p16.map((_, i) => <path key={'a' + i} transform={`rotate(${i * 22.5})`} d="M0-168C22-150 24-126 0-110-24-126-22-150 0-168z" fill="#F6DA8E" fillOpacity=".35" strokeWidth="1.4" />)}
+        {p16.map((_, i) => <path key={'a2' + i} transform={`rotate(${i * 22.5})`} d="M0-158C10-146 10-130 0-120" strokeWidth=".8" />)}
+      </g>
+      <g fill="none" stroke={`url(#${id}g)`}>
+        <circle r="110" strokeWidth="1.4" />
+        {p8.map((_, i) => <path key={'b' + i} transform={`rotate(${i * 45 + 22.5})`} d="M0-108C26-96 30-80 0-70-30-80-26-96 0-108z" fill="#F2CF7E" fillOpacity=".35" strokeWidth="1.3" />)}
+        <circle r="70" strokeWidth="2.2" fill="#FFF6E0" className="chakra-inner" />
+        <circle r="66" strokeWidth=".8" />
+        {up.map(([a, b, w], i) => <path key={'u' + i} d={`M0 ${a}L${w} ${b}H${-w}Z`} stroke="#A8741F" strokeWidth="2" fill="#F2CF7E" fillOpacity=".22" />)}
+        {down.map(([a, b, w], i) => <path key={'v' + i} d={`M0 ${a}L${w} ${b}H${-w}Z`} stroke="#B0321A" strokeOpacity=".75" strokeWidth="1.8" fill="#E8A33A" fillOpacity=".1" />)}
+        <circle r="7" fill="#B0321A" stroke="#E9C46A" strokeWidth="2" />
       </g>
     </svg>
   )
 }
 
+/** Fades the side ornaments in once the page's header artwork has scrolled away. */
+function useShowOrnaments() {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const on = () => setShow(window.scrollY > Math.min(320, window.innerHeight * 0.38))
+    on()
+    window.addEventListener('scroll', on, { passive: true })
+    return () => window.removeEventListener('scroll', on)
+  }, [])
+  return show
+}
+
 export function SideOrnaments() {
+  const show = useShowOrnaments()
   const side = (right: boolean) => {
-    const pos = right ? { right: 0 } : { left: 0 }
+    const at = (offset: string) => ({ [right ? 'right' : 'left']: offset })
     return (
-      <div className="absolute inset-y-0" style={{ ...pos, width: 'var(--gutter)' }}>
+      <div className="absolute inset-y-0" style={{ ...at('0'), width: 'var(--gutter)' }}>
         {/* soft saffron glow along the edge */}
-        <div className="absolute inset-0" style={{ background: `linear-gradient(${right ? 'to left' : 'to right'}, rgba(242,185,28,.10), rgba(242,207,126,.06) 55%, transparent)` }} />
-        {/* mandala peeking in from the edge */}
-        <div className="absolute top-1/2 -translate-y-1/2 opacity-60" style={{ [right ? 'right' : 'left']: 'calc(var(--md) / -2)', width: 'var(--md)', height: 'var(--md)' }}>
-          <LineMandala className="h-full w-full animate-spin-slow" />
-        </div>
-        {/* vertical temple border */}
-        <div className="absolute bottom-0 top-[86px] w-[34px]" style={{ [right ? 'right' : 'left']: 'calc(var(--gutter) * .62 - 17px)', backgroundImage: SIDE_BORDER, backgroundRepeat: 'repeat-y',
-          maskImage: 'linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)' }} />
+        <div className="absolute inset-0" style={{ background: `linear-gradient(${right ? 'to left' : 'to right'}, rgba(242,185,28,.10), rgba(242,207,126,.05) 60%, transparent)` }} />
+        {/* the garland: a temple border running from the bell down to the diya */}
+        <div className="absolute bottom-[70px] top-[200px] w-[34px]" style={{ ...at('calc(var(--axis) - 17px)'), backgroundImage: SIDE_BORDER, backgroundRepeat: 'repeat-y', backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent)' }} />
         {/* bell under the header */}
-        <div className="absolute top-[70px] h-[150px] w-[46px]" style={{ [right ? 'right' : 'left']: 'calc(var(--gutter) * .62 - 23px)' }}>
-          <Bell className="h-full w-full" chain={90} delay={right ? 1.2 : 0} />
+        <div className="absolute top-[74px] h-[132px] w-[42px]" style={at('calc(var(--axis) - 21px)')}>
+          <Bell className="h-full w-full" chain={78} delay={right ? 1.2 : 0} />
         </div>
-        {/* lit diya at the bottom (left only — the contact buttons sit bottom-right) */}
-        {!right && <div className="absolute bottom-4 h-14 w-14" style={{ left: 'calc(var(--gutter) * .62 - 28px)' }}><Diya className="h-full w-full" /></div>}
+        {/* Shri Chakra medallion hung on the garland, mid-screen */}
+        <div className="absolute top-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgba(147,96,15,.25)]" style={{ ...at('calc(var(--axis) - var(--ck) / 2)'), width: 'var(--ck)', height: 'var(--ck)' }}>
+          <ChakraMedallion className="h-full w-full" />
+        </div>
+        {/* lit diya at the foot (left only — the contact buttons sit bottom-right) */}
+        {!right && <div className="absolute bottom-3 h-14 w-14" style={at('calc(var(--axis) - 28px)')}><Diya className="h-full w-full" /></div>}
       </div>
     )
   }
   return (
-    <div className="side-ornaments pointer-events-none fixed inset-0 z-0 hidden min-[1300px]:block" aria-hidden>
+    <div className={`side-ornaments pointer-events-none fixed inset-0 z-0 hidden transition-opacity duration-700 min-[1300px]:block ${show ? 'opacity-100' : 'opacity-0'}`} aria-hidden>
       {side(false)}
       {side(true)}
     </div>

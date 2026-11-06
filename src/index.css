@@ -176,5 +176,8 @@ html[lang='ta'] .arch > span, html[lang='ml'] .arch > span { font-size: min(0.86
 html:not([lang='en']) .svc-tag-kn { display: none; }
 
 /* Side ornaments — width of the empty margin beside the 72rem content column */
-.side-ornaments { --gutter: max(0px, calc((100vw - 72rem) / 2)); --md: clamp(320px, calc(var(--gutter) * 2.6), 620px); }
-html[data-theme='night'] .side-ornaments { opacity: .8; }
+.side-ornaments { --gutter: max(0px, calc((100vw - 72rem) / 2)); --axis: calc(var(--gutter) * .5); --ck: clamp(90px, calc(var(--gutter) * .92), 330px); }
+html[data-theme='night'] .side-ornaments .chakra-bg { fill: #1F1940; }
+html[data-theme='night'] .side-ornaments .chakra-inner { fill: #2A2152; }
+/* Night mode: the deep red accent text is hard to read on the dark sky — lighten it */
+html[data-theme='night'] .text-\[\#B0321A\] { color: #F4A47C; }

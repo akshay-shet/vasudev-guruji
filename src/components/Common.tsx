@@ -78,9 +78,9 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
   return (
     <section className={`relative overflow-hidden ${compact ? 'pb-2 pt-6 lg:pb-4 lg:pt-10' : 'pb-8 pt-6 lg:pb-12 lg:pt-12'}`}>
       <img src={import.meta.env.BASE_URL + 'img/hero-right.jpg'} alt="" className="scenery pointer-events-none absolute right-0 top-0 hidden h-full w-[34%] object-cover object-left opacity-90 lg:block"
-        style={{ maskImage: 'linear-gradient(to left, #000 40%, transparent)', WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent)' }} />
+        style={{ maskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', maskComposite: 'intersect', WebkitMaskComposite: 'source-in' }} />
       <img src={import.meta.env.BASE_URL + 'img/hero-left.jpg'} alt="" className="scenery pointer-events-none absolute left-0 top-0 hidden h-full w-[12%] object-cover object-right opacity-90 lg:block"
-        style={{ maskImage: 'linear-gradient(to right, #000 50%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 50%, transparent)' }} />
+        style={{ maskImage: 'linear-gradient(to right, #000 50%, transparent), linear-gradient(to bottom, #000 62%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 50%, transparent), linear-gradient(to bottom, #000 62%, transparent)', maskComposite: 'intersect', WebkitMaskComposite: 'source-in' }} />
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}
         <h1 className="section-title !leading-tight">{hi ? <KeywordPair heading en={title} kn={hi} /> : title}</h1>
