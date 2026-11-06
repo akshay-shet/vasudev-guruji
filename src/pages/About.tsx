@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { EnquiryForm, PageHero, Section, SectionTitle } from '../components/Common'
-import { DevotionalFrame, Diamond, GurujiPhoto } from '../components/Decor'
+import { Diamond, DivinePortrait } from '../components/Decor'
 import { Arrow } from '../components/Icons'
 import { site } from '../data/site'
 
@@ -11,9 +11,7 @@ export default function About() {
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          <DevotionalFrame inset={import.meta.env.BASE_URL + 'img/guruji-writing.jpg'} tag="Jyotisha · Vastu · Homa">
-            <GurujiPhoto className="h-full w-full object-cover object-[50%_12%]" />
-          </DevotionalFrame>
+          <DivinePortrait src={site.photo} alt={site.photoAlt} />
           <div>
             <h2 className="section-title">{site.name}</h2>
             <Diamond className="mt-2 h-3 w-28" />

@@ -353,39 +353,68 @@ export function SideOrnaments() {
 }
 
 /* ───────── Divine portrait frame (About page) ─────────
- * A tall arch with a soft golden aura behind it, a thin cream-and-gold border, a floating tag,
- * and a second small photo overlapping the lower corner. */
-export function DevotionalFrame({ children, inset, tag, className = '' }: { children: ReactNode; inset?: string; tag?: ReactNode; className?: string }) {
+ * A temple-shrine (ogee / onion) arch, as seen over sanctum doorways:
+ * a maroon velvet back panel with a gold dotted inlay, a golden kalasha finial at the crown,
+ * a marigold garland tracing the arch, mango leaves at the apex, a soft aura behind,
+ * and a maroon-and-gold name plaque at the foot. */
+const OGEE = 'M-160 470V178C-160 112-84 92-44 62C-17 42 0 22 0 0C0 22 17 42 44 62C84 92 160 112 160 178V470Z'
+
+export function DivinePortrait({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
+  const id = 'dp' + useId().replace(/:/g, '')
   return (
-    <div className={`relative mx-auto w-full max-w-[440px] pb-8 pr-6 pt-6 sm:pr-10 ${className}`}>
-      {/* golden aura */}
-      <div className="pointer-events-none absolute left-[46%] top-[38%] h-[95%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
-        style={{ background: 'radial-gradient(circle, rgba(255,210,120,.45) 0%, rgba(255,226,170,.22) 40%, transparent 68%)' }} />
-      <Rays className="left-[46%] top-[36%] h-[100%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50" />
+    <figure className={`relative mx-auto w-full max-w-[430px] ${className}`}>
+      {/* aura */}
+      <div className="pointer-events-none absolute left-1/2 top-[42%] aspect-square w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
+        style={{ background: 'radial-gradient(circle, rgba(255,205,110,.5) 0%, rgba(255,225,160,.22) 40%, transparent 66%)' }} />
+      <svg viewBox="-200 -40 400 616" className="relative block w-full drop-shadow-[0_30px_40px_rgba(110,26,11,.35)]" role="img" aria-label={alt}>
+        <defs>
+          <linearGradient id={id + 'g'} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#FBE7A8" /><stop offset=".35" stopColor="#C58B2D" /><stop offset=".55" stopColor="#F6DA8E" /><stop offset="1" stopColor="#8A5A0E" />
+          </linearGradient>
+          <radialGradient id={id + 'v'} cx=".5" cy=".35" r=".75">
+            <stop offset="0" stopColor="#9C2A14" /><stop offset=".65" stopColor="#6E1A0B" /><stop offset="1" stopColor="#45100A" />
+          </radialGradient>
+          <clipPath id={id + 'c'}><path d={OGEE} transform="translate(0 46)" /></clipPath>
+        </defs>
 
-      {/* main arch */}
-      <div className="relative rounded-t-[46%] rounded-b-[28px] bg-[#FFF8EA] p-[10px] shadow-[0_28px_60px_-30px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A]">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-t-[44%] rounded-b-[20px] ring-1 ring-[#E7C26A]/80">
-          {children}
-          <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(70% 40% at 50% 0%, rgba(255,236,180,.30), transparent 70%)' }} />
-        </div>
-        {/* small gold crest at the top of the arch */}
-        <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#C58B2D] bg-[#F6DA8E] shadow" aria-hidden />
-      </div>
+        {/* velvet back panel */}
+        <path d={OGEE} transform="translate(0 4) scale(1.14 1.1)" fill={`url(#${id}v)`} stroke={`url(#${id}g)`} strokeWidth="3.5" />
+        <path d={OGEE} transform="translate(0 15) scale(1.08 1.065)" fill="none" stroke="#E7C26A" strokeWidth="2.2" strokeDasharray="0 7" strokeLinecap="round" opacity=".9" />
 
-      {/* floating tag */}
-      {tag && (
-        <span className="absolute left-0 top-[14%] inline-flex items-center gap-2 rounded-full border border-[#E7C26A] bg-[#FFFDF7]/95 px-3.5 py-1.5 font-marcellus text-[13.5px] text-maroon shadow-[0_8px_20px_-10px_rgba(122,36,16,.5)] backdrop-blur-sm sm:-left-4 sm:text-[15px]">
-          <span className="text-[#C58B2D]" aria-hidden>✦</span>{tag}
-        </span>
-      )}
+        {/* kalasha finial */}
+        <g transform="translate(0 12)">
+          <path d="M0-46c-6 6-6 12 0 16 6-4 6-10 0-16z" fill="#F2A33A" stroke="#8A5A0E" strokeWidth="1" />
+          <path d="M-9-29h18l-3 6h-12z" fill={`url(#${id}g)`} />
+          <path d="M-14-22c0 14 6 20 14 20s14-6 14-20z" fill={`url(#${id}g)`} stroke="#8A5A0E" strokeWidth="1" />
+          <path d="M-10 0h20l3 6h-26z" fill={`url(#${id}g)`} />
+        </g>
 
-      {/* second photo overlapping the corner */}
-      {inset && (
-        <div className="absolute bottom-0 right-0 w-[38%] rounded-2xl bg-[#FFF8EA] p-[5px] shadow-[0_18px_34px_-16px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A]">
-          <img src={inset} alt="" loading="lazy" className="aspect-square w-full rounded-xl object-cover object-top" />
-        </div>
-      )}
-    </div>
+        {/* photo in the arch */}
+        <image href={src} x="-160" y="46" width="320" height="470" preserveAspectRatio="xMidYMin slice" clipPath={`url(#${id}c)`} />
+
+        {/* gold frame of the opening */}
+        <path d={OGEE} transform="translate(0 46)" fill="none" stroke={`url(#${id}g)`} strokeWidth="7" />
+        <path d={OGEE} transform="translate(0 46)" fill="none" stroke="#6E1A0B" strokeWidth="1.2" />
+
+        {/* marigold garland tracing the arch */}
+        <path d={OGEE} transform="translate(0 46) scale(1.035 1.02)" fill="none" stroke="#F08A12" strokeWidth="9" strokeDasharray="0 10" strokeLinecap="round" />
+        <path d={OGEE} transform="translate(0 46) scale(1.035 1.02)" fill="none" stroke="#FFC93C" strokeWidth="5" strokeDasharray="0 10" strokeDashoffset="5" strokeLinecap="round" />
+
+        {/* mango leaves at the apex */}
+        <g transform="translate(0 50)">
+          {[-38, -19, 0, 19, 38].map((r, i) => (
+            <path key={i} transform={`rotate(${r})`} d="M0 0C6 10 6 22 0 30C-6 22-6 10 0 0z" fill="#3E8E3A" stroke="#21581F" strokeWidth=".8" />
+          ))}
+          <circle r="6" fill="#B0321A" stroke="#F6DA8E" strokeWidth="2" />
+        </g>
+      </svg>
+
+      {/* name plaque */}
+      <figcaption className="absolute bottom-[1.5%] left-1/2 w-[64%] -translate-x-1/2 rounded-lg px-3 py-2 text-center"
+        style={{ background: 'linear-gradient(180deg,#8E2412,#5E160A)', boxShadow: 'inset 0 0 0 1.5px #D9AA52, inset 0 0 0 4px #5E160A, inset 0 0 0 5px #D9AA52aa, 0 10px 22px -10px rgba(0,0,0,.55)' }}>
+        <span className="block font-cormorant text-[22px] font-bold leading-tight text-[#F7D88A] sm:text-[24px]" data-no-translate="">Vasudev Guruji</span>
+        <span className="block font-kn text-[13px] leading-tight text-goldlight" data-no-translate="">ವಾಸುದೇವ ಗುರೂಜಿ</span>
+      </figcaption>
+    </figure>
   )
 }
