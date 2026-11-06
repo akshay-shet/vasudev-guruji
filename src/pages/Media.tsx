@@ -13,7 +13,7 @@ export function Discourses() {
   const list = discourses.filter((d) => filter === 'All' || d.series === filter)
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ವೀಡಿಯೊಗಳು', en: 'VIDEOS' }} keyword="Vedic Astrology Services" title="Videos & Discourses" hi="ವೀಡಿಯೊ ಮತ್ತು ಪ್ರವಚನಗಳು" subtitle="Satsang, Bhagavad Gita and Jyotisha talks by Guruji." />
+      <PageHero eyebrow={{ kn: 'ವೀಡಿಯೊಗಳು', en: 'VIDEOS' }} keyword="Vedic Astrology Services" title="Videos & Discourses" hi="ವೀಡಿಯೊ ಮತ್ತು ಪ್ರವಚನಗಳು" />
       <Section>
         <div className="mb-6 flex flex-wrap justify-center gap-2">
           {series.map((s) => <button key={s} onClick={() => setFilter(s)} className={filter === s ? 'btn-gold px-4 py-1.5' : 'btn-outline px-4 py-1.5'} aria-pressed={filter === s}>{s}</button>)}
@@ -59,7 +59,7 @@ export function Events() {
   const parts = [[Math.floor(diff / 864e5), 'Days'], [Math.floor(diff / 36e5) % 24, 'Hours'], [Math.floor(diff / 6e4) % 60, 'Min'], [Math.floor(diff / 1e3) % 60, 'Sec']] as const
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಕಾರ್ಯಕ್ರಮಗಳು', en: 'EVENTS' }} keyword="Best Astrologer Online" title="Events & Programs" hi="ಉತ್ಸವ ಮತ್ತು ಕಾರ್ಯಕ್ರಮಗಳು" subtitle="Festivals, satsangs, retreats and courses with Guruji — at the ashram and online." />
+      <PageHero eyebrow={{ kn: 'ಕಾರ್ಯಕ್ರಮಗಳು', en: 'EVENTS' }} keyword="Best Astrologer Online" title="Events & Programs" hi="ಉತ್ಸವ ಮತ್ತು ಕಾರ್ಯಕ್ರಮಗಳು" />
       {next && (
         <Section>
           <div className="card p-6 text-center md:p-10">

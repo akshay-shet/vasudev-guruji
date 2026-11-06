@@ -76,7 +76,7 @@ function DiyaLighting() {
 export default function Mantras() {
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಸಂಪನ್ಮೂಲಗಳು', en: 'RESOURCES' }} keyword="Vedic Astrology Services" title="Mantras, Japa & Diya" hi="ಮಂತ್ರ, ಜಪ ಮತ್ತು ದೀಪ" subtitle="Sacred sound purifies the mind. Chant with devotion, count with the mala and offer a light." />
+      <PageHero eyebrow={{ kn: 'ಸಂಪನ್ಮೂಲಗಳು', en: 'RESOURCES' }} keyword="Vedic Astrology Services" title="Mantras, Japa & Diya" hi="ಮಂತ್ರ, ಜಪ ಮತ್ತು ದೀಪ" />
       <Section>
         <SectionTitle eyebrow={{ kn: 'ಮಂತ್ರಗಳು', en: 'MANTRAS' }} kn="ಪವಿತ್ರ ಮಂತ್ರಗಳು">Sacred Mantras</SectionTitle>
         <div className="grid gap-5 md:grid-cols-2">

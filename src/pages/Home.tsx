@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArchTile, EnquiryForm, Eyebrow, KeywordPair, Ribbon, Section, SectionTitle, usePageTitle } from '../components/Common'
 import { Diamond } from '../components/Decor'
@@ -20,18 +20,6 @@ const slides = [
   { l1: 'Serve with', l2: 'Love & Devotion', h1: 'ಪ್ರೀತಿ ಮತ್ತು', h2: 'ಭಕ್ತಿಯಿಂದ ಸೇವೆ', pillars: ['Seva', 'Satsang', 'Retreats', 'Community'], hp: ['ಸೇವೆ', 'ಸತ್ಸಂಗ', 'ಸಾಧನೆ', 'ಸಮುದಾಯ'] },
 ]
 
-function Pillars({ items, style }: { items: string[]; style?: CSSProperties }) {
-  return (
-    <p className="flex flex-wrap items-center justify-center gap-x-[0.7em] font-cormorant font-medium text-ink" style={style}>
-      {items.map((p, i) => (
-        <span key={p} className="flex items-center gap-[0.7em]">
-          {i > 0 && <span className="text-gold" aria-hidden>•</span>}
-          {p}
-        </span>
-      ))}
-    </p>
-  )
-}
 
 /* ───────── Latest discourse video card ───────── */
 function VideoCard({ variant }: { variant: 'mobile' | 'desktop' }) {
@@ -156,8 +144,7 @@ function MobileHome() {
             <span className="block font-cormorant font-semibold italic text-maroon" style={{ fontSize: `calc(${u(7.6)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h1 : native ? `${s.l1} ${s.l2} ·1` : s.l1}</span>
             <span className="gold-text block font-cormorant font-bold italic" style={{ fontSize: `calc(${u(9.4)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h2 : native ? `${s.l1} ${s.l2} ·2` : s.l2}</span>
           </h1>
-          <Pillars items={lang === 'hi' ? s.hp : s.pillars} style={{ fontSize: u(3.25), marginTop: u(2.6) }} />
-          <p className="mt-[calc(var(--u)*2)] text-[13px] font-semibold text-golddark"><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" /></p>
+          <p className="mx-auto mt-[calc(var(--u)*3)] inline-block rounded-full bg-maroon/90 px-[1.1em] py-[0.4em] font-semibold leading-snug text-[#F7D88A] shadow-gold" style={{ fontSize: 'clamp(15px, calc(var(--u)*3.9), 19px)' }}><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" className="[&_.text-gold]:text-goldlight" /></p>
         </div>
         <div className="mt-[calc(var(--u)*4)] flex justify-center gap-[calc(var(--u)*1.6)]" role="tablist">
           {slides.map((_, i) => (
@@ -220,10 +207,7 @@ function DesktopHome() {
             <span className="text-gold" style={{ fontSize: d(1.2, 12) }}>◈</span>
             <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold" />
           </div>
-          <div className="rounded-full border border-goldlight/60 bg-paper/75 px-[1.4em] py-[0.35em] shadow-[0_6px_20px_-10px_rgba(147,96,15,.5)] backdrop-blur-sm" style={{ marginTop: d(1.5, 14), fontSize: d(1.3, 15) }}>
-            <Pillars items={lang === 'hi' ? s.hp : s.pillars} style={{ letterSpacing: '.02em' }} />
-          </div>
-          <p className="mt-[calc(var(--d)*1.2)] rounded-full bg-maroon/85 px-[1.2em] py-[0.3em] font-semibold text-[#F7D88A] shadow-gold" style={{ fontSize: d(1.15, 14) }}><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" className="[&_.text-gold]:text-goldlight" /></p>
+          <p className="rounded-full bg-maroon/90 px-[1.3em] py-[0.4em] font-semibold text-[#F7D88A] shadow-gold" style={{ marginTop: d(1.8, 18), fontSize: d(1.75, 20) }}><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" className="[&_.text-gold]:text-goldlight" /></p>
         </div>
 
 
@@ -276,14 +260,13 @@ function DevoteeWords() {
                 <figcaption className="font-marcellus text-[17px] leading-tight text-maroon">{r.name}</figcaption>
                 <p className="text-sm text-ink/[.88]">{r.place} · {r.topic}</p>
               </div>
-              {r.sample && <span className="rounded-full bg-goldlight/30 px-2 py-0.5 font-cinzel text-[9px] tracking-widest text-golddark">SAMPLE</span>}
             </div>
             <span className="mt-3 flex text-gold" aria-label={`${r.rating} out of 5`}>{Array.from({ length: 5 }).map((_, k) => <Star key={k} size={15} filled={k < r.rating} />)}</span>
             <blockquote className="mt-2 flex-1 text-[17px] leading-relaxed text-ink/90">{r.text}</blockquote>
           </figure>
         ))}
       </div>
-      {reviews.some((r) => r.sample) && <p className="mt-1 text-center text-sm text-ink/[.88]">Sample testimonials shown for layout — to be replaced with real devotee words.</p>}
+      
     </div>
   )
 }
@@ -304,7 +287,7 @@ export default function Home() {
           sub="Accurate horoscope reading, Kundali Milan, Vastu and proven remedies for every area of life — choose a service to know more.">Vedic Astrology Services</SectionTitle>
         <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-2 sm:gap-5">
           {services.map((s) => (
-            <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"><ServiceCard s={s} /></div>
+            <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"><ServiceCard s={s} minimal /></div>
           ))}
         </div>
       </Section>

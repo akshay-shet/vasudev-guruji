@@ -15,7 +15,6 @@ export function Locations({ heading = true }: { heading?: boolean }) {
         <div className="mb-8 text-center">
           <Eyebrow kn="ನಮ್ಮ ಕೇಂದ್ರಗಳು" en="LOCATIONS" />
           <h2 className="section-title mt-3"><KeywordPair heading en="Where to Meet Guruji" kn="ಗುರೂಜಿಯವರನ್ನು ಎಲ್ಲಿ ಭೇಟಿಯಾಗಬಹುದು" /></h2>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/[.88]">Five places, one Guruji. Mandya is the main centre — devotees everywhere else can meet Guruji on his visits or consult by phone and video.</p>
         </div>
       )}
       <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1.05fr_1fr]">

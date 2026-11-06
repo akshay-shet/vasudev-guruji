@@ -42,7 +42,7 @@ export function Kundali() {
   ] as const
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಗುಣ ಮಿಲನ', en: 'GUNA MILAN' }} keyword="Marriage Matching & Kundali Milan" title="Kundali Matching" hi="ಕುಂಡಲಿ ಹೊಂದಾಣಿಕೆ" subtitle="The traditional Ashtakoota Guna Milan — eight factors (kootas) adding up to 36 gunas — used to assess marriage compatibility from the Moon nakshatras of the couple." />
+      <PageHero eyebrow={{ kn: 'ಗುಣ ಮಿಲನ', en: 'GUNA MILAN' }} keyword="Marriage Matching & Kundali Milan" title="Kundali Matching" hi="ಕುಂಡಲಿ ಹೊಂದಾಣಿಕೆ" />
       <Section>
         <div className="card p-5 md:p-8">
           <div className="text-center"><Eyebrow kn="ಲೆಕ್ಕಾಚಾರ" en="CALCULATOR" /></div>

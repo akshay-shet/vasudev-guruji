@@ -23,7 +23,6 @@ export const gallery: GalleryItem[] = [
   { section: 'photos', src: img('guruji-portrait.jpg'), caption: 'Vasudev Guruji', kn: 'ವಾಸುದೇವ ಗುರೂಜಿ', tall: true },
   { section: 'photos', src: img('kollegala-centre.jpg'), caption: 'Samruddhi Astro Center, Kollegala', kn: 'ಸಮೃದ್ಧಿ ಜ್ಯೋತಿಷ್ಯ ಕೇಂದ್ರ, ಕೊಳ್ಳೇಗಾಲ' },
   { section: 'photos', src: img('lifeline-poster.jpg'), caption: 'Life Line Horoscope book', kn: 'ಜೀವನ ರೇಖೆ ಜಾತಕ ಪುಸ್ತಕ', tall: true },
-  { section: 'photos', src: site.latestDiscourse.poster, caption: 'Maa Kamakhya Devi Temple, Guwahati', kn: 'ಮಾ ಕಾಮಾಖ್ಯಾ ದೇವಿ ದೇವಸ್ಥಾನ, ಗುವಾಹಟಿ', tall: true },
 
   { section: 'videos', src: site.latestDiscourse.videoSrc, poster: site.latestDiscourse.poster, video: true, caption: site.latestDiscourse.title, kn: 'ವ್ಯಾಪಾರ, ಹಣ ಮತ್ತು ನಕಾರಾತ್ಮಕ ಶಕ್ತಿ — ಗುರೂಜಿ ಉತ್ತರಿಸುತ್ತಾರೆ', tall: true },
 ]

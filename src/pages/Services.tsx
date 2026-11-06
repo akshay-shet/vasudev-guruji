@@ -49,16 +49,18 @@ export function ServicePoster({ s }: { s: Service }) {
   )
 }
 
-export function ServiceCard({ s }: { s: Service }) {
+export function ServiceCard({ s, minimal = false }: { s: Service; minimal?: boolean }) {
   return (
     <Link to={`/services/${s.slug}`} className="group flex w-full flex-col rounded-xl bg-paper p-1 shadow-[0_10px_26px_-14px_rgba(147,96,15,.5)] ring-1 ring-goldlight/60 transition hover:-translate-y-1 sm:rounded-2xl sm:p-1.5">
       <ServicePoster s={s} />
-      <div className="flex flex-1 flex-col items-center px-1 pb-2 pt-1.5 text-center sm:px-3 sm:pb-4 sm:pt-2">
-        <h3 className="font-marcellus text-[12px] leading-tight text-maroon sm:text-[18px] sm:leading-snug">
-          <KeywordPair stacked en={s.title} kn={s.kn} className="[&>span:last-child]:text-[10.5px] [&>span:last-child]:text-golddark sm:[&>span:last-child]:text-[13.5px]" />
+      <div className={`flex flex-1 flex-col items-center px-1 text-center sm:px-3 ${minimal ? 'pb-2.5 pt-2 sm:pb-4 sm:pt-3' : 'pb-2 pt-1.5 sm:pb-4 sm:pt-2'}`}>
+        <h3 className={`font-marcellus leading-tight text-maroon ${minimal ? 'text-[13.5px] sm:text-[21px]' : 'text-[12px] sm:text-[18px] sm:leading-snug'}`}>
+          <KeywordPair stacked en={s.title} kn={s.kn} className={minimal
+            ? '[&>span:last-child]:mt-0.5 [&>span:last-child]:text-[12px] [&>span:last-child]:text-golddark sm:[&>span:last-child]:text-[16px]'
+            : '[&>span:last-child]:text-[10.5px] [&>span:last-child]:text-golddark sm:[&>span:last-child]:text-[13.5px]'} />
         </h3>
-        <p className="mt-1.5 hidden text-[15px] leading-snug text-ink/[.82] lg:block">{s.desc}</p>
-        <span className="mt-auto hidden items-center gap-1 pt-2 font-marcellus text-[14px] text-[#B0321A] group-hover:gap-2 sm:inline-flex">Know more <Arrow size={14} /></span>
+        {!minimal && <p className="mt-1.5 hidden text-[15px] leading-snug text-ink/70 lg:block">{s.desc}</p>}
+        <span className={`mt-auto hidden items-center gap-1 font-marcellus text-[#B0321A] group-hover:gap-2 sm:inline-flex ${minimal ? 'pt-3 text-[15px]' : 'pt-2 text-[14px]'}`}>Know more <Arrow size={14} /></span>
       </div>
     </Link>
   )
@@ -72,7 +74,6 @@ export function Services() {
         <Eyebrow kn="ಸೇವೆಗಳು" en="OUR SERVICES" />
         <h1 className="section-title mt-3 !leading-tight"><KeywordPair heading en="How Guruji Can Help" kn="ಗುರೂಜಿಯವರ ಮಾರ್ಗದರ್ಶನ" /></h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
-        <p className="hero-sub mx-auto mt-2 max-w-xl text-lg text-ink/[.82]">Choose the area of life where you seek clarity — Guruji will guide you with care.</p>
       </section>
       <Section className="!pt-4">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-2 sm:gap-5">

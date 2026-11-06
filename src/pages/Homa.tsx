@@ -52,7 +52,6 @@ export default function HomaPage() {
         <Eyebrow kn="ಹೋಮಗಳು" en="SACRED FIRE RITUALS" />
         <h1 className="section-title mt-3 !leading-tight"><KeywordPair heading en="Homa & Havan Services" kn="ಹೋಮ ಮತ್ತು ಹವನ ಸೇವೆಗಳು" /></h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
-        <p className="hero-sub mx-auto mt-3 max-w-2xl text-lg text-ink/[.88]">Each homa is performed by Guruji with Vedic priests, with the sankalpa taken in your name, gotra and nakshatra — at the ashram, at your home, or online with live video.</p>
       </section>
       <Section className="!pt-6">
         <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-3">

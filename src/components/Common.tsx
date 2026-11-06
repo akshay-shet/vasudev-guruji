@@ -85,7 +85,6 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
         {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}
         <h1 className="section-title !leading-tight">{hi ? <KeywordPair heading en={title} kn={hi} /> : title}</h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
-        {kw && <p className="hero-kw mt-2 text-[15px] font-semibold text-golddark md:text-base"><Link to={`/services/${kw.slug}`} className="hover:underline"><KeywordPair en={kw.title} kn={kw.kn} /></Link></p>}
         {subtitle && <p className="hero-sub mx-auto mt-3 max-w-2xl text-lg text-ink/[.88] md:text-xl">{subtitle}</p>}
         {children}
       </div>
@@ -160,7 +159,6 @@ export function EnquiryForm({ defaultTopic = 'Other', title = 'Send an Enquiry',
           <div className={`col-span-2 ${compact ? '' : 'md:col-span-6'}`}><label className="label" htmlFor="eq-msg">Your question</label><textarea id="eq-msg" name="message" rows={2} className="input !py-2" /></div>
           <div className={`col-span-2 ${compact ? '' : 'md:col-span-6'} mt-1 flex flex-col items-center gap-1.5`}>
             <button type="submit" className="btn-gold px-7 py-2.5 text-[17px]"><WhatsApp size={20} /> Send on WhatsApp</button>
-            <p className="text-center text-[13px] leading-snug text-ink/[.88]">Opens WhatsApp with your details filled in. Guidance only — not medical, legal or financial advice.</p>
           </div>
         </form>
       )}

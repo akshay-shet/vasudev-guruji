@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { EnquiryForm, PageHero, Section } from '../components/Common'
 import { Diamond } from '../components/Decor'
 import { BiText } from '../components/LifeLine'
@@ -7,30 +8,32 @@ import { gallery, gallerySections, type GalleryItem, type GallerySection } from 
 
 const ICONS = { star: Star, lotus: Lotus, play: Play } as const
 
-/** One framed item: temple-arch top, gold border, maroon name-plate underneath. */
+/** One framed item: cream mount, double gold rule, small corner jewels — the whole picture is shown, never cropped. */
 function Frame({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) {
+  const jewel = 'absolute h-2.5 w-2.5 rotate-45 border border-[#C58B2D] bg-[#F6DA8E]'
   return (
     <figure className="mb-4 break-inside-avoid sm:mb-6">
-      <button onClick={onOpen} className="group block w-full text-left" aria-label={item.video ? `Play video: ${item.caption}` : `Open photo: ${item.caption}`}>
-        <div className={`p-[3px] shadow-[0_16px_30px_-18px_rgba(122,36,16,.65)] ${item.tall ? 'rounded-t-[999px] rounded-b-xl' : 'rounded-xl'}`}
-          style={{ background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-          <div className={`relative overflow-hidden bg-[#3A1408] ${item.tall ? 'aspect-[3/4] rounded-t-[999px] rounded-b-[10px]' : 'aspect-[4/3] rounded-[10px]'}`}>
-            <img src={item.video ? item.poster : item.src} alt={item.caption} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-            {item.video ? (
+      <button onClick={onOpen} className="group block w-full rounded-xl text-left" aria-label={item.video ? `Play video: ${item.caption}` : `Open photo: ${item.caption}`}>
+        <div className="relative rounded-xl bg-[#FFFBF0] p-2.5 shadow-[0_14px_30px_-18px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A] transition group-hover:-translate-y-1 group-hover:shadow-[0_22px_36px_-18px_rgba(122,36,16,.65)] sm:p-3">
+          <div className="pointer-events-none absolute inset-1 rounded-lg border border-[#E7C26A]/70" aria-hidden />
+          <span className={`${jewel} left-0 top-0 -translate-x-1/3 -translate-y-1/3`} aria-hidden />
+          <span className={`${jewel} right-0 top-0 translate-x-1/3 -translate-y-1/3`} aria-hidden />
+          <span className={`${jewel} bottom-0 left-0 -translate-x-1/3 translate-y-1/3`} aria-hidden />
+          <span className={`${jewel} bottom-0 right-0 translate-x-1/3 translate-y-1/3`} aria-hidden />
+          <div className="relative overflow-hidden rounded-md ring-1 ring-[#C58B2D]/50">
+            <img src={item.video ? item.poster : item.src} alt={item.caption} loading="lazy" className="block h-auto w-full transition duration-700 group-hover:scale-[1.03]" />
+            {item.video && (
               <>
-                <span className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
-                <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-white/25 text-white backdrop-blur-sm transition group-hover:scale-110"><Play size={28} className="ml-1" /></span>
-                <span className="absolute left-3 top-3 rounded-full bg-[#B0321A] px-2.5 py-0.5 font-cinzel text-[10px] font-semibold tracking-widest text-white">VIDEO</span>
+                <span className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-[#B0321A]/80 text-white shadow-lg transition group-hover:scale-110"><Play size={24} className="ml-1" /></span>
+                <span className="absolute left-2 top-2 rounded-full bg-[#B0321A] px-2 py-0.5 font-cinzel text-[10px] font-semibold tracking-widest text-white">VIDEO</span>
               </>
-            ) : (
-              <span className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 transition group-hover:opacity-100" />
             )}
           </div>
+          <figcaption className="px-1 pb-0.5 pt-2.5 text-center">
+            <span className="block font-marcellus text-[15px] leading-snug text-maroon sm:text-[16px]"><BiText t={{ en: item.caption, kn: item.kn }} knClass="text-[0.85em] mt-0.5" /></span>
+          </figcaption>
         </div>
-        <figcaption className="relative mx-3 -mt-3 rounded-lg px-3 py-2 text-center shadow-md"
-          style={{ background: 'linear-gradient(180deg,#8E2412,#5E160A)', boxShadow: 'inset 0 0 0 1px #D9AA52, 0 6px 14px -8px rgba(0,0,0,.5)' }}>
-          <span className="block font-cormorant text-[17px] font-bold leading-tight text-[#F7D88A]"><BiText t={{ en: item.caption, kn: item.kn }} knClass="text-[0.78em] mt-0.5 !text-goldlight/90" /></span>
-        </figcaption>
       </button>
     </figure>
   )
@@ -75,26 +78,31 @@ export default function GalleryPage() {
   const [tab, setTab] = useState<'all' | GallerySection>('all')
   const [open, setOpen] = useState<{ items: GalleryItem[]; i: number } | null>(null)
   const shown = gallerySections.filter((s) => tab === 'all' || tab === s.key)
+  const tabs: { key: 'all' | GallerySection; label: string; kn: string; icon?: string; count: number }[] = [
+    { key: 'all', label: 'All', kn: 'ಎಲ್ಲಾ', count: gallery.length },
+    ...gallerySections.map((s) => ({ key: s.key, label: s.label, kn: s.kn, icon: s.icon, count: gallery.filter((g) => g.section === s.key).length })),
+  ]
   return (
     <>
       <PageHero compact eyebrow={{ kn: 'ಗ್ಯಾಲರಿ', en: 'GALLERY' }} title="Gallery" hi="ಚಿತ್ರ ಸಂಪುಟ" />
       <Section className="!pt-4">
-        {/* section switcher: three temple plaques */}
-        <div className="mx-auto mb-8 grid max-w-3xl grid-cols-3 gap-2 sm:gap-4" role="tablist" aria-label="Gallery sections">
-          {gallerySections.map((s) => {
-            const I = ICONS[s.icon as keyof typeof ICONS]
-            const active = tab === s.key
-            const count = gallery.filter((g) => g.section === s.key).length
-            return (
-              <button key={s.key} role="tab" aria-selected={active} onClick={() => setTab(active ? 'all' : s.key)}
-                className={`flex flex-col items-center gap-1 rounded-2xl border px-2 py-3 text-center transition sm:py-4 ${active ? 'border-[#D9AA52] text-[#F7D88A] shadow-lg' : 'border-goldlight bg-paper text-maroon hover:-translate-y-0.5 hover:shadow'}`}
-                style={active ? { background: 'linear-gradient(180deg,#8E2412,#5E160A)' } : undefined}>
-                <span className={`flex h-10 w-10 items-center justify-center rounded-full border ${active ? 'border-goldlight/70 text-goldlight' : 'border-goldlight text-golddark'}`}><I size={20} /></span>
-                <span className="font-marcellus text-[13.5px] leading-tight sm:text-[16px]"><BiText t={{ en: s.label, kn: s.kn }} knClass={`text-[0.8em] mt-0.5 ${active ? '!text-goldlight' : ''}`} /></span>
-                <span className={`font-cinzel text-[10px] tracking-widest ${active ? 'text-goldlight/80' : 'text-golddark'}`}>{count}</span>
-              </button>
-            )
-          })}
+        {/* compact section switcher */}
+        <div className="mb-8 flex justify-center">
+          <div className="flex flex-wrap justify-center gap-1.5 sm:inline-flex sm:flex-nowrap sm:gap-1 sm:rounded-full sm:border sm:border-goldlight sm:bg-paper sm:p-1 sm:shadow-sm" role="tablist" aria-label="Gallery sections">
+            {tabs.map((t) => {
+              const I = t.icon ? ICONS[t.icon as keyof typeof ICONS] : null
+              const active = tab === t.key
+              return (
+                <button key={t.key} role="tab" aria-selected={active} onClick={() => setTab(t.key)}
+                  className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 font-marcellus text-[13.5px] transition sm:px-4 sm:text-[15px] ${active ? 'text-[#F7D88A] shadow' : 'border border-goldlight bg-paper text-maroon hover:bg-goldlight/20 sm:border-0 sm:bg-transparent'}`}
+                  style={active ? { background: 'linear-gradient(180deg,#8E2412,#5E160A)' } : undefined}>
+                  {I && <I size={15} />}
+                  <span>{t.label}</span>
+                  <span className={`rounded-full px-1.5 text-[11px] leading-[18px] ${active ? 'bg-white/15 text-goldlight' : 'bg-goldlight/30 text-golddark'}`}>{t.count}</span>
+                </button>
+              )
+            })}
+          </div>
         </div>
 
         {shown.map((s) => {
@@ -103,17 +111,17 @@ export default function GalleryPage() {
             <div key={s.key} className="mb-10 last:mb-0">
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/60" />
-                <h2 className="text-center font-cormorant text-[26px] font-bold italic leading-tight text-maroon sm:text-[32px]"><BiText t={{ en: s.label, kn: s.kn }} inline knClass="text-[0.7em]" /></h2>
+                <h2 className="text-center font-cormorant text-[24px] font-bold italic leading-tight text-maroon sm:text-[30px]"><BiText t={{ en: s.label, kn: s.kn }} inline knClass="text-[0.7em]" /></h2>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/60" />
               </div>
-              <div className={`mx-auto gap-4 sm:gap-6 ${items.length === 1 ? 'max-w-sm' : items.length === 2 ? 'max-w-2xl columns-2' : 'columns-2 lg:columns-3'}`}>
+              <div className={`mx-auto gap-4 sm:gap-6 ${items.length === 1 ? 'max-w-[260px] sm:max-w-[340px]' : items.length === 2 ? 'max-w-2xl columns-2' : 'columns-2 lg:columns-3'}`}>
                 {items.map((it, i) => <Frame key={it.src} item={it} onOpen={() => setOpen({ items, i })} />)}
               </div>
             </div>
           )
         })}
         <Diamond className="mx-auto mt-6 h-3 w-28" />
-        <p className="mt-3 text-center text-[15px] text-ink/[.82]">More photos and videos are added regularly. <a href="/contact" className="inline-flex items-center gap-1 text-golddark underline">Share yours with the office <Arrow size={12} /></a></p>
+        <p className="mt-3 text-center text-[15px] text-ink/[.82]">More photos and videos are added regularly. <Link to="/contact" className="inline-flex items-center gap-1 text-golddark underline">Share yours with the office <Arrow size={12} /></Link></p>
       </Section>
       <Section className="!pt-2"><div className="mx-auto max-w-3xl"><EnquiryForm title="Ask Guruji" /></div></Section>
       {open && <Lightbox items={open.items} index={open.i} onClose={() => setOpen(null)} onGo={(i) => setOpen({ ...open, i })} />}

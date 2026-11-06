@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
 import { EnquiryForm, PageHero, Section, SectionTitle } from '../components/Common'
-import { Diamond, GurujiPhoto } from '../components/Decor'
+import { DevotionalFrame, Diamond, GurujiPhoto } from '../components/Decor'
 import { Arrow } from '../components/Icons'
 import { site } from '../data/site'
 
 export default function About() {
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಗುರೂಜಿ', en: 'ABOUT GURUJI' }} keyword="Trusted Astrologer for Life Problems" title="About Guruji" hi="ಗುರೂಜಿ ಬಗ್ಗೆ" subtitle={site.shortBio} />
+      <PageHero eyebrow={{ kn: 'ಗುರೂಜಿ', en: 'ABOUT GURUJI' }} keyword="Trusted Astrologer for Life Problems" title="About Guruji" hi="ಗುರೂಜಿ ಬಗ್ಗೆ" />
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          <div className="relative mx-auto w-full max-w-[400px] rounded-t-[200px] p-[6px] shadow-glow" style={{ background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-            <GurujiPhoto className="aspect-[540/770] w-full rounded-t-[195px] object-cover" />
-          </div>
+          <DevotionalFrame>
+            <GurujiPhoto className="h-full w-full object-cover object-top" />
+          </DevotionalFrame>
           <div>
             <h2 className="section-title">{site.name}</h2>
             <Diamond className="mt-2 h-3 w-28" />

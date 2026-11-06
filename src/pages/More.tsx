@@ -19,7 +19,7 @@ export function Shop() {
   const link = whatsappLink(['🙏 Hari Om, I would like to enquire about:', ...items.map((i) => `• ${i.p.name} × ${i.q}`), '', 'Name:', 'Place:'].join('\n'))
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಅಂಗಡಿ', en: 'SHOP' }} keyword="Gemstone Recommendation Services" title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" subtitle="Energised rudraksha, yantras, certified gemstones and puja items. Enquire on WhatsApp and Guruji’s office will guide you." />
+      <PageHero eyebrow={{ kn: 'ಅಂಗಡಿ', en: 'SHOP' }} keyword="Gemstone Recommendation Services" title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" />
       <Section>
         <div className="mb-5 flex flex-wrap justify-center gap-2">
           {cats.map((c) => <button key={c} onClick={() => setCat(c)} className={cat === c ? 'btn-gold px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base' : 'btn-outline px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base'} aria-pressed={cat === c}>{c}</button>)}
