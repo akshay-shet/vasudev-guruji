@@ -813,6 +813,15 @@ const exact: Record<string, string> = {
 
   // ── Locations ──
   'The Book': 'புத்தகம்',
+
+  // ── Locations ──
+  'Get a deeply accurate, personalized book covering every aspect of your life — personality, relationships, career, wealth, health and spiritual path — based on your complete Vedic birth chart, prepared under the guidance of Vasudev Guruji.': 'உங்கள் முழு வைதிக ஜனன ஜாதகத்தின் அடிப்படையில், வாசுதேவ குருஜியின் வழிகாட்டுதலில் தயாரிக்கப்பட்ட — ஆளுமை, உறவுகள், தொழில், செல்வம், உடல்நலம் மற்றும் ஆன்மீகப் பாதை — உங்கள் வாழ்வின் ஒவ்வொரு அம்சத்தையும் உள்ளடக்கிய ஆழமான, துல்லியமான தனிப்பட்ட புத்தகத்தைப் பெறுங்கள்.',
+  'Contents of the Book': 'புத்தகத்தின் பொருளடக்கம்',
+  'Contents': 'பொருளடக்கம்',
+  'Order Your Book': 'உங்கள் புத்தகத்தை ஆர்டர் செய்யுங்கள்',
+  'Prepared under the guidance of Vasudev Guruji': 'வாசுதேவ குருஜியின் வழிகாட்டுதலில் தயாரிக்கப்பட்டது',
+  'What is the Life Line Horoscope book?': 'வாழ்க்கை ரேகை ஜாதகப் புத்தகம் என்றால் என்ன?',
+  'It is an 80–100 page personal book on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'இது உங்கள் முழு வாழ்க்கை பற்றிய 80–100 பக்க தனிப்பட்ட புத்தகம் — ஆளுமை, உறவுகள், தொழில், செல்வம், உடல்நலம் மற்றும் ஆன்மீகப் பாதை, ஆண்டு வாரியான பலன்களுடன் — வாசுதேவ குருஜியின் வழிகாட்டுதலில் உங்கள் வைதிக ஜனன ஜாதகத்திலிருந்து தயாரிக்கப்படுகிறது. சிறப்புச் சலுகை: ₹999/- க்குப் பதில் ₹499/-. கீழே வாட்ஸ்அப்பில் ஆர்டர் செய்யுங்கள்.',
 }
 
 const phrases: Record<string, string> = {
@@ -875,6 +884,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 

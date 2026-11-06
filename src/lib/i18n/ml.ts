@@ -813,6 +813,15 @@ const exact: Record<string, string> = {
 
   // ── Locations ──
   'The Book': 'പുസ്തകം',
+
+  // ── Locations ──
+  'Get a deeply accurate, personalized book covering every aspect of your life — personality, relationships, career, wealth, health and spiritual path — based on your complete Vedic birth chart, prepared under the guidance of Vasudev Guruji.': 'നിങ്ങളുടെ സമ്പൂർണ്ണ വൈദിക ജനന ജാതകത്തെ അടിസ്ഥാനമാക്കി, വാസുദേവ ഗുരുജിയുടെ മാർഗ്ഗനിർദ്ദേശത്തിൽ തയ്യാറാക്കിയ — വ്യക്തിത്വം, ബന്ധങ്ങൾ, തൊഴിൽ, സമ്പത്ത്, ആരോഗ്യം, ആത്മീയ പാത — നിങ്ങളുടെ ജീവിതത്തിന്റെ എല്ലാ വശങ്ങളും ഉൾക്കൊള്ളുന്ന ആഴമേറിയ, കൃത്യമായ വ്യക്തിഗത പുസ്തകം നേടൂ.',
+  'Contents of the Book': 'പുസ്തകത്തിന്റെ ഉള്ളടക്കം',
+  'Contents': 'ഉള്ളടക്കം',
+  'Order Your Book': 'നിങ്ങളുടെ പുസ്തകം ഓർഡർ ചെയ്യൂ',
+  'Prepared under the guidance of Vasudev Guruji': 'വാസുദേവ ഗുരുജിയുടെ മാർഗ്ഗനിർദ്ദേശത്തിൽ തയ്യാറാക്കിയത്',
+  'What is the Life Line Horoscope book?': 'ജീവിത രേഖ ജാതക പുസ്തകം എന്താണ്?',
+  'It is an 80–100 page personal book on your whole life — personality, relationships, career, wealth, health and spiritual path, with year-by-year predictions — prepared from your Vedic birth chart under the guidance of Vasudev Guruji. Special offer: ₹499/- instead of ₹999/-. Order on WhatsApp below.': 'ഇത് നിങ്ങളുടെ മുഴുവൻ ജീവിതത്തെക്കുറിച്ചുള്ള 80–100 പേജ് വ്യക്തിഗത പുസ്തകമാണ് — വ്യക്തിത്വം, ബന്ധങ്ങൾ, തൊഴിൽ, സമ്പത്ത്, ആരോഗ്യം, ആത്മീയ പാത, വർഷംതോറുമുള്ള ഫലങ്ങൾ സഹിതം — വാസുദേവ ഗുരുജിയുടെ മാർഗ്ഗനിർദ്ദേശത്തിൽ നിങ്ങളുടെ വൈദിക ജനന ജാതകത്തിൽ നിന്ന് തയ്യാറാക്കുന്നു. പ്രത്യേക ഓഫർ: ₹999/- ന് പകരം ₹499/-. താഴെ വാട്ട്സ്ആപ്പിൽ ഓർഡർ ചെയ്യൂ.',
 }
 
 const phrases: Record<string, string> = {
@@ -875,6 +884,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'പെരണ്ടപ്പള്ളി',
   'Directions to': 'വഴി:',
   'Business, Money & Negative Energy — Guruji Answers': 'ബിസിനസ്, പണം, നെഗറ്റീവ് ഊർജം — ഗുരുജിയുടെ മറുപടികൾ',
+
+  // ── Locations ──
 
   // ── Locations ──
 
