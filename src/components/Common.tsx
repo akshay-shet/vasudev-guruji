@@ -86,7 +86,7 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
         <h1 className="section-title !leading-tight">{hi ? <KeywordPair heading en={title} kn={hi} /> : title}</h1>
         <Diamond className="mx-auto mt-2 h-3 w-28" />
         {kw && <p className="mt-2 text-[15px] font-semibold text-golddark md:text-base"><Link to={`/services/${kw.slug}`} className="hover:underline"><KeywordPair en={kw.title} kn={kw.kn} /></Link></p>}
-        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/80 md:text-xl">{subtitle}</p>}
+        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/[.88] md:text-xl">{subtitle}</p>}
         {children}
       </div>
     </section>
@@ -103,7 +103,7 @@ export function SectionTitle({ children, sub, kn, eyebrow }: { children: ReactNo
       {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}
       <h2 className="section-title">{kn && typeof children === 'string' ? <KeywordPair heading en={children} kn={kn} /> : children}</h2>
       <Diamond className="mx-auto mt-2 h-3 w-28" />
-      {sub && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/80">{sub}</p>}
+      {sub && <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/[.88]">{sub}</p>}
     </div>
   )
 }
@@ -160,7 +160,7 @@ export function EnquiryForm({ defaultTopic = 'Other', title = 'Send an Enquiry',
           <div className={`col-span-2 ${compact ? '' : 'md:col-span-6'}`}><label className="label" htmlFor="eq-msg">Your question</label><textarea id="eq-msg" name="message" rows={2} className="input !py-2" /></div>
           <div className={`col-span-2 ${compact ? '' : 'md:col-span-6'} mt-1 flex flex-col items-center gap-1.5`}>
             <button type="submit" className="btn-gold px-7 py-2.5 text-[17px]"><WhatsApp size={20} /> Send on WhatsApp</button>
-            <p className="text-center text-[13px] leading-snug text-ink/60">Opens WhatsApp with your details filled in. Guidance only — not medical, legal or financial advice.</p>
+            <p className="text-center text-[13px] leading-snug text-ink/[.88]">Opens WhatsApp with your details filled in. Guidance only — not medical, legal or financial advice.</p>
           </div>
         </form>
       )}
@@ -237,7 +237,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-4 gap-y-5 px-5 py-8 md:grid-cols-2 md:gap-12 md:py-10">
         <div className="col-span-2 md:col-span-1">
           <Brand compact />
-          <p className="mt-3 hidden text-[17px] text-ink/80 md:block">{site.shortBio}</p>
+          <p className="mt-3 hidden text-[17px] text-ink/[.88] md:block">{site.shortBio}</p>
           <p className="mt-2 font-deva text-[15px] text-maroon md:mt-3 md:text-base">{site.shloka}</p>
         </div>
         <div className="col-span-2 md:col-span-1">
@@ -253,7 +253,7 @@ export function Footer() {
           </button>
         </div>
       </div>
-      <div className="border-t border-goldlight/50 px-5 pb-24 pt-4 text-center text-[13px] text-ink/70 md:py-5 md:text-[15px]">
+      <div className="border-t border-goldlight/50 px-5 pb-24 pt-4 text-center text-[13px] text-ink/[.82] md:py-5 md:text-[15px]">
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-1">
           <Link to="/legal/privacy">Privacy Policy</Link><Link to="/legal/terms">Terms &amp; Conditions</Link><Link to="/legal/disclaimer">Disclaimer</Link>
         </div>

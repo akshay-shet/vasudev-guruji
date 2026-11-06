@@ -35,7 +35,7 @@ export function Shop() {
                 </div>
                 <p className="mt-2 font-cinzel text-[9.5px] tracking-widest text-gold sm:text-xs">{p.category.toUpperCase()}</p>
                 <h2 className="font-marcellus text-[14px] leading-tight sm:text-lg sm:leading-snug">{p.name}</h2>
-                <p className="mt-1 flex-1 text-[12.5px] leading-snug text-ink/75 sm:text-[16px]">{p.description}</p>
+                <p className="mt-1 flex-1 text-[12.5px] leading-snug text-ink/[.88] sm:text-[16px]">{p.description}</p>
                 {q === 0 ? (
                   <button className="btn-gold mt-2.5 w-full px-2 py-1.5 text-[14px] sm:mt-3 sm:text-base" onClick={() => add(p.id, 1)}>+ Add</button>
                 ) : (
@@ -49,7 +49,7 @@ export function Shop() {
             )
           })}
         </div>
-        <p className="mt-5 text-center text-[14px] text-ink/65">Gemstones are suggested only after Guruji studies your birth chart. Availability is confirmed on WhatsApp.</p>
+        <p className="mt-5 text-center text-[14px] text-ink/[.82]">Gemstones are suggested only after Guruji studies your birth chart. Availability is confirmed on WhatsApp.</p>
         {count > 0 && <div className="h-20" aria-hidden />}
       </Section>
       {count > 0 && (
@@ -57,7 +57,7 @@ export function Shop() {
           <div className="mx-auto flex max-w-4xl items-center gap-2 sm:gap-4">
             <div className="min-w-0 flex-1">
               <p className="font-marcellus text-[15px] leading-tight text-maroon sm:text-lg">{count} {count === 1 ? 'item selected' : 'items selected'}</p>
-              <button onClick={() => setSel({})} className="text-[13px] text-ink/60 underline">Clear</button>
+              <button onClick={() => setSel({})} className="text-[13px] text-ink/[.88] underline">Clear</button>
             </div>
             <a href={link} target="_blank" rel="noopener" className="btn-gold shrink-0 whitespace-nowrap px-3.5 py-2 text-[14px] sm:px-6 sm:text-base"><WhatsApp size={18} /> Enquire on WhatsApp</a>
           </div>
@@ -88,7 +88,7 @@ export function Contact() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-goldlight bg-paper text-gold md:h-11 md:w-11">{c.icon}</span>
               <span className="min-w-0">
                 <span className="block font-marcellus text-[15px] leading-tight text-maroon md:text-base">{c.label}</span>
-                <span className="block truncate text-[14px] leading-snug text-ink/80 md:text-[15px]">{c.value}</span>
+                <span className="block truncate text-[14px] leading-snug text-ink/[.88] md:text-[15px]">{c.value}</span>
               </span>
             </a>
           ))}
@@ -114,7 +114,7 @@ export function Contact() {
                   <dd>Beside the Kaveri at Ganjam, Srirangapatna — about 16 km from Mysuru and 125 km from Bengaluru.</dd>
                 </div>
               </dl>
-              <p className="mt-2 text-[14px] text-ink/65">Please message on WhatsApp before visiting so the office can confirm Guruji’s availability.</p>
+              <p className="mt-2 text-[14px] text-ink/[.82]">Please message on WhatsApp before visiting so the office can confirm Guruji’s availability.</p>
             </div>
           </div>
           <EnquiryForm compact title="Send an Enquiry" />

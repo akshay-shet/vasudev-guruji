@@ -15,7 +15,7 @@ export function Locations({ heading = true }: { heading?: boolean }) {
         <div className="mb-8 text-center">
           <Eyebrow kn="ನಮ್ಮ ಕೇಂದ್ರಗಳು" en="LOCATIONS" />
           <h2 className="section-title mt-3"><KeywordPair heading en="Where to Meet Guruji" kn="ಗುರೂಜಿಯವರನ್ನು ಎಲ್ಲಿ ಭೇಟಿಯಾಗಬಹುದು" /></h2>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/80">Five places, one Guruji. Mandya is the main centre — devotees everywhere else can meet Guruji on his visits or consult by phone and video.</p>
+          <p className="mx-auto mt-3 max-w-2xl text-lg text-ink/[.88]">Five places, one Guruji. Mandya is the main centre — devotees everywhere else can meet Guruji on his visits or consult by phone and video.</p>
         </div>
       )}
       <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1.05fr_1fr]">
@@ -52,7 +52,7 @@ export function Locations({ heading = true }: { heading?: boolean }) {
                 <div className="relative min-w-0 flex-1">
                   <p className="font-cinzel text-[11px] font-semibold tracking-[0.16em] text-[#B0321A]">{p.state.toUpperCase()}</p>
                   <h3 className="font-cormorant text-[26px] font-bold leading-tight text-maroon"><KeywordPair en={p.city} kn={p.kn} className="[&>span:last-child]:text-[0.7em] [&>span:last-child]:text-golddark max-sm:[&>span:nth-child(2)]:hidden max-sm:[&>span:last-child]:block" /></h3>
-                  <p className="mt-0.5 text-[15px] leading-snug text-ink/70">{p.note}</p>
+                  <p className="mt-0.5 text-[15px] leading-snug text-ink/[.82]">{p.note}</p>
                 </div>
                 <a href={p.map} target="_blank" rel="noopener" aria-label={`Directions to ${p.city}`}
                   className="relative flex shrink-0 flex-col items-center gap-1 rounded-xl border border-goldlight bg-paper px-3 py-2 font-marcellus text-[13px] text-golddark transition hover:bg-goldlight/20">
@@ -64,7 +64,7 @@ export function Locations({ heading = true }: { heading?: boolean }) {
           <li className="relative">
             <span className="absolute -left-7 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full border-2 border-paper bg-[#1DA851] text-white shadow md:-left-9 md:h-8 md:w-8" aria-hidden><WhatsApp size={14} /></span>
             <a href={whatsappLink('🙏 Hari Om Guruji, I would like to know when you are visiting my city.')} target="_blank" rel="noopener"
-              className="flex items-center justify-between gap-3 rounded-2xl border border-dashed border-gold/60 px-4 py-3 text-[15.5px] text-ink/80 hover:bg-goldlight/10 md:px-5">
+              className="flex items-center justify-between gap-3 rounded-2xl border border-dashed border-gold/60 px-4 py-3 text-[15.5px] text-ink/[.88] hover:bg-goldlight/10 md:px-5">
               <span>Anywhere else? Ask when Guruji visits your city, or consult by video.</span>
               <Arrow size={16} className="shrink-0 text-gold" />
             </a>

@@ -21,7 +21,7 @@ function NakPicker({ label, value, onChange }: { label: string; value: { nak: nu
       <select id={`${label}-p`} className="input" value={value.pada} onChange={(e) => onChange({ ...value, pada: +e.target.value })}>
         {[1, 2, 3, 4].map((p) => <option key={p} value={p}>Pada {p}</option>)}
       </select>
-      <p className="mt-2 text-ink/75">Moon sign: <b>{r.name}</b> ({r.english})</p>
+      <p className="mt-2 text-ink/[.88]">Moon sign: <b>{r.name}</b> ({r.english})</p>
     </fieldset>
   )
 }
@@ -72,14 +72,14 @@ export function Kundali() {
               <tbody>
                 {res.kootas.map((k) => (
                   <tr key={k.name} className="border-b border-goldlight/40">
-                    <td className="p-2 font-semibold">{k.name}</td><td className="p-2">{k.detail}</td><td className="p-2 text-ink/75">{k.meaning}</td>
+                    <td className="p-2 font-semibold">{k.name}</td><td className="p-2">{k.detail}</td><td className="p-2 text-ink/[.88]">{k.meaning}</td>
                     <td className="p-2 text-right font-marcellus"><span className={k.score === 0 ? 'text-maroon' : 'text-golddark'}>{k.score}</span> / {k.max}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-center text-ink/65">Educational calculator using standard tables (Yoni scoring simplified). Mangal Dosha, Navamsha and dasha compatibility are checked in Guruji’s full reading.</p>
+          <p className="mt-4 text-center text-ink/[.82]">Educational calculator using standard tables (Yoni scoring simplified). Mangal Dosha, Navamsha and dasha compatibility are checked in Guruji’s full reading.</p>
         </div>
       </Section>
       <Section>

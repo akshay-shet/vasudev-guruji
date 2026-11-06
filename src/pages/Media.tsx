@@ -30,7 +30,7 @@ export function Discourses() {
               <div className="p-5">
                 <p className="font-cinzel text-xs tracking-widest text-gold">{d.series.toUpperCase()}</p>
                 <h2 className="mt-1 font-marcellus text-xl leading-snug">{d.title}</h2>
-                <p className="mt-2 text-lg text-ink/80">{d.description}</p>
+                <p className="mt-2 text-lg text-ink/[.88]">{d.description}</p>
               </div>
             </article>
           ))}
@@ -73,7 +73,7 @@ export function Events() {
               ))}
             </div>
             <h2 className="mt-6 font-cormorant text-4xl font-bold italic">{next.title}</h2>
-            <p className="mt-1 text-lg text-ink/75">{new Date(next.date).toLocaleString(loc, { dateStyle: 'full', timeStyle: 'short' })} · {next.place}</p>
+            <p className="mt-1 text-lg text-ink/[.88]">{new Date(next.date).toLocaleString(loc, { dateStyle: 'full', timeStyle: 'short' })} · {next.place}</p>
           </div>
         </Section>
       )}
@@ -92,8 +92,8 @@ export function Events() {
                 <div className="flex-1">
                   <p className="font-cinzel text-xs tracking-widest text-gold">{e.type.toUpperCase()}{past ? ' · COMPLETED' : ''}</p>
                   <h2 className="font-marcellus text-xl leading-snug">{e.title}</h2>
-                  <p className="mt-1 flex items-center gap-1 text-ink/75"><Calendar size={16} className="text-gold" />{d.toLocaleTimeString(loc, { hour: 'numeric', minute: '2-digit' })}{e.end ? ` – ${new Date(e.end).toLocaleDateString(loc, { day: 'numeric', month: 'short' })}` : ''}</p>
-                  <p className="flex items-center gap-1 text-ink/75"><Pin size={16} className="text-gold" />{e.place}</p>
+                  <p className="mt-1 flex items-center gap-1 text-ink/[.88]"><Calendar size={16} className="text-gold" />{d.toLocaleTimeString(loc, { hour: 'numeric', minute: '2-digit' })}{e.end ? ` – ${new Date(e.end).toLocaleDateString(loc, { day: 'numeric', month: 'short' })}` : ''}</p>
+                  <p className="flex items-center gap-1 text-ink/[.88]"><Pin size={16} className="text-gold" />{e.place}</p>
                   <p className="mt-2 text-lg">{e.description}</p>
                   {!past && <a href={whatsappLink(`🙏 Hari Om, I would like to register for “${e.title}” on ${d.toDateString()}.`)} target="_blank" rel="noopener" className="btn-gold mt-3 px-5 py-1.5">Register on WhatsApp</a>}
                 </div>

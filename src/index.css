@@ -29,7 +29,11 @@ html[data-theme='night'] {
     background: var(--page-bg);
     font-size: 18px;
     line-height: 1.55;
+    font-weight: 500;
   }
+  /* Body copy: Cormorant is thin at 400, so paragraphs and list items use 500 and a slightly richer ink */
+  p, li, dd, label, td { font-weight: 600; }
+  b, strong { font-weight: 700; }
   html[data-theme='night'] body {
     background:
       radial-gradient(1200px 600px at 70% -10%, rgba(120, 80, 200, 0.35), transparent 60%),

@@ -97,7 +97,7 @@ export default function RashiChakra() {
             <span className="gold-text shrink-0 font-kn text-4xl leading-tight md:text-5xl" lang="kn">{r.kn}</span>
             <div>
               <h3 className="font-cormorant text-2xl font-bold leading-tight md:text-3xl">{kn ? `${r.kn} ರಾಶಿ` : `${r.name} · ${r.english}`}</h3>
-              <p className="text-[15px] leading-snug text-ink/70">{r.symbol}</p>
+              <p className="text-[15px] leading-snug text-ink/[.82]">{r.symbol}</p>
             </div>
           </div>
           <div className="shrink-0 max-sm:flex max-sm:w-full max-sm:items-baseline max-sm:gap-2 sm:text-right">
@@ -122,7 +122,7 @@ export default function RashiChakra() {
 
         <p className="mt-3 font-cormorant text-lg font-semibold italic leading-snug text-maroon md:text-xl">“{r.traits}”</p>
 
-        <p className="mt-1.5 text-[15px] leading-snug text-ink/75">Kalapurusha: governs the {limb[sel]} · {r.quality.split(' ')[0]} sign · {r.degrees}</p>
+        <p className="mt-1.5 text-[15px] leading-snug text-ink/[.88]">Kalapurusha: governs the {limb[sel]} · {r.quality.split(' ')[0]} sign · {r.degrees}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
           <Link to="/contact" className="btn-gold px-4 py-1.5 text-[15px]">Ask Guruji <Arrow size={18} /></Link>

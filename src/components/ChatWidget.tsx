@@ -58,7 +58,7 @@ export function ChatWidget() {
             <LotusLogo className="h-7 w-9" />
             <div className="flex-1 leading-tight">
               <p className="font-marcellus text-[17px] text-maroon">Guruji’s Assistant</p>
-              <p className="text-[12px] text-ink/60">AI · general guidance only</p>
+              <p className="text-[12px] text-ink/[.88]">AI · general guidance only</p>
             </div>
             <button onClick={() => setOpen(false)} className="pill h-8 w-8" aria-label="Close chat" data-id="chat-close"><Close size={14} /></button>
           </div>
@@ -69,7 +69,7 @@ export function ChatWidget() {
                 <p className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3.5 py-2 text-[16px] leading-snug ${m.role === 'user' ? 'rounded-br-md bg-gold text-white' : 'rounded-bl-md border border-goldlight bg-paper'}`}>{m.content}</p>
               </div>
             ))}
-            {busy && <p className="px-1 text-sm text-ink/60">Typing…</p>}
+            {busy && <p className="px-1 text-sm text-ink/[.88]">Typing…</p>}
             {msgs.length === 1 && (
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {suggestions.map((s) => <button key={s} onClick={() => send(translateText(s))} className="btn-outline px-3 py-1 text-[13px]">{s}</button>)}
@@ -84,7 +84,7 @@ export function ChatWidget() {
             <button className="btn-gold shrink-0 px-4" disabled={busy}>Send</button>
           </form>
           <a href={whatsappLink('🙏 Hari Om Guruji, I would like to make an enquiry.')} target="_blank" rel="noopener"
-            className="flex items-center justify-center gap-1.5 border-t border-goldlight/40 py-1.5 text-[13px] text-ink/65 hover:text-golddark">
+            className="flex items-center justify-center gap-1.5 border-t border-goldlight/40 py-1.5 text-[13px] text-ink/[.82] hover:text-golddark">
             <WhatsApp size={14} className="text-[#1DA851]" /> Prefer a person? Chat with the office on WhatsApp
           </a>
         </div>

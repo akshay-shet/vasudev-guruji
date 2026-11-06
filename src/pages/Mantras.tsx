@@ -38,7 +38,7 @@ function JapaMala() {
         </svg>
         <span className="absolute inset-[18%] flex flex-col items-center justify-center rounded-full border border-goldlight bg-paper shadow-glow">
           <span className="gold-text font-marcellus text-6xl">{count}</span>
-          <span className="font-cinzel text-xs tracking-widest text-ink/70">TAP · SPACE</span>
+          <span className="font-cinzel text-xs tracking-widest text-ink/[.82]">TAP · SPACE</span>
         </span>
       </button>
       <p className="mt-5 text-xl">Malas completed: <b className="text-golddark">{malas}</b> · Total japa: <b>{malas * 108 + count}</b></p>

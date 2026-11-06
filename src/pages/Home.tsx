@@ -86,7 +86,7 @@ function DiscourseIntro({ center = false }: { center?: boolean }) {
       <Eyebrow kn="ಇತ್ತೀಚಿನ ಪ್ರವಚನ" en="LATEST DISCOURSE" />
       <h2 className="section-title mt-3 !leading-tight">{site.latestDiscourse.title}</h2>
       <Diamond className={`mt-2 h-3 w-28 ${center ? 'mx-auto' : ''}`} />
-      <p className={`mt-3 max-w-md text-lg text-ink/80 ${center ? 'mx-auto' : ''}`}>In this conversation Guruji answers questions on business losses, partnerships that turn sour, money troubles, sleepless nights and fear — and how negative energy can lie behind them.</p>
+      <p className={`mt-3 max-w-md text-lg text-ink/[.88] ${center ? 'mx-auto' : ''}`}>In this conversation Guruji answers questions on business losses, partnerships that turn sour, money troubles, sleepless nights and fear — and how negative energy can lie behind them.</p>
     </div>
   )
 }
@@ -273,7 +273,7 @@ function DevoteeWords() {
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full font-marcellus text-lg text-white" style={{ background: hue[i % hue.length] }} aria-hidden>{r.name[0]}</span>
               <div className="min-w-0 flex-1">
                 <figcaption className="font-marcellus text-[17px] leading-tight text-maroon">{r.name}</figcaption>
-                <p className="text-sm text-ink/60">{r.place} · {r.topic}</p>
+                <p className="text-sm text-ink/[.88]">{r.place} · {r.topic}</p>
               </div>
               {r.sample && <span className="rounded-full bg-goldlight/30 px-2 py-0.5 font-cinzel text-[9px] tracking-widest text-golddark">SAMPLE</span>}
             </div>
@@ -282,7 +282,7 @@ function DevoteeWords() {
           </figure>
         ))}
       </div>
-      {reviews.some((r) => r.sample) && <p className="mt-1 text-center text-sm text-ink/55">Sample testimonials shown for layout — to be replaced with real devotee words.</p>}
+      {reviews.some((r) => r.sample) && <p className="mt-1 text-center text-sm text-ink/[.88]">Sample testimonials shown for layout — to be replaced with real devotee words.</p>}
     </div>
   )
 }

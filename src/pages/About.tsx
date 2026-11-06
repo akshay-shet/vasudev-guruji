@@ -28,7 +28,7 @@ export default function About() {
           <p className="mt-4 font-deva text-2xl leading-relaxed text-maroon md:text-3xl">
             ಬಹೂನಾಂ ಜನ್ಮನಾಮನ್ತೇ ಜ್ಞಾನವಾನ್ಮಾಂ ಪ್ರಪದ್ಯತೇ ।<br />ವಾಸುದೇವಃ ಸರ್ವಮಿತಿ ಸ ಮಹಾತ್ಮಾ ಸುದುರ್ಲಭಃ ॥
           </p>
-          <p className="mt-2 font-cinzel text-xs tracking-widest text-ink/70">BHAGAVAD GITA 7.19</p>
+          <p className="mt-2 font-cinzel text-xs tracking-widest text-ink/[.82]">BHAGAVAD GITA 7.19</p>
           <p className="mx-auto mt-4 max-w-3xl text-xl italic">
             “After many births, the one who has realised wisdom surrenders to Me, knowing <b>‘Vasudeva is all that is’</b>. Such a great soul is very rare.”
           </p>

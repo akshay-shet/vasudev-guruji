@@ -56,7 +56,7 @@ export function SearchPanel({ onClose }: { onClose: () => void }) {
             ))}
           </ul>
         )}
-        {q && results.length === 0 && <p className="mt-3 px-2 text-ink/70">{t('No results. Try “Guna Milan”, “Shop” or “Mantra”.')}</p>}
+        {q && results.length === 0 && <p className="mt-3 px-2 text-ink/[.82]">{t('No results. Try “Guna Milan”, “Shop” or “Mantra”.')}</p>}
       </div>
     </div>
   )
@@ -168,7 +168,7 @@ function Drawer({ onClose, onSearch }: { onClose: () => void; onSearch: () => vo
           <Brand compact />
           <button onClick={onClose} className="pill h-10 w-10" aria-label="Close menu"><Close size={18} /></button>
         </div>
-        <button onClick={onSearch} className="mb-3 flex w-full items-center gap-2 rounded-full border border-goldlight bg-paper px-4 py-2.5 text-left text-ink/70" aria-label="Search the site">
+        <button onClick={onSearch} className="mb-3 flex w-full items-center gap-2 rounded-full border border-goldlight bg-paper px-4 py-2.5 text-left text-ink/[.82]" aria-label="Search the site">
           <Search size={18} className="text-gold" /> Search pages…
         </button>
         <ul className="space-y-1">
