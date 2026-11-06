@@ -11,8 +11,8 @@ export default function About() {
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          <DevotionalFrame>
-            <GurujiPhoto className="h-full w-full object-cover object-top" />
+          <DevotionalFrame inset={import.meta.env.BASE_URL + 'img/guruji-writing.jpg'} tag="Jyotisha · Vastu · Homa">
+            <GurujiPhoto className="h-full w-full object-cover object-[50%_12%]" />
           </DevotionalFrame>
           <div>
             <h2 className="section-title">{site.name}</h2>

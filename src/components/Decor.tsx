@@ -352,55 +352,40 @@ export function SideOrnaments() {
   )
 }
 
-/* ───────── Devotional frame for Guruji's portrait (About page) ─────────
- * A temple-shrine arch: soft halo and rays behind, a gold arch with a pearl-string border,
- * an ॐ finial at the crown, two swaying bells at the shoulders, and a lotus pedestal with diyas. */
-export function DevotionalFrame({ children, className = '' }: { children: ReactNode; className?: string }) {
+/* ───────── Divine portrait frame (About page) ─────────
+ * A tall arch with a soft golden aura behind it, a thin cream-and-gold border, a floating tag,
+ * and a second small photo overlapping the lower corner. */
+export function DevotionalFrame({ children, inset, tag, className = '' }: { children: ReactNode; inset?: string; tag?: ReactNode; className?: string }) {
   return (
-    <div className={`relative mx-auto w-full max-w-[420px] px-6 pb-14 pt-10 ${className}`}>
-      {/* halo + rays */}
-      <div className="pointer-events-none absolute left-1/2 top-[30%] h-[120%] w-[140%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
-        style={{ background: 'radial-gradient(circle, rgba(255,214,120,.55) 0%, rgba(255,226,160,.25) 38%, transparent 66%)' }} />
-      <Rays className="left-1/2 top-[30%] h-[130%] w-[150%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70" />
+    <div className={`relative mx-auto w-full max-w-[440px] pb-8 pr-6 pt-6 sm:pr-10 ${className}`}>
+      {/* golden aura */}
+      <div className="pointer-events-none absolute left-[46%] top-[38%] h-[95%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full" aria-hidden
+        style={{ background: 'radial-gradient(circle, rgba(255,210,120,.45) 0%, rgba(255,226,170,.22) 40%, transparent 68%)' }} />
+      <Rays className="left-[46%] top-[36%] h-[100%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50" />
 
-      {/* the shrine arch */}
-      <div className="relative aspect-[400/570]">
-        <div className="absolute inset-0 rounded-t-full p-[7px] shadow-[0_30px_60px_-28px_rgba(122,36,16,.75)]"
-          style={{ background: 'linear-gradient(160deg,#F6DA8E,#C58B2D 35%,#FBE7A8 55%,#93600F 100%)' }}>
-          <div className="relative h-full w-full overflow-hidden rounded-t-full" style={{ boxShadow: 'inset 0 0 0 2px #7A2410' }}>
-            {children}
-            {/* warm glow at the top of the picture */}
-            <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(60% 35% at 50% 8%, rgba(255,236,180,.35), transparent 70%)' }} />
-          </div>
+      {/* main arch */}
+      <div className="relative rounded-t-[46%] rounded-b-[28px] bg-[#FFF8EA] p-[10px] shadow-[0_28px_60px_-30px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A]">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-t-[44%] rounded-b-[20px] ring-1 ring-[#E7C26A]/80">
+          {children}
+          <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(70% 40% at 50% 0%, rgba(255,236,180,.30), transparent 70%)' }} />
         </div>
-        {/* pearl string following the arch */}
-        <svg viewBox="0 0 400 570" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden>
-          <path d="M4 568V200A196 196 0 0 1 396 200V568" fill="none" stroke="#FFF6DC" strokeWidth="5" strokeLinecap="round" strokeDasharray="0 11" />
-          <path d="M4 568V200A196 196 0 0 1 396 200V568" fill="none" stroke="#C58B2D" strokeWidth="1" strokeOpacity=".6" strokeDasharray="0 11" strokeDashoffset="5.5" strokeLinecap="round" />
-        </svg>
-        {/* ॐ finial at the crown */}
-        <div className="absolute left-1/2 top-0 flex h-16 w-16 -translate-x-1/2 -translate-y-[58%] items-center justify-center rounded-full shadow-[0_8px_18px_-6px_rgba(122,36,16,.6)]"
-          style={{ background: 'conic-gradient(#F6DA8E,#C58B2D,#FBE7A8,#93600F,#F6DA8E)' }} aria-hidden>
-          <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full font-deva text-[30px] leading-none text-[#F7D88A]" style={{ background: 'radial-gradient(circle at 40% 35%,#A8301A,#5E160A)' }}>ॐ</span>
-        </div>
-        {/* bells at the shoulders */}
-        <div className="absolute -left-5 top-[30%] h-[96px] w-[30px]" aria-hidden><Bell className="h-full w-full" chain={54} /></div>
-        <div className="absolute -right-5 top-[30%] h-[96px] w-[30px]" aria-hidden><Bell className="h-full w-full" chain={54} delay={1.1} /></div>
+        {/* small gold crest at the top of the arch */}
+        <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#C58B2D] bg-[#F6DA8E] shadow" aria-hidden />
       </div>
 
-      {/* lotus pedestal with diyas */}
-      <svg viewBox="0 0 300 70" className="absolute bottom-1 left-1/2 w-[86%] -translate-x-1/2" aria-hidden>
-        <defs>
-          <linearGradient id="dfLotus" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#FFD9E2" /><stop offset="1" stopColor="#E98AA6" /></linearGradient>
-          <linearGradient id="dfGold" x1="0" x2="1"><stop offset="0" stopColor="#93600F" /><stop offset=".5" stopColor="#F6DA8E" /><stop offset="1" stopColor="#93600F" /></linearGradient>
-        </defs>
-        <rect x="40" y="50" width="220" height="10" rx="5" fill="url(#dfGold)" />
-        {[-4, -3, -2, -1, 0, 1, 2, 3, 4].map((k) => (
-          <path key={k} transform={`translate(${150 + k * 22} 50) rotate(${k * 9})`} d="M0 0C-12-14-10-30 0-40 10-30 12-14 0 0z" fill="url(#dfLotus)" stroke="#C25B7A" strokeWidth="1" />
-        ))}
-      </svg>
-      <div className="absolute bottom-2 left-0 h-12 w-12" aria-hidden><Diya className="h-full w-full" /></div>
-      <div className="absolute bottom-2 right-0 h-12 w-12" aria-hidden><Diya className="h-full w-full" /></div>
+      {/* floating tag */}
+      {tag && (
+        <span className="absolute left-0 top-[14%] inline-flex items-center gap-2 rounded-full border border-[#E7C26A] bg-[#FFFDF7]/95 px-3.5 py-1.5 font-marcellus text-[13.5px] text-maroon shadow-[0_8px_20px_-10px_rgba(122,36,16,.5)] backdrop-blur-sm sm:-left-4 sm:text-[15px]">
+          <span className="text-[#C58B2D]" aria-hidden>✦</span>{tag}
+        </span>
+      )}
+
+      {/* second photo overlapping the corner */}
+      {inset && (
+        <div className="absolute bottom-0 right-0 w-[38%] rounded-2xl bg-[#FFF8EA] p-[5px] shadow-[0_18px_34px_-16px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A]">
+          <img src={inset} alt="" loading="lazy" className="aspect-square w-full rounded-xl object-cover object-top" />
+        </div>
+      )}
     </div>
   )
 }
