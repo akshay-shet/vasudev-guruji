@@ -129,8 +129,22 @@ function MobileHome() {
     <div className="mx-auto w-full max-w-[480px] overflow-hidden lg:hidden" style={{ ['--u' as string]: 'min(1vw, 4.8px)' }}>
       {/* HERO ART */}
       <div className="relative aspect-[941/1420] overflow-hidden">
-        <img src={import.meta.env.BASE_URL + 'img/hero-mobile.jpg'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with temple bells, waterfalls and the rising sun"
-          className="absolute inset-0 h-full w-full object-cover object-top" fetchPriority="high" />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${import.meta.env.BASE_URL}img/hero-mobile-600.webp 600w, ${import.meta.env.BASE_URL}img/hero-mobile.webp 820w`}
+            sizes="(max-width: 600px) 100vw, 480px"
+          />
+          <img
+            src={import.meta.env.BASE_URL + 'img/hero-mobile.jpg'}
+            alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with temple bells, waterfalls and the rising sun"
+            className="absolute inset-0 h-full w-full object-cover object-top"
+            fetchPriority="high"
+            decoding="async"
+            width={941}
+            height={1420}
+          />
+        </picture>
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,250,238,.85), rgba(255,250,238,.45) 55%, transparent)' }} />
         <div className="fade-cream pointer-events-none absolute inset-x-0 bottom-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,248,234,0), var(--fade) 88%)' }} />
       </div>
@@ -146,10 +160,21 @@ function MobileHome() {
           </h1>
           <p className="mx-auto mt-[calc(var(--u)*3)] inline-block rounded-full bg-maroon/90 px-[1.1em] py-[0.4em] font-semibold leading-snug text-[#F7D88A] shadow-gold" style={{ fontSize: 'clamp(15px, calc(var(--u)*3.9), 19px)' }}><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" className="[&_.text-gold]:text-goldlight" /></p>
         </div>
-        <div className="mt-[calc(var(--u)*4)] flex justify-center gap-[calc(var(--u)*1.6)]" role="tablist">
+        <div className="mt-[calc(var(--u)*4)] flex justify-center gap-1" role="tablist">
           {slides.map((_, i) => (
-            <button key={i} role="tab" aria-selected={slide === i} aria-label={`Slide ${i + 1}`} onClick={() => setSlide(i)}
-              className="rounded-full transition" style={{ width: u(1.9), height: u(1.9), background: slide === i ? '#C58B2D' : '#E3DCCD' }} />
+            <button
+              key={i}
+              role="tab"
+              aria-selected={slide === i}
+              aria-label={`Slide ${i + 1}`}
+              onClick={() => setSlide(i)}
+              className="flex h-9 w-9 items-center justify-center rounded-full transition"
+            >
+              <span
+                className="rounded-full transition"
+                style={{ width: u(1.9), height: u(1.9), background: slide === i ? '#C58B2D' : '#E3DCCD' }}
+              />
+            </button>
           ))}
         </div>
       </div>
@@ -188,8 +213,18 @@ function DesktopHome() {
     <div className="hidden lg:block" style={{ ['--d' as string]: 'min(1vw, 16.8px)' }}>
       {/* HERO */}
       <div className="relative mx-auto h-[100svh] max-h-[1080px] min-h-[640px] w-full max-w-[1920px] overflow-hidden">
-        <img src={import.meta.env.BASE_URL + 'img/hero-desktop.jpg'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with a temple, waterfalls and the rising sun behind"
-          className="absolute inset-0 h-full w-full object-cover object-[30%_38%]" fetchPriority="high" />
+        <picture>
+          <source type="image/webp" srcSet={import.meta.env.BASE_URL + 'img/hero-desktop.webp'} />
+          <img
+            src={import.meta.env.BASE_URL + 'img/hero-desktop.jpg'}
+            alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with a temple, waterfalls and the rising sun behind"
+            className="absolute inset-0 h-full w-full object-cover object-[30%_38%]"
+            fetchPriority="high"
+            decoding="async"
+            width={1671}
+            height={941}
+          />
+        </picture>
         {/* soft glow so the headline reads cleanly over the sky */}
         <div className="pointer-events-none absolute left-[29%] top-[8%] h-[56%] w-[55%]" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,250,238,.88) 0%, rgba(255,246,228,.62) 50%, transparent 76%)' }} />
         <div className="fade-cream pointer-events-none absolute inset-x-0 bottom-0 h-[22%]" style={{ background: 'linear-gradient(to bottom, rgba(255,248,234,0) 0%, rgba(255,248,234,.35) 45%, var(--fade) 100%)' }} />
