@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { FloatingContact, Footer } from './components/Common'
 import { SideOrnaments, Stars, TempleIntro } from './components/Decor'
 import { useReveal } from './lib/useReveal'
+import { Seo } from './lib/Seo'
 import Home from './pages/Home'
 import HomaPage from './pages/Homa'
 import About from './pages/About'
@@ -34,6 +35,7 @@ export default function App() {
     <>
       <Stars />
       <SideOrnaments />
+      <Seo />
       <TempleIntro />
       <ScrollManager />
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[200] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2">Skip to content</a>

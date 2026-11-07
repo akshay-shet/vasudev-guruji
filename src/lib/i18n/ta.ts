@@ -848,6 +848,10 @@ const exact: Record<string, string> = {
   'Next': 'அடுத்தது',
   'VIDEO': 'காணொளி',
   'Guruji’s videos, photos and celebrity moments are in the Gallery, and the latest discourse also plays on the home page.': 'குருஜியின் காணொளிகள், படங்கள் மற்றும் பிரபலங்களுடனான தருணங்கள் காட்சியகத்தில் உள்ளன, சமீபத்திய சொற்பொழிவு முகப்புப் பக்கத்திலும் ஒளிபரப்பாகிறது.',
+
+  // ── Locations ──
+  'Samruddhi Astro Center, Srirangapatna, Mandya': 'சம்ருத்தி ஜோதிட மையம், ஸ்ரீரங்கப்பட்டணா, மண்டியா',
+  'Srirangapatna, Mandya': 'ஸ்ரீரங்கப்பட்டணா, மண்டியா',
 }
 
 const phrases: Record<string, string> = {
@@ -910,6 +914,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 

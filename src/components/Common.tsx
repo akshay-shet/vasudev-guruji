@@ -63,11 +63,9 @@ export function Eyebrow({ kn, en }: { kn: string; en: string }) {
   )
 }
 
-/** Sets the browser-tab / search-engine title for a page (kept in English for SEO). */
+/** Kept for compatibility — titles and meta tags are now set per route by <Seo /> (src/lib/Seo.tsx, data in src/data/seo.ts). */
 export function usePageTitle(title?: string) {
-  useEffect(() => {
-    document.title = title ? `${title} | Vasudev Guruji — Best Astrologer Online` : 'Vasudev Guruji — Best Astrologer Online | Vedic Astrology Services in Srirangapatna, Mysuru'
-  }, [title])
+  void title
 }
 
 /* ───────── Inner page hero banner ─────────

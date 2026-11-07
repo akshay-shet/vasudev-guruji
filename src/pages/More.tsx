@@ -102,13 +102,13 @@ export function Contact() {
           <div className="flex flex-col gap-4 md:gap-6">
             <a href={centrePhotoLink} target="_blank" rel="noopener" aria-label="Samruddhi Astro Center on Google"
               className="card group relative block min-h-[240px] flex-1 overflow-hidden !rounded-2xl">
-              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.jpg'} alt="Samruddhi Astro Center, Kollegala" loading="lazy"
+              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.jpg'} alt="Samruddhi Astro Center, Srirangapatna, Mandya" loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
               <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
                 <span>
                   <span className="block font-cormorant text-[24px] font-bold leading-tight text-[#F7D88A]" data-no-translate="">Samruddhi Astro Center</span>
-                  <span className="flex items-center gap-1 text-[14px] text-white/90"><Pin size={14} /> Kollegala</span>
+                  <span className="flex items-center gap-1 text-[14px] text-white/90"><Pin size={14} /> Srirangapatna, Mandya</span>
                 </span>
                 <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-1.5 font-marcellus text-[14px] text-maroon shadow">View on Google <Arrow size={13} /></span>
               </span>
