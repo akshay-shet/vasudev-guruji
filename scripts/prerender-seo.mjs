@@ -7,7 +7,7 @@ import { dirname, join } from 'node:path'
 
 const out = await build({
   stdin: { contents: "export * from './src/data/seo'; export { faqs } from './src/data/faq'; export { services } from './src/data/content'; export { site } from './src/data/site'", resolveDir: process.cwd(), loader: 'ts' },
-  bundle: true, write: false, format: 'esm', platform: 'node', define: { 'import.meta.env.BASE_URL': '"/"' }, logLevel: 'error',
+  bundle: true, write: false, format: 'esm', platform: 'node', define: { 'import.meta.env.BASE_URL': '"/"', 'import.meta.env.VITE_SITE_URL': JSON.stringify(process.env.VITE_SITE_URL || 'https://vg-five-self.vercel.app') }, logLevel: 'error',
 })
 const m = await import('data:text/javascript;base64,' + Buffer.from(out.outputFiles[0].text).toString('base64'))
 const { SITE_URL, allPaths, seoFor, jsonLdFor, faqs, services, site } = m

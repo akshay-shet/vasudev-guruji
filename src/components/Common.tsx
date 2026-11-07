@@ -113,18 +113,23 @@ export function EnquiryForm({ defaultTopic = 'Other', title = 'Send an Enquiry',
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const f = new FormData(e.currentTarget)
+    const clean = (val: FormDataEntryValue | null, max = 200) =>
+      typeof val === 'string' ? val.trim().replace(/[\u0000-\u001F\u007F-\u009F]/g, '').slice(0, max) : ''
+    const name = clean(f.get('name'), 80)
+    const phone = clean(f.get('phone'), 30)
+    if (!name || !phone) return
     const lines = [
       '🙏 Hari Om Guruji,',
       `New enquiry from the website — Topic: ${topic}`,
-      `Name: ${f.get('name')}`,
-      `Phone: ${f.get('phone')}`,
-      f.get('dob') ? `Date of birth: ${f.get('dob')}` : '',
-      f.get('tob') ? `Time of birth: ${f.get('tob')}` : '',
-      f.get('pob') ? `Place of birth: ${f.get('pob')}` : '',
-      f.get('message') ? `Message: ${f.get('message')}` : '',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      clean(f.get('dob'), 20) ? `Date of birth: ${clean(f.get('dob'), 20)}` : '',
+      clean(f.get('tob'), 20) ? `Time of birth: ${clean(f.get('tob'), 20)}` : '',
+      clean(f.get('pob'), 100) ? `Place of birth: ${clean(f.get('pob'), 100)}` : '',
+      clean(f.get('message'), 1000) ? `Message: ${clean(f.get('message'), 1000)}` : '',
     ].filter(Boolean)
     const link = whatsappLink(lines.join('\n'))
-    window.open(link, '_blank', 'noopener')
+    window.open(link, '_blank', 'noopener,noreferrer')
     setSent(link)
     e.currentTarget.reset()
   }

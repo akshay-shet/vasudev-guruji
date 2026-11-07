@@ -69,5 +69,6 @@ export const topics = [
 export type Topic = (typeof topics)[number]
 
 export function whatsappLink(text: string) {
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`
+  const num = (site.whatsapp || '').replace(/\D/g, '')
+  return `https://wa.me/${num}?text=${encodeURIComponent(text)}`
 }

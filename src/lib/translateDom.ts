@@ -11,7 +11,7 @@ import type { Lang } from './i18n/languages'
 import { toScript } from './i18n/script'
 
 type Dict = { exact: Record<string, string>; phrases: Record<string, string> }
-const loaders = import.meta.glob<{ default: Dict }>('./i18n/[a-z][a-z].ts')
+const loaders = import.meta.glob<{ default: Dict }>(['./i18n/[a-z][a-z].ts', '!./i18n/kn.ts'])
 const cache: Partial<Record<Lang, Dict>> = { kn }
 
 const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase()
