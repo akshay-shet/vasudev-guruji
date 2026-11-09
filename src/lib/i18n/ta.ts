@@ -866,6 +866,22 @@ const exact: Record<string, string> = {
   'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.': 'ஸ்வஸ்திக், ஓம் மற்றும் திரிசூல தகடுகள், வாஸ்து ஸ்ப்ரே மற்றும் பொடி, வாகனப் பாதுகாப்பு மற்றும் பல.',
   'Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.': 'கிடைப்பது வாட்ஸ்அப்பில் உறுதிசெய்யப்படும். உங்கள் ஜாதகம் மற்றும் வீட்டுக்கேற்ற பொருளை குருஜி பரிந்துரைப்பார்.',
   'Shop categories': 'கடைப் பிரிவுகள்',
+
+  // ── Locations ──
+  'Online Astrologer in Mandya': 'மண்டியாவில் ஆன்லைன் ஜோதிடர்',
+  'Jathaka Reading in Mandya': 'மண்டியாவில் ஜாதகம் பார்த்தல்',
+  'Vedic Astrologer in Mandya': 'மண்டியாவில் வேத ஜோதிடர்',
+  'Live Consultation in Mandya': 'மண்டியாவில் நேரடி ஆலோசனை',
+  'Career Astrologer in Mandya': 'மண்டியாவில் தொழில் ஜோதிடர்',
+  'Love Astrologer in Mandya': 'மண்டியாவில் காதல் ஜோதிடர்',
+  'Marriage Astrologer in Mandya': 'மண்டியாவில் திருமண ஜோதிடர்',
+  'Business Astrologer in Mandya': 'மண்டியாவில் வணிக ஜோதிடர்',
+  'Property Astrologer in Mandya': 'மண்டியாவில் சொத்து ஜோதிடர்',
+  'Gemstone Consultant in Mandya': 'மண்டியாவில் இரத்தின ஆலோசகர்',
+  'Health Astrology in Mandya': 'மண்டியாவில் ஆரோக்கிய ஜோதிடம்',
+  'Life Guidance in Mandya': 'மண்டியாவில் வாழ்க்கை வழிகாட்டல்',
+  'Negative Energy Removal in Mandya': 'மண்டியாவில் எதிர்மறை ஆற்றல் நீக்கம்',
+  'Vastu Consultant in Mandya': 'மண்டியாவில் வாஸ்து ஆலோசகர்',
 }
 
 const phrases: Record<string, string> = {
@@ -928,6 +944,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 

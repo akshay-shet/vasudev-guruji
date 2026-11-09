@@ -866,6 +866,22 @@ const exact: Record<string, string> = {
   'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.': 'സ്വസ്തിക്, ഓം, ത്രിശൂല ഫലകങ്ങൾ, വാസ്തു സ്പ്രേയും പൊടിയും, വാഹന സംരക്ഷണം തുടങ്ങിയവ.',
   'Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.': 'ലഭ്യത വാട്ട്സ്ആപ്പിൽ സ്ഥിരീകരിക്കും. നിങ്ങളുടെ ജാതകത്തിനും വീടിനും യോജിച്ചത് ഗുരുജി നിർദ്ദേശിക്കും.',
   'Shop categories': 'കട വിഭാഗങ്ങൾ',
+
+  // ── Locations ──
+  'Online Astrologer in Mandya': 'മണ്ഡ്യയിൽ ഓൺലൈൻ ജ്യോതിഷി',
+  'Jathaka Reading in Mandya': 'മണ്ഡ്യയിൽ ജാതക വായന',
+  'Vedic Astrologer in Mandya': 'മണ്ഡ്യയിൽ വൈദിക ജ്യോതിഷി',
+  'Live Consultation in Mandya': 'മണ്ഡ്യയിൽ നേരിട്ടുള്ള കൂടിയാലോചന',
+  'Career Astrologer in Mandya': 'മണ്ഡ്യയിൽ തൊഴിൽ ജ്യോതിഷി',
+  'Love Astrologer in Mandya': 'മണ്ഡ്യയിൽ പ്രണയ ജ്യോതിഷി',
+  'Marriage Astrologer in Mandya': 'മണ്ഡ്യയിൽ വിവാഹ ജ്യോതിഷി',
+  'Business Astrologer in Mandya': 'മണ്ഡ്യയിൽ ബിസിനസ് ജ്യോതിഷി',
+  'Property Astrologer in Mandya': 'മണ്ഡ്യയിൽ സ്വത്ത് ജ്യോതിഷി',
+  'Gemstone Consultant in Mandya': 'മണ്ഡ്യയിൽ രത്ന ഉപദേഷ്ടാവ്',
+  'Health Astrology in Mandya': 'മണ്ഡ്യയിൽ ആരോഗ്യ ജ്യോതിഷം',
+  'Life Guidance in Mandya': 'മണ്ഡ്യയിൽ ജീവിത മാർഗനിർദേശം',
+  'Negative Energy Removal in Mandya': 'മണ്ഡ്യയിൽ നെഗറ്റീവ് ഊർജ്ജ നിവാരണം',
+  'Vastu Consultant in Mandya': 'മണ്ഡ്യയിൽ വാസ്തു ഉപദേഷ്ടാവ്',
 }
 
 const phrases: Record<string, string> = {
@@ -928,6 +944,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'പെരണ്ടപ്പള്ളി',
   'Directions to': 'വഴി:',
   'Business, Money & Negative Energy — Guruji Answers': 'ബിസിനസ്, പണം, നെഗറ്റീവ് ഊർജം — ഗുരുജിയുടെ മറുപടികൾ',
+
+  // ── Locations ──
 
   // ── Locations ──
 

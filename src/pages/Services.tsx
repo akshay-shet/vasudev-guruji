@@ -67,6 +67,28 @@ export function ServiceCard({ s, minimal = false }: { s: Service; minimal?: bool
   )
 }
 
+/** Services-page card (reference layout): banner on top, round call button over its corner,
+ *  small red "… IN MANDYA" label, bold title, short description and "Know more". */
+export function ServiceTile({ s }: { s: Service }) {
+  return (
+    <article className="group relative flex h-full w-full flex-col rounded-xl bg-paper p-1.5 shadow-[0_10px_26px_-16px_rgba(147,96,15,.55)] ring-1 ring-goldlight/50 transition hover:-translate-y-1 sm:rounded-2xl sm:p-2.5">
+      <Link to={`/services/${s.slug}`} aria-label={s.title} className="block"><ServiceBanner s={s} /></Link>
+      <a href={site.phoneHref} aria-label={`Call about ${s.short}`}
+        className="relative z-[1] -mt-4 ml-1.5 flex h-8 w-8 items-center justify-center rounded-full border-2 border-paper bg-[#F2B91C] text-maroon shadow-md transition hover:scale-110 sm:-mt-5 sm:ml-3 sm:h-10 sm:w-10">
+        <Phone size={16} />
+      </a>
+      <Link to={`/services/${s.slug}`} className="flex flex-1 flex-col items-center px-0.5 pb-1.5 pt-1.5 text-center sm:px-2 sm:pb-3">
+        <p className="font-cinzel text-[8px] font-semibold leading-tight tracking-[0.08em] text-[#B0321A] uppercase sm:text-[11px] sm:tracking-[0.12em]">{`${s.label} in Mandya`}</p>
+        <h2 className="mt-1 font-marcellus text-[13px] font-semibold leading-tight text-maroon sm:mt-1.5 sm:text-[19px] sm:leading-snug">
+          <KeywordPair stacked en={s.short} kn={s.kn} className="[&>span:last-child]:mt-0.5 [&>span:last-child]:block [&>span:last-child]:text-[10.5px] [&>span:last-child]:font-normal [&>span:last-child]:text-golddark sm:[&>span:last-child]:text-[13.5px]" />
+        </h2>
+        <p className="mt-1.5 line-clamp-4 text-[11.5px] leading-snug text-ink/[.82] sm:mt-2 sm:line-clamp-none sm:text-[15px]">{s.desc}</p>
+        <span className="mt-auto inline-flex items-center gap-1 pt-2 font-marcellus text-[12px] text-[#B0321A] group-hover:gap-2 sm:pt-3 sm:text-[14.5px]">Know more <Arrow size={13} /></span>
+      </Link>
+    </article>
+  )
+}
+
 export function Services() {
   usePageTitle('Astrology Services')
   return (
@@ -79,7 +101,7 @@ export function Services() {
       <Section className="!pt-4">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-2 sm:gap-5">
           {services.map((s) => (
-            <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"><ServiceCard s={s} /></div>
+            <div key={s.slug} className="flex w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.5rem)/3)]"><ServiceTile s={s} /></div>
           ))}
         </div>
       </Section>

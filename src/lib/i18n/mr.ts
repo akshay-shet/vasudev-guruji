@@ -867,6 +867,22 @@ const exact: Record<string, string> = {
   'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.': 'स्वस्तिक, ओम आणि त्रिशूळ प्लेट्स, वास्तु स्प्रे आणि पावडर, वाहन संरक्षण आणि बरेच काही.',
   'Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.': 'उपलब्धता व्हॉट्सॲपवर निश्चित केली जाते. गुरुजी तुमच्या कुंडली आणि घरानुसार योग्य वस्तू सुचवू शकतात.',
   'Shop categories': 'दुकान विभाग',
+
+  // ── Locations ──
+  'Online Astrologer in Mandya': 'मंड्या येथील ऑनलाइन ज्योतिषी',
+  'Jathaka Reading in Mandya': 'मंड्या येथे जातक वाचन',
+  'Vedic Astrologer in Mandya': 'मंड्या येथील वैदिक ज्योतिषी',
+  'Live Consultation in Mandya': 'मंड्या येथे थेट सल्ला',
+  'Career Astrologer in Mandya': 'मंड्या येथील करिअर ज्योतिषी',
+  'Love Astrologer in Mandya': 'मंड्या येथील प्रेम ज्योतिषी',
+  'Marriage Astrologer in Mandya': 'मंड्या येथील विवाह ज्योतिषी',
+  'Business Astrologer in Mandya': 'मंड्या येथील व्यवसाय ज्योतिषी',
+  'Property Astrologer in Mandya': 'मंड्या येथील मालमत्ता ज्योतिषी',
+  'Gemstone Consultant in Mandya': 'मंड्या येथील रत्न सल्लागार',
+  'Health Astrology in Mandya': 'मंड्या येथे आरोग्य ज्योतिष',
+  'Life Guidance in Mandya': 'मंड्या येथे जीवन मार्गदर्शन',
+  'Negative Energy Removal in Mandya': 'मंड्या येथे नकारात्मक ऊर्जा निवारण',
+  'Vastu Consultant in Mandya': 'मंड्या येथील वास्तु सल्लागार',
 }
 
 const phrases: Record<string, string> = {
@@ -929,6 +945,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'पेरंडपल्ली',
   'Directions to': 'मार्ग:',
   'Business, Money & Negative Energy — Guruji Answers': 'व्यवसाय, पैसा आणि नकारात्मक ऊर्जा — गुरुजींची उत्तरे',
+
+  // ── Locations ──
 
   // ── Locations ──
 
