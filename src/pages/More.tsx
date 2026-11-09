@@ -46,8 +46,9 @@ export function Shop() {
                 const q = sel[p.id] ?? 0
                 return (
                   <article key={p.id} className={`card flex flex-col p-2 transition sm:p-3 ${q ? 'ring-2 ring-gold' : ''}`}>
-                    <div className={`relative aspect-square overflow-hidden rounded-lg ring-1 ring-goldlight/60 ${p.category === 'pyramids' ? 'bg-[#FBF0D6]' : 'bg-[#3A1A0C]'}`}>
-                      <img src={p.img} alt={p.name} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain" />
+                    <div className="relative aspect-square">
+                      {/* product cut-outs (transparent background); bracelets are photos, shown with rounded corners */}
+                      <img src={p.img} alt={p.name} loading="lazy" decoding="async" className={`absolute inset-0 h-full w-full ${p.category === 'bracelets' ? 'rounded-lg object-cover' : 'object-contain p-1 drop-shadow-[0_8px_10px_rgba(90,40,10,.18)]'}`} />
                       {q > 0 && <span className="absolute right-1.5 top-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-maroon px-1.5 font-marcellus text-[13px] text-goldlight shadow">×{q}</span>}
                     </div>
                     <h3 className="mt-2 flex-1 font-marcellus text-[14px] leading-tight text-maroon sm:text-[16.5px] sm:leading-snug" data-no-translate="">{p.name}</h3>
