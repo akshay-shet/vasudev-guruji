@@ -163,7 +163,6 @@ function Drawer({ onClose, onSearch }: { onClose: () => void; onSearch: () => vo
     <div className="fixed inset-0 z-[80]" role="dialog" aria-modal="true" aria-label="Menu">
       <div className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" onClick={onClose} />
       <aside className="absolute left-0 top-0 flex h-full w-[86%] max-w-sm flex-col overflow-y-auto bg-cream p-5 shadow-2xl" style={{ animation: 'slidein .3s ease' }}>
-        <style>{'@keyframes slidein{from{transform:translateX(-100%)}}'}</style>
         <div className="mb-4 flex items-center justify-between">
           <Brand compact />
           <button onClick={onClose} className="pill h-10 w-10" aria-label="Close menu"><Close size={18} /></button>

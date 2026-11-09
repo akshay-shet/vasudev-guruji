@@ -102,7 +102,7 @@ export function Contact() {
           <div className="flex flex-col gap-4 md:gap-6">
             <a href={centrePhotoLink} target="_blank" rel="noopener" aria-label="Samruddhi Astro Center on Google"
               className="card group relative block min-h-[240px] flex-1 overflow-hidden !rounded-2xl">
-              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.jpg'} alt="Samruddhi Astro Center, Srirangapatna, Mandya" loading="lazy"
+              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.webp'} alt="Samruddhi Astro Center, Srirangapatna, Mandya" loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
               <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
@@ -172,7 +172,8 @@ const legal: Record<string, { title: string; kn: string; body: [string, string][
 export function Legal() {
   const loc = useLocale()
   const { page = 'privacy' } = useParams()
-  const doc = legal[page] ?? legal.privacy
+  const doc = legal[page]
+  if (!doc) return <NotFound />
   return (
     <>
       <PageHero eyebrow={{ kn: 'ಕಾನೂನು', en: 'LEGAL' }} title={doc.title} hi={doc.kn} subtitle={`Last updated ${new Date(2026, 10, 1).toLocaleDateString(loc, { month: 'long', year: 'numeric' })}`} />
@@ -193,10 +194,5 @@ export function Legal() {
   )
 }
 
-export function NotFound() {
-  return (
-    <PageHero title="Page not found" hi="ಪುಟ ಸಿಗಲಿಲ್ಲ" subtitle="The path you seek is not here — but every path leads home.">
-      <Link to="/" className="btn-gold mt-6 px-7 py-2.5">Return home</Link>
-    </PageHero>
-  )
-}
+import { NotFound } from './NotFound'
+export { NotFound }

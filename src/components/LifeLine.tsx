@@ -23,12 +23,12 @@ export function BiText({ t, className = '', knClass = '', inline = false }: { t:
   )
 }
 
-/** The "Life Line Horoscope" book poster (public/img/lifeline-poster.jpg — replace the file to change it). */
+/** The "Life Line Horoscope" book poster (public/img/lifeline-poster.webp — replace the file to change it). */
 export function LifeLineBook({ className = '' }: { className?: string }) {
   return (
     <div className={`relative mx-auto w-full max-w-[360px] ${className}`}>
       <div className="rounded-2xl p-[3px] shadow-[0_24px_44px_-20px_rgba(60,15,5,.7)]" style={{ background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-        <img src={import.meta.env.BASE_URL + 'img/lifeline-poster.jpg'} alt="Life Line Horoscope book by Vasudev Guruji"
+        <img src={import.meta.env.BASE_URL + 'img/lifeline-poster.webp'} alt="Life Line Horoscope book by Vasudev Guruji"
           width={1199} height={1312} loading="lazy" className="block aspect-[1199/1312] w-full rounded-[14px] object-cover" />
       </div>
     </div>
@@ -46,7 +46,7 @@ export function LifeLineOffer({ center = false, more = false }: { center?: boole
         <span className="rounded-full bg-[#1DA851]/12 px-2 py-0.5 text-[14px] font-bold text-[#147A3B]">{`Save ₹${lifeline.originalPrice - lifeline.offerPrice}`}</span>
       </div>
       <div className={`mt-3 flex flex-wrap gap-2 ${center ? 'justify-center' : ''}`}>
-        <a href={lifelineOrderLink()} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[#1DA851] px-5 py-2.5 font-semibold text-white shadow-md transition hover:brightness-110">
+        <a href={lifelineOrderLink()} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[#15803D] px-5 py-2.5 font-semibold text-white shadow-md transition hover:brightness-110">
           <WhatsApp size={19} /> {`Order on WhatsApp – ${inr(lifeline.offerPrice)}`}
         </a>
         {more && <Link to="/life-line-horoscope" className="btn-outline px-4 py-2">Know more <Arrow size={15} /></Link>}
@@ -191,10 +191,12 @@ export function LifeLineSlider() {
           </div>
           <div className="mt-4 flex items-center gap-3">
             <button onClick={() => go(-1)} className="pill h-9 w-9" aria-label="Previous slide"><Chevron size={14} className="rotate-90" /></button>
-            <div className="flex gap-1.5">
+            <div className="flex">
               {slides.map((x, n) => (
-                <button key={x.key} onClick={() => setI(n)} aria-label={`Slide ${n + 1}`} aria-current={n === i}
-                  className={`h-2.5 rounded-full transition-all ${n === i ? 'w-7 bg-gold' : 'w-2.5 bg-goldlight'}`} />
+                // 24px tap target (WCAG 2.2 target-size) around the small visual dot
+                <button key={x.key} onClick={() => setI(n)} aria-label={`Slide ${n + 1}`} aria-current={n === i} className="flex h-6 min-w-6 items-center justify-center px-[3px]">
+                  <span className={`block h-2.5 rounded-full transition-all ${n === i ? 'w-7 bg-gold' : 'w-2.5 bg-goldlight'}`} />
+                </button>
               ))}
             </div>
             <button onClick={() => go(1)} className="pill h-9 w-9" aria-label="Next slide"><Chevron size={14} className="-rotate-90" /></button>

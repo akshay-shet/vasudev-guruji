@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { faqs } from '../data/faq'
-import { jsonLdFor, SITE_URL, seoFor } from '../data/seo'
+import { isKnownPath, jsonLdFor, SITE_URL, seoFor } from '../data/seo'
 
 function setMeta(attr: 'name' | 'property', key: string, value: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)
@@ -25,8 +25,9 @@ export function Seo() {
     document.title = seo.title
     setMeta('name', 'description', seo.description)
     setMeta('name', 'keywords', seo.keywords.join(', '))
-    setMeta('name', 'robots', path.startsWith('/legal') ? 'noindex, follow' : 'index, follow, max-image-preview:large')
-    setLink('canonical', url)
+    const known = isKnownPath(path)
+    setMeta('name', 'robots', !known || path.startsWith('/legal') ? 'noindex, follow' : 'index, follow, max-image-preview:large')
+    if (known) setLink('canonical', url); else document.head.querySelector('link[rel="canonical"]')?.remove()
     setMeta('property', 'og:title', seo.title)
     setMeta('property', 'og:description', seo.description)
     setMeta('property', 'og:url', url)

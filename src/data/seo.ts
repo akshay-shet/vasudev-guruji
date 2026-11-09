@@ -176,10 +176,20 @@ export const allPaths = [
   ...services.map((s) => `/services/${s.slug}`),
 ]
 
+export const notFoundSeo: PageSeo = { title: 'Page not found — Vasudev Guruji', description: 'This page does not exist. Visit the home page or contact Vasudev Guruji’s office.', keywords: [] }
+
+/** True for every real, indexable route. Anything else is a 404 (noindex). */
+export function isKnownPath(path: string): boolean {
+  const clean = path.replace(/\/+$/, '') || '/'
+  if (clean.startsWith('/services/')) return !!serviceSeo(clean.split('/')[2])
+  return clean in pageSeo
+}
+
 export function seoFor(path: string): PageSeo {
   const clean = path.replace(/\/+$/, '') || '/'
-  if (clean.startsWith('/services/')) return serviceSeo(clean.split('/')[2]) ?? pageSeo['/services']
-  return pageSeo[clean] ?? pageSeo['/']
+  if (!isKnownPath(clean)) return notFoundSeo
+  if (clean.startsWith('/services/')) return serviceSeo(clean.split('/')[2])!
+  return pageSeo[clean]
 }
 
 /* ───────── Structured data (JSON-LD) ───────── */

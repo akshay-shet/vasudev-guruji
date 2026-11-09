@@ -21,8 +21,8 @@ export const site = {
   mapQuery: 'Sri Nimishambha Temple Dasoha Bhavan, Ganjam, Srirangapatna, Karnataka 571438',
   officeHours: 'Daily 10:00 AM – 6:00 PM (IST)',
 
-  /** Guruji's portrait (public/img/guruji-portrait.jpg). Replace the file to change it. */
-  photo: import.meta.env.BASE_URL + 'img/guruji-portrait.jpg',
+  /** Guruji's portrait (public/img/guruji-portrait.webp). Replace the file to change it. */
+  photo: import.meta.env.BASE_URL + 'img/guruji-portrait.webp',
   photoFallback: import.meta.env.BASE_URL + 'img/guruji-placeholder.svg',
   photoAlt: 'Vasudev Guruji seated in blessing',
 
@@ -50,7 +50,7 @@ export const site = {
     /** OR a video file, e.g. '/videos/inner-peace.mp4' (put the file in public/videos). Used when youtubeId is empty. */
     videoSrc: import.meta.env.BASE_URL + 'videos/latest-discourse.mp4',
     /** Cover image shown before the video plays. */
-    poster: import.meta.env.BASE_URL + 'videos/latest-discourse-cover.jpg',
+    poster: import.meta.env.BASE_URL + 'videos/latest-discourse-cover.webp',
   },
 
   social: {

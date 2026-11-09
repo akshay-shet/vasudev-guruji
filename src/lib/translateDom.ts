@@ -5,14 +5,13 @@
  * Kannada-script Sanskrit is converted to the language's own script.
  * Switching back to English restores the originals.
  */
-import kn from './i18n/kn'
 import { nakshatras, rashis } from '../data/vedic'
 import type { Lang } from './i18n/languages'
 import { toScript } from './i18n/script'
 
 type Dict = { exact: Record<string, string>; phrases: Record<string, string> }
 const loaders = import.meta.glob<{ default: Dict }>('./i18n/[a-z][a-z].ts')
-const cache: Partial<Record<Lang, Dict>> = { kn }
+const cache: Partial<Record<Lang, Dict>> = {} // every dictionary (Kannada too) loads only when chosen
 
 const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase()
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')

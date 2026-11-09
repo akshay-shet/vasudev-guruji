@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 import App from './App'
 import { PrefsProvider } from './lib/prefs'
+import { installGlobalErrorHandlers } from './lib/log'
 // Google Fonts, self-hosted via Fontsource (works offline and on any host)
 import '@fontsource/marcellus/400.css'
 import '@fontsource/cinzel/400.css'
@@ -24,6 +25,8 @@ import '@fontsource/tiro-devanagari-hindi/400.css'
 import './index.css'
 
 // Preview builds (VITE_ROUTER=memory) keep navigation inside the page.
+installGlobalErrorHandlers()
+
 const Router = import.meta.env.VITE_ROUTER === 'memory' ? MemoryRouter : BrowserRouter
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

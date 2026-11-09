@@ -5,7 +5,7 @@ import { Arrow, WhatsApp } from '../components/Icons'
 import { homas, type Homa as HomaT } from '../data/content'
 import { whatsappLink } from '../data/site'
 
-const homaImg = (h: HomaT) => `${import.meta.env.BASE_URL}img/homa/${h.slug}.jpg`
+const homaImg = (h: HomaT) => `${import.meta.env.BASE_URL}img/homa/${h.slug}.webp`
 
 const bookLink = (h: HomaT) => whatsappLink(`🙏 Hari Om Guruji, I would like to book the ${h.name}.\n\nName:\nGotra / Nakshatra:\nPreferred date:\nPlace:`)
 

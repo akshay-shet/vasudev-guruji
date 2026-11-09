@@ -15,7 +15,7 @@ function ContactButtons() {
   return (
     <div className="mt-2 flex flex-wrap gap-1.5">
       <a href={site.phoneHref} className="btn-gold px-3 py-1.5 text-[14px]"><Phone size={15} /> Call Guruji</a>
-      <a href={whatsappLink('🙏 Hari Om Guruji, I need your guidance.')} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 rounded-full bg-[#1DA851] px-3 py-1.5 text-[14px] font-semibold text-white shadow"><WhatsApp size={15} /> WhatsApp</a>
+      <a href={whatsappLink('🙏 Hari Om Guruji, I need your guidance.')} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 rounded-full bg-[#15803D] px-3 py-1.5 text-[14px] font-semibold text-white shadow"><WhatsApp size={15} /> WhatsApp</a>
     </div>
   )
 }
@@ -63,7 +63,6 @@ export function ChatWidget() {
         <div role="dialog" aria-label="Guruji’s Assistant"
           className="card fixed bottom-4 right-[84px] z-[70] flex h-[min(580px,calc(100svh-120px))] w-[min(390px,calc(100vw-100px))] flex-col overflow-hidden !rounded-2xl shadow-2xl max-sm:inset-x-3 max-sm:bottom-3 max-sm:top-[76px] max-sm:h-auto max-sm:w-auto"
           style={{ animation: 'chatpop .25s ease' }}>
-          <style>{'@keyframes chatpop{from{opacity:0;transform:translateY(12px) scale(.97)}}'}</style>
           <div className="flex items-center gap-3 border-b border-goldlight/60 bg-paper/80 px-4 py-2.5">
             <LotusLogo className="h-7 w-9" />
             <div className="flex-1 leading-tight">

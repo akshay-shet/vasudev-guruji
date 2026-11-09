@@ -3,6 +3,7 @@ import { EnquiryForm, Eyebrow, KeywordPair, PageHero, Section, usePageTitle } fr
 import { Diamond } from '../components/Decor'
 import { Arrow, iconByName, Phone, WhatsApp } from '../components/Icons'
 import { services, type Service } from '../data/content'
+import { NotFound } from './NotFound'
 import { site, whatsappLink } from '../data/site'
 
 const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
@@ -14,9 +15,9 @@ export function ServiceBanner({ s, large = false }: { s: Service; large?: boolea
     <div className={`relative overflow-hidden ${large ? 'aspect-[16/8] rounded-2xl' : 'aspect-[16/8.4] rounded-xl'}`}
       style={{ padding: 2.5, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
       <div className={`relative h-full w-full overflow-hidden ${large ? 'rounded-[14px]' : 'rounded-[10px]'}`}>
-        <img src={img('hero-desktop.jpg')} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[88%_38%] scale-125" />
+        <img src={img('hero-desktop.webp')} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[88%_38%] scale-125" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(58,20,6,.88) 0%, rgba(90,32,8,.72) 42%, rgba(60,22,8,.35) 75%, rgba(40,14,4,.55) 100%)' }} />
-        <img src={img('guruji-portrait.jpg')} alt="" loading="lazy" className="absolute bottom-0 left-[2%] h-[96%] w-[42%] object-cover object-top"
+        <img src={img('guruji-portrait.webp')} alt="" loading="lazy" className="absolute bottom-0 left-[2%] h-[96%] w-[42%] object-cover object-top"
           style={{ maskImage: 'linear-gradient(to right, #000 70%, transparent), linear-gradient(to top, #000 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 72%, transparent)' }} />
         <div className="absolute inset-y-0 right-[4%] flex w-[55%] flex-col items-end justify-center text-right">
           <I size={large ? 34 : 22} className="mb-1 hidden text-goldlight/90 sm:block" />
@@ -34,8 +35,8 @@ export function ServicePoster({ s }: { s: Service }) {
   return (
     <div className="relative aspect-[4/5] overflow-hidden rounded-lg sm:rounded-xl" style={{ padding: 2, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
       <div className="relative h-full w-full overflow-hidden rounded-[6px] sm:rounded-[10px]" style={{ background: '#3A1408' }}>
-        <img src={img('hero-desktop.jpg')} alt="" loading="lazy" className="absolute inset-0 h-full w-full scale-150 object-cover object-[86%_40%] opacity-80" />
-        <img src={img('guruji-portrait.jpg')} alt="" loading="lazy" className="absolute inset-x-0 top-0 h-[82%] w-full object-cover object-[50%_8%]"
+        <img src={img('hero-desktop.webp')} alt="" loading="lazy" className="absolute inset-0 h-full w-full scale-150 object-cover object-[86%_40%] opacity-80" />
+        <img src={img('guruji-portrait.webp')} alt="" loading="lazy" className="absolute inset-x-0 top-0 h-[82%] w-full object-cover object-[50%_8%]"
           style={{ maskImage: 'linear-gradient(to bottom,#000 72%,transparent)', WebkitMaskImage: 'linear-gradient(to bottom,#000 72%,transparent)' }} />
         <span className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-goldlight/80 bg-maroon/85 text-goldlight shadow sm:right-2.5 sm:top-2.5 sm:h-9 sm:w-9"><I size={15} /></span>
         {/* plaque */}
@@ -90,7 +91,7 @@ export function Services() {
 export function ServiceDetail() {
   const { slug } = useParams()
   const s = services.find((x) => x.slug === slug)
-  if (!s) return <Services />
+  if (!s) return <NotFound />
   return (
     <>
       <PageHero compact eyebrow={{ kn: 'ಸೇವೆಗಳು', en: 'OUR SERVICES' }} title={s.title} hi={s.kn} />

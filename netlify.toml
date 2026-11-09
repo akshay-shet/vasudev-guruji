@@ -1,8 +1,16 @@
+# Netlify fallback host. Every public route is prerendered to dist/<route>/index.html,
+# unknown URLs get dist/404.html with a real 404 status, and security/caching headers are
+# generated into dist/_headers from vercel.json by scripts/prerender-seo.mjs (single source of truth).
 [build]
   command = "npm run build"
   publish = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/discourses"
+  to = "/gallery"
+  status = 301
+
+[[redirects]]
+  from = "/legal/refund"
+  to = "/legal/terms"
+  status = 301

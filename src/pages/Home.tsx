@@ -27,7 +27,7 @@ function VideoCard({ variant }: { variant: 'mobile' | 'desktop' }) {
   const t = useT()
   const desk = variant === 'desktop'
   const { youtubeId, videoSrc, poster, title, duration } = site.latestDiscourse
-  const cover = poster || import.meta.env.BASE_URL + 'img/discourse.jpg'
+  const cover = poster || import.meta.env.BASE_URL + 'img/discourse.webp'
   const fs = (deskPx: string, mob: number) => (desk ? deskPx : `calc(var(--u)*${mob})`)
   return (
     <div className={`relative aspect-[9/16] w-full overflow-hidden ${desk ? 'rounded-[24px]' : 'rounded-[20px]'}`}
@@ -111,6 +111,17 @@ function JourneyPanel() {
 }
 
 /* ───────────────────────── MOBILE HOMEPAGE ───────────────────────── */
+function useMediaQuery(query: string) {
+  const [match, setMatch] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const on = () => setMatch(mq.matches)
+    on(); mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [query])
+  return match
+}
+
 function MobileHome() {
   const [slide, setSlide] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -129,7 +140,7 @@ function MobileHome() {
     <div className="mx-auto w-full max-w-[480px] overflow-hidden lg:hidden" style={{ ['--u' as string]: 'min(1vw, 4.8px)' }}>
       {/* HERO ART */}
       <div className="relative aspect-[941/1420] overflow-hidden">
-        <img src={import.meta.env.BASE_URL + 'img/hero-mobile.jpg'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with temple bells, waterfalls and the rising sun"
+        <img src={import.meta.env.BASE_URL + 'img/hero-mobile.webp'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with temple bells, waterfalls and the rising sun"
           className="absolute inset-0 h-full w-full object-cover object-top" fetchPriority="high" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,250,238,.85), rgba(255,250,238,.45) 55%, transparent)' }} />
         <div className="fade-cream pointer-events-none absolute inset-x-0 bottom-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,248,234,0), var(--fade) 88%)' }} />
@@ -139,17 +150,17 @@ function MobileHome() {
       <div className="relative -mt-[7%] px-[4%] text-center" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} aria-roledescription="carousel" aria-label="Highlights">
         <p className="font-deva text-maroon" style={{ fontSize: u(4.1) }}>{site.shloka}</p>
         <div key={slide} className="animate-[fadein_.7s_ease]" aria-live="polite">
-          <style>{'@keyframes fadein{from{opacity:0;transform:translateY(8px)}}'}</style>
           <h1 className="leading-[1.02]">
             <span className="block font-cormorant font-semibold italic text-maroon" style={{ fontSize: `calc(${u(7.6)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h1 : native ? `${s.l1} ${s.l2} ·1` : s.l1}</span>
             <span className="gold-text block font-cormorant font-bold italic" style={{ fontSize: `calc(${u(9.4)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h2 : native ? `${s.l1} ${s.l2} ·2` : s.l2}</span>
           </h1>
           <p className="mx-auto mt-[calc(var(--u)*3)] inline-block rounded-full bg-maroon/90 px-[1.1em] py-[0.4em] font-semibold leading-snug text-[#F7D88A] shadow-gold" style={{ fontSize: 'clamp(15px, calc(var(--u)*3.9), 19px)' }}><KeywordPair en="Best Astrologer Online" kn="ಅತ್ಯುತ್ತಮ ಆನ್‌ಲೈನ್ ಜ್ಯೋತಿಷಿ" className="[&_.text-gold]:text-goldlight" /></p>
         </div>
-        <div className="mt-[calc(var(--u)*4)] flex justify-center gap-[calc(var(--u)*1.6)]" role="tablist">
+        <div className="mt-[calc(var(--u)*3)] flex justify-center" role="tablist">
           {slides.map((_, i) => (
-            <button key={i} role="tab" aria-selected={slide === i} aria-label={`Slide ${i + 1}`} onClick={() => setSlide(i)}
-              className="rounded-full transition" style={{ width: u(1.9), height: u(1.9), background: slide === i ? '#C58B2D' : '#E3DCCD' }} />
+            <button key={i} role="tab" aria-selected={slide === i} aria-label={`Slide ${i + 1}`} onClick={() => setSlide(i)} className="flex h-6 w-6 items-center justify-center">
+              <span className="block rounded-full transition" style={{ width: u(1.9), height: u(1.9), background: slide === i ? '#C58B2D' : '#D9CFBC' }} />
+            </button>
           ))}
         </div>
       </div>
@@ -188,7 +199,7 @@ function DesktopHome() {
     <div className="hidden lg:block" style={{ ['--d' as string]: 'min(1vw, 16.8px)' }}>
       {/* HERO */}
       <div className="relative mx-auto h-[100svh] max-h-[1080px] min-h-[640px] w-full max-w-[1920px] overflow-hidden">
-        <img src={import.meta.env.BASE_URL + 'img/hero-desktop.jpg'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with a temple, waterfalls and the rising sun behind"
+        <img src={import.meta.env.BASE_URL + 'img/hero-desktop.webp'} alt="Vasudev Guruji seated with a rudraksha mala before a golden mandala, with a temple, waterfalls and the rising sun behind"
           className="absolute inset-0 h-full w-full object-cover object-[30%_38%]" fetchPriority="high" />
         {/* soft glow so the headline reads cleanly over the sky */}
         <div className="pointer-events-none absolute left-[29%] top-[8%] h-[56%] w-[55%]" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,250,238,.88) 0%, rgba(255,246,228,.62) 50%, transparent 76%)' }} />
@@ -261,7 +272,7 @@ function DevoteeWords() {
                 <p className="text-sm text-ink/[.88]">{r.place} · {r.topic}</p>
               </div>
             </div>
-            <span className="mt-3 flex text-gold" aria-label={`${r.rating} out of 5`}>{Array.from({ length: 5 }).map((_, k) => <Star key={k} size={15} filled={k < r.rating} />)}</span>
+            <span className="mt-3 flex text-gold" role="img" aria-label={`${r.rating} out of 5`}>{Array.from({ length: 5 }).map((_, k) => <Star key={k} size={15} filled={k < r.rating} />)}</span>
             <blockquote className="mt-2 flex-1 text-[17px] leading-relaxed text-ink/90">{r.text}</blockquote>
           </figure>
         ))}
@@ -272,13 +283,14 @@ function DevoteeWords() {
 }
 
 export default function Home() {
+  // Render only the hero that fits the screen, so phones never download the desktop hero image (and vice versa).
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
   usePageTitle()
   const t = useT()
   const [topic] = useState<Topic>('Other')
   return (
     <>
-      <MobileHome />
-      <DesktopHome />
+      {isDesktop ? <DesktopHome /> : <MobileHome />}
 
       <div className="mt-6"><Ribbon /></div>
 
