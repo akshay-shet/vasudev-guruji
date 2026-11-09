@@ -42,13 +42,15 @@ test.describe('routing, 404 and redirects', () => {
     expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://vasudev-guruji.vercel.app/sitemap.xml')
   })
 
-  test('client-side navigation updates title and canonical', async ({ page }) => {
+  test('client-side navigation updates title and canonical', async ({ page, isMobile }) => {
     await page.goto('/')
     await settle(page)
-    await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Contact' }).click().catch(async () => {
-      await page.getByRole('button', { name: /menu/i }).click()
-      await page.getByRole('dialog').getByRole('link', { name: 'Contact' }).click()
-    })
+    if (isMobile) {
+      await page.getByRole('button', { name: 'Open menu' }).click()
+      await page.getByRole('dialog', { name: 'Menu' }).getByRole('link', { name: 'Contact', exact: true }).click()
+    } else {
+      await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Contact', exact: true }).click()
+    }
     await expect(page).toHaveURL(/\/contact$/)
     await expect(page).toHaveTitle(/Contact Vasudev Guruji/)
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://vasudev-guruji.vercel.app/contact')

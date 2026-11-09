@@ -57,7 +57,7 @@ export const keywordGroups = {
     'homa booking', 'homam booking online', 'havan puja', 'Ganapathi homa', 'Navagraha homa', 'Maha Mrityunjaya homa',
     'Sudarshana homa', 'Chandi homa', 'Lakshmi Kubera homa', 'Vastu homa', 'dosha nivarana puja', 'ಹೋಮ', 'ಹವನ',
   ],
-  products: ['gemstone recommendation', 'astrology gemstones', 'rudraksha', 'original rudraksha', 'Shri Yantra', 'Navagraha Yantra', 'puja items', 'ರತ್ನ', 'ರುದ್ರಾಕ್ಷಿ'],
+  products: ['vastu pyramid', 'Jiten pyramid', 'Brahmo PyraCard', 'pyracard', 'Pyron vastu', 'feng shui products', 'vastu correction products', 'crystal bracelet', 'energised bracelet', 'evil eye bracelet', 'vastu spray', 'swastik pyramid', 'ಪಿರಮಿಡ್ ವಾಸ್ತು'],
   learning: ['mantras with meaning', 'Gayatri mantra', 'Maha Mrityunjaya mantra', 'japa mala 108', 'rashi chakra', 'zodiac signs Vedic', 'spiritual discourses'],
 }
 
@@ -109,8 +109,8 @@ export const pageSeo: Record<string, PageSeo> = {
     keywords: k.marriage.slice(0, 12), image: IMG.hero,
   },
   '/shop': {
-    title: 'Rudraksha, Yantras, Gemstones & Puja Items — Sacred Shop',
-    description: 'Energised rudraksha malas, Shri Yantra, Navagraha Yantra, certified gemstones and puja items from Vasudev Guruji’s office. Gemstones suggested only after a chart reading. Enquire on WhatsApp.',
+    title: 'Vastu Pyramids, PyraCards, Pyron & Crystal Bracelets — Shop',
+    description: 'Jiten Vastu pyramids and energy systems, 16 Brahmo PyraCards, PYRON for Vaastu & Feng Shui, energised crystal bracelets and Vastu accessories. Enquire on WhatsApp with Vasudev Guruji’s office.',
     keywords: k.products, image: IMG.hero,
   },
   '/events': {

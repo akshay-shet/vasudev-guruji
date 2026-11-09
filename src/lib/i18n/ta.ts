@@ -852,6 +852,20 @@ const exact: Record<string, string> = {
   // ── Locations ──
   'Samruddhi Astro Center, Srirangapatna, Mandya': 'சம்ருத்தி ஜோதிட மையம், ஸ்ரீரங்கப்பட்டணா, மண்டியா',
   'Srirangapatna, Mandya': 'ஸ்ரீரங்கப்பட்டணா, மண்டியா',
+
+  // ── Locations ──
+  'Vastu Pyramids & Energy Systems': 'வாஸ்து பிரமிடுகள் மற்றும் ஆற்றல் அமைப்புகள்',
+  '16 Types of PyraCards': '16 வகை பைரா கார்டுகள்',
+  'PYRON for Vaastu & Feng Shui': 'வாஸ்து மற்றும் ஃபெங் ஷுயிக்கான பைரான்',
+  'Energised Crystal Bracelets': 'அபிமந்திரிக்கப்பட்ட படிகக் காப்புகள்',
+  'Vastu Accessories': 'வாஸ்து பொருட்கள்',
+  'Jiten pyramid systems, fortune cards and discs for Vastu correction.': 'வாஸ்து திருத்தத்திற்கான ஜிதேன் பிரமிடு அமைப்புகள், பார்ச்சூன் கார்டுகள் மற்றும் தட்டுகள்.',
+  'Brahmo PyraCards — choose the card for your purpose.': 'பிரம்மோ பைரா கார்டுகள் — உங்கள் நோக்கத்திற்கேற்ற கார்டைத் தேர்ந்தெடுங்கள்.',
+  'The full PYRON range, also available in the Gold variant.': 'முழு பைரான் வரிசை, கோல்ட் வகையிலும் கிடைக்கும்.',
+  'Crystal and gemstone bracelets, energised before dispatch.': 'அனுப்பும் முன் அபிமந்திரிக்கப்பட்ட படிக மற்றும் ரத்தினக் காப்புகள்.',
+  'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.': 'ஸ்வஸ்திக், ஓம் மற்றும் திரிசூல தகடுகள், வாஸ்து ஸ்ப்ரே மற்றும் பொடி, வாகனப் பாதுகாப்பு மற்றும் பல.',
+  'Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.': 'கிடைப்பது வாட்ஸ்அப்பில் உறுதிசெய்யப்படும். உங்கள் ஜாதகம் மற்றும் வீட்டுக்கேற்ற பொருளை குருஜி பரிந்துரைப்பார்.',
+  'Shop categories': 'கடைப் பிரிவுகள்',
 }
 
 const phrases: Record<string, string> = {
@@ -914,6 +928,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'பெரண்டப்பள்ளி',
   'Directions to': 'வழி:',
   'Business, Money & Negative Energy — Guruji Answers': 'வணிகம், பணம் மற்றும் எதிர்மறை சக்தி — குருஜியின் பதில்கள்',
+
+  // ── Locations ──
 
   // ── Locations ──
 

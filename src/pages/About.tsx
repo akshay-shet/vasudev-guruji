@@ -11,7 +11,7 @@ export default function About() {
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          <DivinePortrait src={site.photo} alt={site.photoAlt} />
+          <DivinePortrait src={import.meta.env.BASE_URL + 'img/guruji-about.webp'} alt="Vasudev Guruji writing at his desk" />
           <div>
             <h2 className="section-title">{site.name}</h2>
             <Diamond className="mt-2 h-3 w-28" />

@@ -66,7 +66,7 @@ export function Kundali() {
               </p>
             )}
           </div>
-          <div className="mt-6 overflow-x-auto">
+          <div className="mt-6 overflow-x-auto" tabIndex={0} role="region" aria-label="Guna Milan score table">
             <table className="w-full min-w-[560px] text-left text-[17px]">
               <thead className="font-marcellus text-maroon"><tr className="border-b border-goldlight"><th className="p-2">Koota</th><th className="p-2">Details</th><th className="p-2">Area</th><th className="p-2 text-right">Score</th></tr></thead>
               <tbody>

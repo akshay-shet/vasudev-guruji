@@ -853,6 +853,20 @@ const exact: Record<string, string> = {
   // ── Locations ──
   'Samruddhi Astro Center, Srirangapatna, Mandya': 'समृद्धि ज्योतिष केंद्र, श्रीरंगपट्टण, मंड्या',
   'Srirangapatna, Mandya': 'श्रीरंगपट्टण, मंड्या',
+
+  // ── Locations ──
+  'Vastu Pyramids & Energy Systems': 'वास्तु पिरामिड और ऊर्जा प्रणालियाँ',
+  '16 Types of PyraCards': '16 प्रकार के पायरा कार्ड',
+  'PYRON for Vaastu & Feng Shui': 'वास्तु और फेंगशुई के लिए पायरॉन',
+  'Energised Crystal Bracelets': 'अभिमंत्रित क्रिस्टल ब्रेसलेट',
+  'Vastu Accessories': 'वास्तु सामग्री',
+  'Jiten pyramid systems, fortune cards and discs for Vastu correction.': 'वास्तु सुधार के लिए जितेन पिरामिड प्रणालियाँ, फॉर्च्यून कार्ड और डिस्क।',
+  'Brahmo PyraCards — choose the card for your purpose.': 'ब्रह्मो पायरा कार्ड — अपने उद्देश्य के अनुसार कार्ड चुनें।',
+  'The full PYRON range, also available in the Gold variant.': 'पूरी पायरॉन श्रृंखला, गोल्ड संस्करण में भी उपलब्ध।',
+  'Crystal and gemstone bracelets, energised before dispatch.': 'भेजने से पहले अभिमंत्रित क्रिस्टल और रत्न ब्रेसलेट।',
+  'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.': 'स्वस्तिक, ओम और त्रिशूल प्लेटें, वास्तु स्प्रे और पाउडर, वाहन सुरक्षा और बहुत कुछ।',
+  'Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.': 'उपलब्धता व्हाट्सऐप पर पुष्ट की जाती है। गुरुजी आपकी कुंडली और घर के अनुसार सही वस्तु सुझा सकते हैं।',
+  'Shop categories': 'दुकान श्रेणियाँ',
 }
 
 const phrases: Record<string, string> = {
@@ -915,6 +929,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'पेरंडपल्ली',
   'Directions to': 'रास्ता:',
   'Business, Money & Negative Energy — Guruji Answers': 'व्यापार, धन और नकारात्मक ऊर्जा — गुरुजी के उत्तर',
+
+  // ── Locations ──
 
   // ── Locations ──
 

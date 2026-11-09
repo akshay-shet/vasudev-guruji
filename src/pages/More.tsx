@@ -1,55 +1,72 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { EnquiryForm, PageHero, Section } from '../components/Common'
+import { EnquiryForm, KeywordPair, PageHero, Section } from '../components/Common'
 import { Arrow, Mail, Phone, Pin, WhatsApp } from '../components/Icons'
 import { Locations } from '../components/Locations'
-import { products, type Product } from '../data/content'
+import { products, shopCategories, type ShopCategory } from '../data/content'
 import { site, whatsappLink } from '../data/site'
 import { useLocale } from '../lib/prefs'
 
 /* ───────── Shop ───────── */
 export function Shop() {
-  const [cat, setCat] = useState<'All' | Product['category']>('All')
+  const [cat, setCat] = useState<'all' | ShopCategory>('all')
   const [sel, setSel] = useState<Record<string, number>>({})
-  const cats = ['All', 'Rudraksha', 'Yantras', 'Gemstones', 'Puja Items'] as const
-  const list = products.filter((p) => cat === 'All' || p.category === cat)
   const add = (id: string, d: number) => setSel((c) => ({ ...c, [id]: Math.max(0, Math.min(99, (c[id] ?? 0) + d)) }))
   const items = products.filter((p) => (sel[p.id] ?? 0) > 0).map((p) => ({ p, q: sel[p.id] }))
   const count = items.reduce((n, i) => n + i.q, 0)
   const link = whatsappLink(['🙏 Hari Om, I would like to enquire about:', ...items.map((i) => `• ${i.p.name} × ${i.q}`), '', 'Name:', 'Place:'].join('\n'))
+  const shown = shopCategories.filter((c) => cat === 'all' || c.key === cat)
+  const pill = (active: boolean) => `whitespace-nowrap rounded-full border px-3.5 py-1.5 font-marcellus text-[13.5px] transition sm:text-[15px] ${active ? 'border-[#D9AA52] text-[#F7D88A] shadow' : 'border-goldlight bg-paper text-maroon hover:bg-goldlight/20'}`
+  const activeBg = { background: 'linear-gradient(180deg,#8E2412,#5E160A)' }
   return (
     <>
-      <PageHero eyebrow={{ kn: 'ಅಂಗಡಿ', en: 'SHOP' }} keyword="Gemstone Recommendation Services" title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" />
-      <Section>
-        <div className="mb-5 flex flex-wrap justify-center gap-2">
-          {cats.map((c) => <button key={c} onClick={() => setCat(c)} className={cat === c ? 'btn-gold px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base' : 'btn-outline px-3.5 py-1.5 text-[14px] sm:px-4 sm:text-base'} aria-pressed={cat === c}>{c}</button>)}
+      <PageHero compact eyebrow={{ kn: 'ಅಂಗಡಿ', en: 'SHOP' }} title="Sacred Shop" hi="ಪವಿತ್ರ ವಸ್ತುಗಳು" />
+      <Section className="!pt-4">
+        <div className="mb-8 flex flex-wrap justify-center gap-1.5 sm:gap-2" role="tablist" aria-label="Shop categories">
+          <button role="tab" aria-selected={cat === 'all'} onClick={() => setCat('all')} className={pill(cat === 'all')} style={cat === 'all' ? activeBg : undefined}>All <span>({products.length})</span></button>
+          {shopCategories.map((c) => (
+            <button key={c.key} role="tab" aria-selected={cat === c.key} onClick={() => setCat(c.key)} className={pill(cat === c.key)} style={cat === c.key ? activeBg : undefined}>
+              {c.label} <span>({products.filter((p) => p.category === c.key).length})</span>
+            </button>
+          ))}
         </div>
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-4">
-          {list.map((p) => {
-            const q = sel[p.id] ?? 0
-            return (
-              <article key={p.id} className={`card flex flex-col p-2 transition sm:p-4 ${q ? 'ring-2 ring-gold' : ''}`}>
-                <div className="relative flex aspect-square items-center justify-center rounded-lg border border-goldlight/60 text-5xl sm:rounded-2xl sm:text-6xl" style={{ background: 'radial-gradient(circle,#FFF6DD,#F5DFAE)' }}>
-                  <span aria-hidden>{p.emoji}</span>
-                  {q > 0 && <span className="absolute right-1.5 top-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-maroon px-1.5 font-marcellus text-[13px] text-goldlight shadow">×{q}</span>}
-                </div>
-                <p className="mt-2 font-cinzel text-[9.5px] tracking-widest text-gold sm:text-xs">{p.category.toUpperCase()}</p>
-                <h2 className="font-marcellus text-[14px] leading-tight sm:text-lg sm:leading-snug">{p.name}</h2>
-                <p className="mt-1 flex-1 text-[12.5px] leading-snug text-ink/[.88] sm:text-[16px]">{p.description}</p>
-                {q === 0 ? (
-                  <button className="btn-gold mt-2.5 w-full px-2 py-1.5 text-[14px] sm:mt-3 sm:text-base" onClick={() => add(p.id, 1)}>+ Add</button>
-                ) : (
-                  <div className="mt-2.5 flex items-center justify-between gap-1 rounded-full border border-gold bg-paper p-0.5 sm:mt-3">
-                    <button className="btn-outline h-8 w-8 shrink-0 !p-0 text-lg sm:h-9 sm:w-9" onClick={() => add(p.id, -1)} aria-label={`Remove one ${p.name}`}>−</button>
-                    <span className="font-marcellus text-[16px] text-maroon sm:text-lg" aria-live="polite">{q}</span>
-                    <button className="btn-gold h-8 w-8 shrink-0 !p-0 text-lg sm:h-9 sm:w-9" onClick={() => add(p.id, 1)} aria-label={`Add one ${p.name}`}>+</button>
-                  </div>
-                )}
-              </article>
-            )
-          })}
-        </div>
-        <p className="mt-5 text-center text-[14px] text-ink/[.82]">Gemstones are suggested only after Guruji studies your birth chart. Availability is confirmed on WhatsApp.</p>
+
+        {shown.map((c) => (
+          <div key={c.key} className="mb-12 last:mb-0">
+            <div className="mb-5 text-center">
+              <div className="flex items-center gap-3">
+                <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/60" />
+                <h2 className="font-cormorant text-[24px] font-bold italic leading-tight text-maroon sm:text-[32px]"><KeywordPair heading en={c.label} kn={c.kn} /></h2>
+                <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/60" />
+              </div>
+              <p className="mt-1 text-[15px] text-ink/[.82] sm:text-[16px]">{c.blurb}</p>
+            </div>
+            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+              {products.filter((p) => p.category === c.key).map((p) => {
+                const q = sel[p.id] ?? 0
+                return (
+                  <article key={p.id} className={`card flex flex-col p-2 transition sm:p-3 ${q ? 'ring-2 ring-gold' : ''}`}>
+                    <div className={`relative aspect-square overflow-hidden rounded-lg ring-1 ring-goldlight/60 ${p.category === 'pyramids' ? 'bg-[#FBF0D6]' : 'bg-[#3A1A0C]'}`}>
+                      <img src={p.img} alt={p.name} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain" />
+                      {q > 0 && <span className="absolute right-1.5 top-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-maroon px-1.5 font-marcellus text-[13px] text-goldlight shadow">×{q}</span>}
+                    </div>
+                    <h3 className="mt-2 flex-1 font-marcellus text-[14px] leading-tight text-maroon sm:text-[16.5px] sm:leading-snug" data-no-translate="">{p.name}</h3>
+                    {q === 0 ? (
+                      <button className="btn-gold mt-2 w-full px-2 py-1.5 text-[14px] sm:text-base" onClick={() => add(p.id, 1)} aria-label={`Add ${p.name}`}>+ Add</button>
+                    ) : (
+                      <div className="mt-2 flex items-center justify-between gap-1 rounded-full border border-gold bg-paper p-0.5">
+                        <button className="btn-outline h-8 w-8 shrink-0 !p-0 text-lg sm:h-9 sm:w-9" onClick={() => add(p.id, -1)} aria-label={`Remove one ${p.name}`}>−</button>
+                        <span className="font-marcellus text-[16px] text-maroon sm:text-lg" aria-live="polite">{q}</span>
+                        <button className="btn-gold h-8 w-8 shrink-0 !p-0 text-lg sm:h-9 sm:w-9" onClick={() => add(p.id, 1)} aria-label={`Add one ${p.name}`}>+</button>
+                      </div>
+                    )}
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+        ))}
+        <p className="mt-8 text-center text-[14px] text-ink/[.82]">Availability is confirmed on WhatsApp. Guruji can suggest the right item for your chart and home.</p>
         {count > 0 && <div className="h-20" aria-hidden />}
       </Section>
       {count > 0 && (
