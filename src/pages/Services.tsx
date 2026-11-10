@@ -45,6 +45,23 @@ export function ServicePoster({ s }: { s: Service }) {
   )
 }
 
+/** Home-page card: wide banner (parchment left, service artwork right) with the name written in the parchment space. */
+export function ServiceBannerCard({ s }: { s: Service }) {
+  const I = iconByName[s.icon]
+  return (
+    <Link to={`/services/${s.slug}`} aria-label={s.title}
+      className="group relative block aspect-[1040/440] w-full overflow-hidden rounded-xl bg-[#FBEAD0] shadow-[0_10px_24px_-14px_rgba(147,96,15,.55)] transition hover:-translate-y-1 hover:shadow-[0_16px_30px_-14px_rgba(147,96,15,.6)] sm:rounded-2xl">
+      <img src={img(`services/home-${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+      <div className="absolute inset-y-0 left-0 flex w-[54%] flex-col justify-center pl-[5%] pr-1">
+        <span className="flex h-7 w-7 items-center justify-center rounded-full border border-golddark/40 bg-white/60 text-golddark sm:h-8 sm:w-8"><I size={15} /></span>
+        <h3 className="mt-1.5 font-marcellus text-[17px] leading-tight text-maroon sm:text-[19px] xl:text-[18px]">{s.short}</h3>
+        <p className="mt-0.5 font-kn text-[13px] leading-snug text-golddark sm:text-[14px] xl:text-[13px]" lang="kn" data-no-translate>{s.kn}</p>
+        <span className="mt-1.5 inline-flex items-center gap-1 font-marcellus text-[13.5px] text-[#B0321A] group-hover:gap-2 sm:text-[14.5px]">Know more <Arrow size={13} /></span>
+      </div>
+    </Link>
+  )
+}
+
 export function ServiceCard({ s, minimal = false }: { s: Service; minimal?: boolean }) {
   return (
     <Link to={`/services/${s.slug}`} className="group flex w-full flex-col rounded-xl bg-paper p-1 shadow-[0_10px_26px_-14px_rgba(147,96,15,.5)] transition hover:-translate-y-1 sm:rounded-2xl sm:p-1.5">
