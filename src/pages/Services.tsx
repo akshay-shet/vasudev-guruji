@@ -30,20 +30,17 @@ export function ServiceBanner({ s, large = false }: { s: Service; large?: boolea
 export function ServicePoster({ s }: { s: Service }) {
   const I = iconByName[s.icon]
   return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-lg sm:rounded-xl">
-      <div className="relative h-full w-full overflow-hidden" style={{ background: '#3A1408' }}>
-        <img src={img(`services/${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(40,14,4,.5) 0%, rgba(40,14,4,0) 55%)' }} />
-        <img src={img('services/guruji-namaste.webp')} alt="" loading="lazy" decoding="async"
-          className="absolute bottom-[18%] left-[-4%] h-[62%] w-auto max-w-[62%] object-contain object-left-bottom drop-shadow-[4px_0_10px_rgba(0,0,0,.45)]" />
-        <span className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-goldlight/80 bg-maroon/85 text-goldlight shadow sm:right-2.5 sm:top-2.5 sm:h-9 sm:w-9"><I size={15} /></span>
-        {/* plaque */}
-        <div className="absolute inset-x-[5%] bottom-[5%] flex min-h-[26%] flex-col items-center justify-center rounded-md px-1 py-1 text-center sm:rounded-lg"
-          style={{ background: 'linear-gradient(180deg,#8E2412,#5E160A)', boxShadow: 'inset 0 0 0 1.5px #D9AA52, inset 0 0 0 3px #5E160A, inset 0 0 0 4px #D9AA52aa, 0 4px 10px rgba(0,0,0,.45)' }}>
-          <span className="font-cormorant font-bold leading-[1.05] text-[#F7D88A] drop-shadow-[0_1px_2px_rgba(0,0,0,.6)]" style={{ fontSize: 'clamp(12px, 3.6vw, 21px)' }}>{s.short}</span>
-          <span className="mt-0.5 text-[9px] leading-none text-goldlight sm:text-[12px]" aria-hidden>❀</span>
-        </div>
-      </div>
+    <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#FDEDCF] sm:rounded-xl">
+      {/* right: the service artwork, fading into the parchment */}
+      <img src={img(`services/${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-y-0 right-0 h-full w-[70%] object-cover object-[62%_50%]"
+        style={{ maskImage: 'linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 20%,#000 42%)', WebkitMaskImage: 'linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 20%,#000 42%)' }} />
+      {/* left: parchment with mandala corners and a faint temple */}
+      <img src={img('services/panel-left.webp')} alt="" loading="lazy" decoding="async" className="absolute inset-y-0 left-0 h-full w-[48%] object-cover object-left"
+        style={{ maskImage: 'linear-gradient(90deg,#000 62%,transparent)', WebkitMaskImage: 'linear-gradient(90deg,#000 62%,transparent)' }} />
+      {/* Guruji in the left space */}
+      <img src={img('services/guruji-namaste.webp')} alt="" loading="lazy" decoding="async"
+        className="absolute bottom-0 left-[-4%] h-[62%] w-auto max-w-[66%] object-contain object-left-bottom drop-shadow-[3px_2px_8px_rgba(90,40,10,.35)]" />
+      <span className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-goldlight/80 bg-maroon/85 text-goldlight shadow sm:right-2.5 sm:top-2.5 sm:h-9 sm:w-9"><I size={14} /></span>
     </div>
   )
 }
