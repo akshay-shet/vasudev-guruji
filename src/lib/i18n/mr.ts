@@ -883,6 +883,11 @@ const exact: Record<string, string> = {
   'Life Guidance in Mandya': 'मंड्या येथे जीवन मार्गदर्शन',
   'Negative Energy Removal in Mandya': 'मंड्या येथे नकारात्मक ऊर्जा निवारण',
   'Vastu Consultant in Mandya': 'मंड्या येथील वास्तु सल्लागार',
+
+  // ── Locations ──
+  'Niranjan Swamy — Reel 1': 'निरंजन स्वामी — रील 1',
+  'Niranjan Swamy — Reel 2': 'निरंजन स्वामी — रील 2',
+  'Guruji — a moment from the ashram': 'आश्रमातील गुरुजींचा एक क्षण',
 }
 
 const phrases: Record<string, string> = {
@@ -945,6 +950,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'पेरंडपल्ली',
   'Directions to': 'मार्ग:',
   'Business, Money & Negative Energy — Guruji Answers': 'व्यवसाय, पैसा आणि नकारात्मक ऊर्जा — गुरुजींची उत्तरे',
+
+  // ── Locations ──
 
   // ── Locations ──
 

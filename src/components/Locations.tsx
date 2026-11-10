@@ -21,10 +21,8 @@ export function Locations({ heading = true }: { heading?: boolean }) {
         {/* main centre */}
         <article className="relative overflow-hidden rounded-3xl text-white shadow-[0_18px_40px_-18px_rgba(122,36,16,.7)]" style={{ background: 'linear-gradient(160deg,#9C2A14 0%,#7A2410 55%,#4A1408 100%)' }}>
           <div className="relative aspect-[16/10] overflow-hidden">
-            <img src={img('hero-desktop.webp')} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[78%_35%]" />
-            <img src={img('guruji-portrait.webp')} alt="Vasudev Guruji" loading="lazy" className="absolute bottom-0 left-0 h-full w-[46%] object-cover object-top"
-              style={{ maskImage: 'linear-gradient(to right,#000 70%,transparent)', WebkitMaskImage: 'linear-gradient(to right,#000 70%,transparent)' }} />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #7A2410 0%, rgba(122,36,16,.35) 35%, transparent 60%)' }} />
+            <img src={img('guruji-desk.webp')} alt="Vasudev Guruji at his consultation desk" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-[60%_45%]" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #7A2410 0%, rgba(122,36,16,.25) 22%, transparent 42%)' }} />
             <span className="absolute right-4 top-4 rounded-full bg-[#F2B91C] px-3 py-1 font-cinzel text-[11px] font-semibold tracking-[0.16em] text-maroon shadow">MAIN CENTRE</span>
           </div>
           <div className="relative px-5 pb-6 pt-1 md:px-7">

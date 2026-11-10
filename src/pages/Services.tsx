@@ -30,11 +30,12 @@ export function ServiceBanner({ s, large = false }: { s: Service; large?: boolea
 export function ServicePoster({ s }: { s: Service }) {
   const I = iconByName[s.icon]
   return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-lg sm:rounded-xl" style={{ padding: 2, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-      <div className="relative h-full w-full overflow-hidden rounded-[6px] sm:rounded-[10px]" style={{ background: '#3A1408' }}>
-        <img src={img('hero-desktop.webp')} alt="" loading="lazy" className="absolute inset-0 h-full w-full scale-150 object-cover object-[86%_40%] opacity-80" />
-        <img src={img('guruji-portrait.webp')} alt="" loading="lazy" className="absolute inset-x-0 top-0 h-[82%] w-full object-cover object-[50%_8%]"
-          style={{ maskImage: 'linear-gradient(to bottom,#000 72%,transparent)', WebkitMaskImage: 'linear-gradient(to bottom,#000 72%,transparent)' }} />
+    <div className="relative aspect-[4/5] overflow-hidden rounded-lg sm:rounded-xl">
+      <div className="relative h-full w-full overflow-hidden" style={{ background: '#3A1408' }}>
+        <img src={img(`services/${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-[70%_50%]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(40,14,4,.5) 0%, rgba(40,14,4,0) 55%)' }} />
+        <img src={img('services/guruji-namaste.webp')} alt="" loading="lazy" decoding="async"
+          className="absolute bottom-[18%] left-[-4%] h-[62%] w-auto max-w-[62%] object-contain object-left-bottom drop-shadow-[4px_0_10px_rgba(0,0,0,.45)]" />
         <span className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-goldlight/80 bg-maroon/85 text-goldlight shadow sm:right-2.5 sm:top-2.5 sm:h-9 sm:w-9"><I size={15} /></span>
         {/* plaque */}
         <div className="absolute inset-x-[5%] bottom-[5%] flex min-h-[26%] flex-col items-center justify-center rounded-md px-1 py-1 text-center sm:rounded-lg"
@@ -49,7 +50,7 @@ export function ServicePoster({ s }: { s: Service }) {
 
 export function ServiceCard({ s, minimal = false }: { s: Service; minimal?: boolean }) {
   return (
-    <Link to={`/services/${s.slug}`} className="group flex w-full flex-col rounded-xl bg-paper p-1 shadow-[0_10px_26px_-14px_rgba(147,96,15,.5)] ring-1 ring-goldlight/60 transition hover:-translate-y-1 sm:rounded-2xl sm:p-1.5">
+    <Link to={`/services/${s.slug}`} className="group flex w-full flex-col rounded-xl bg-paper p-1 shadow-[0_10px_26px_-14px_rgba(147,96,15,.5)] transition hover:-translate-y-1 sm:rounded-2xl sm:p-1.5">
       <ServicePoster s={s} />
       <div className={`flex flex-1 flex-col items-center px-1 text-center sm:px-3 ${minimal ? 'pb-2.5 pt-2 sm:pb-4 sm:pt-3' : 'pb-2 pt-1.5 sm:pb-4 sm:pt-2'}`}>
         <h3 className={`font-marcellus leading-tight text-maroon ${minimal ? 'text-[13.5px] sm:text-[21px]' : 'text-[12px] sm:text-[18px] sm:leading-snug'}`}>
