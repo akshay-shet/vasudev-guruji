@@ -11,6 +11,7 @@ export function watchProblems(page: Page) {
   page.addInitScript(() => {
     document.addEventListener('securitypolicyviolation', (e) => console.error(`CSP ${e.violatedDirective} blocked ${e.blockedURI}`))
     try { sessionStorage.setItem('vg-intro', '1') } catch { /* ignore */ } // skip the opening door animation
+    try { localStorage.setItem('vg-kaal-seen', new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10)) } catch { /* ignore */ } // keep the daily Kaal card out of the way
   })
   return problems
 }

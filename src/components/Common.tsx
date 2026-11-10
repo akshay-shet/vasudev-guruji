@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { ChatWidget } from './ChatWidget'
+import { KaalPopup, openKaal } from './KaalPopup'
 import { Link } from 'react-router-dom'
 import { site, topics, whatsappLink, type Topic } from '../data/site'
 import { services } from '../data/content'
@@ -175,6 +176,7 @@ export function FloatingContact() {
   return (
     <div className="fixed bottom-3 right-3 z-[60] flex flex-col gap-2 sm:bottom-4 sm:right-4 sm:gap-3">
       <ChatWidget />
+      <KaalPopup />
       <a href={site.phoneHref} aria-label={`Call ${site.phone}`} className="btn-gold h-12 w-12 !rounded-full shadow-lg sm:h-14 sm:w-14"><Phone size={22} /></a>
       <a href={whatsappLink('🙏 Hari Om Guruji, I would like to make an enquiry.')} target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
         className="flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition hover:scale-105 sm:h-14 sm:w-14" style={{ background: 'linear-gradient(180deg,#3BE07A,#1DA851)' }}>
@@ -250,6 +252,7 @@ export function Footer() {
             <li className="flex items-start gap-2 min-[420px]:col-span-2 md:col-span-1"><Mail size={16} className="mt-1 shrink-0 text-gold" /><a href={`mailto:${site.email}`} className="break-all">{site.email}</a></li>
             <li className="flex items-start gap-2 min-[420px]:col-span-2 md:col-span-1"><Pin size={16} className="mt-1 shrink-0 text-gold" /><span>{site.address}</span></li>
           </ul>
+          <button onClick={openKaal} className="btn-outline mr-2 mt-3 px-4 py-1 text-sm md:mt-4"><Sun size={16} className="text-gold" /> Today’s Rahu Kaal</button>
           <button onClick={toggleTheme} className="btn-outline mt-3 px-4 py-1 text-sm md:mt-4">
             {theme === 'day' ? <><MoonIcon size={16} className="text-gold" /> Night</> : <><Sun size={16} className="text-gold" /> Day</>}
           </button>

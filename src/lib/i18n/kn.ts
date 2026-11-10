@@ -888,6 +888,14 @@ const exact: Record<string, string> = {
   'Niranjan Swamy — Reel 1': 'ನಿರಂಜನ ಸ್ವಾಮಿ — ರೀಲ್ 1',
   'Niranjan Swamy — Reel 2': 'ನಿರಂಜನ ಸ್ವಾಮಿ — ರೀಲ್ 2',
   'Guruji — a moment from the ashram': 'ಆಶ್ರಮದಿಂದ ಗುರೂಜಿಯವರ ಒಂದು ಕ್ಷಣ',
+
+  // ── Locations ──
+  'Today’s Inauspicious Times': 'ಇಂದಿನ ಅಶುಭ ಸಮಯಗಳು',
+  'Rahu Kaal': 'ರಾಹು ಕಾಲ',
+  'Gulika Kaal': 'ಗುಳಿಕ ಕಾಲ',
+  'Yamaganda Kaal': 'ಯಮಗಂಡ ಕಾಲ',
+  'Now': 'ಈಗ',
+  'Today’s Rahu Kaal': 'ಇಂದಿನ ರಾಹು ಕಾಲ',
 }
 
 const phrases: Record<string, string> = {
@@ -950,6 +958,8 @@ const phrases: Record<string, string> = {
   'Perandapalli': 'ಪೆರಂಡಪಲ್ಲಿ',
   'Directions to': 'ದಾರಿ:',
   'Business, Money & Negative Energy — Guruji Answers': 'ವ್ಯಾಪಾರ, ಹಣ ಮತ್ತು ನಕಾರಾತ್ಮಕ ಶಕ್ತಿ — ಗುರೂಜಿಯವರ ಉತ್ತರ',
+
+  // ── Locations ──
 
   // ── Locations ──
 
