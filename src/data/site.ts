@@ -1,3 +1,4 @@
+import { MEDIA } from '../lib/media'
 /**
  * ─────────────────────────────────────────────────────────────
  *  ALL SITE DETAILS LIVE HERE. Edit this one file to update
@@ -22,8 +23,8 @@ export const site = {
   officeHours: 'Daily 10:00 AM – 6:00 PM (IST)',
 
   /** Guruji's portrait (public/img/guruji-portrait.webp). Replace the file to change it. */
-  photo: import.meta.env.BASE_URL + 'img/guruji-portrait.webp',
-  photoFallback: import.meta.env.BASE_URL + 'img/guruji-placeholder.svg',
+  photo: MEDIA + 'img/guruji-portrait.webp',
+  photoFallback: MEDIA + 'img/guruji-placeholder.svg',
   photoAlt: 'Vasudev Guruji seated in blessing',
 
   shortBio:
@@ -48,9 +49,9 @@ export const site = {
     /** YouTube video ID, e.g. 'dQw4w9WgXcQ'. It plays inside the card on the homepage. */
     youtubeId: '',
     /** OR a video file, e.g. '/videos/inner-peace.mp4' (put the file in public/videos). Used when youtubeId is empty. */
-    videoSrc: import.meta.env.BASE_URL + 'videos/latest-discourse.mp4',
+    videoSrc: MEDIA + 'videos/latest-discourse.mp4',
     /** Cover image shown before the video plays. */
-    poster: import.meta.env.BASE_URL + 'videos/latest-discourse-cover.webp',
+    poster: MEDIA + 'videos/latest-discourse-cover.webp',
   },
 
   social: {

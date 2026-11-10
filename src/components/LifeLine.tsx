@@ -4,6 +4,7 @@ import { lifeline, lifelineOrderLink, type Bi } from '../data/lifeline'
 import { usePrefs } from '../lib/prefs'
 import { Diamond } from './Decor'
 import { Arrow, Chevron, iconByName, WhatsApp } from './Icons'
+import { MEDIA } from '../lib/media'
 
 const inr = (n: number) => `₹${n}/-`
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
@@ -28,7 +29,7 @@ export function LifeLineBook({ className = '' }: { className?: string }) {
   return (
     <div className={`relative mx-auto w-full max-w-[360px] ${className}`}>
       <div className="rounded-2xl p-[3px] shadow-[0_24px_44px_-20px_rgba(60,15,5,.7)]" style={{ background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-        <img src={import.meta.env.BASE_URL + 'img/lifeline-poster.webp'} alt="Life Line Horoscope book by Vasudev Guruji"
+        <img src={MEDIA + 'img/lifeline-poster.webp'} alt="Life Line Horoscope book by Vasudev Guruji"
           width={1199} height={1312} loading="lazy" className="block aspect-[1199/1312] w-full rounded-[14px] object-cover" />
       </div>
     </div>

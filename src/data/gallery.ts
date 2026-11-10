@@ -5,13 +5,14 @@
  * ─────────────────────────────────────────────────────────────
  */
 import { site } from './site'
+import { MEDIA } from '../lib/media'
 
-const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
+const img = (f: string) => MEDIA + 'img/' + f
 
 export type GallerySection = 'celebrity' | 'photos' | 'videos'
 export interface GalleryItem { section: GallerySection; src: string; caption: string; kn: string; poster?: string; video?: boolean; tall?: boolean }
 
-const vid = (f: string) => import.meta.env.BASE_URL + 'videos/' + f
+const vid = (f: string) => MEDIA + 'videos/' + f
 
 export const gallerySections: { key: GallerySection; label: string; kn: string; icon: string }[] = [
   { key: 'celebrity', label: 'Celebrity Images', kn: 'ಗಣ್ಯರೊಂದಿಗೆ', icon: 'star' },

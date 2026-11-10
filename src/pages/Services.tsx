@@ -5,8 +5,9 @@ import { Arrow, iconByName, Phone, WhatsApp } from '../components/Icons'
 import { services, type Service } from '../data/content'
 import { NotFound } from './NotFound'
 import { site, whatsappLink } from '../data/site'
+import { MEDIA } from '../lib/media'
 
-const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
+const img = (f: string) => MEDIA + 'img/' + f
 
 /** Temple-scene banner with Guruji's portrait and the service name in gold. */
 export function ServiceBanner({ s, large = false }: { s: Service; large?: boolean }) {

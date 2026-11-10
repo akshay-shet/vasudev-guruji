@@ -6,6 +6,7 @@ import { services } from '../data/content'
 import { usePrefs, useT } from '../lib/prefs'
 import { ArchShape, Brand, Diamond, Diya } from './Decor'
 import { Close, iconByName, Mail, MoonIcon, Phone, Pin, Play, Sun, WhatsApp } from './Icons'
+import { MEDIA } from '../lib/media'
 
 /* ───────── Arch tile ───────── */
 export function ArchTile({ icon, label, label2, to, small, variant = 'mobile' }: { icon: string; label: string; label2: string; to: string; small?: boolean; variant?: 'mobile' | 'desktop' }) {
@@ -75,9 +76,9 @@ export function PageHero({ title, hi, subtitle, children, compact, keyword, eyeb
   usePageTitle(kw ? `${title} · ${kw.title}` : title)
   return (
     <section className={`page-hero relative overflow-hidden ${compact ? 'pb-2 pt-6 lg:pb-4 lg:pt-10' : 'pb-8 pt-6 lg:pb-12 lg:pt-12'}`}>
-      <img src={import.meta.env.BASE_URL + 'img/hero-right.webp'} alt="" className="scenery pointer-events-none absolute right-0 top-0 hidden h-full w-[34%] object-cover object-left opacity-90 lg:block"
+      <img src={MEDIA + 'img/hero-right.webp'} alt="" className="scenery pointer-events-none absolute right-0 top-0 hidden h-full w-[34%] object-cover object-left opacity-90 lg:block"
         style={{ maskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', WebkitMaskImage: 'linear-gradient(to left, #000 40%, transparent), linear-gradient(to bottom, #000 62%, transparent)', maskComposite: 'intersect', WebkitMaskComposite: 'source-in' }} />
-      <img src={import.meta.env.BASE_URL + 'img/hero-left.webp'} alt="" className="scenery pointer-events-none absolute left-0 top-0 hidden h-full w-[12%] object-cover object-right opacity-90 lg:block"
+      <img src={MEDIA + 'img/hero-left.webp'} alt="" className="scenery pointer-events-none absolute left-0 top-0 hidden h-full w-[12%] object-cover object-right opacity-90 lg:block"
         style={{ maskImage: 'linear-gradient(to right, #000 50%, transparent), linear-gradient(to bottom, #000 62%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 50%, transparent), linear-gradient(to bottom, #000 62%, transparent)', maskComposite: 'intersect', WebkitMaskComposite: 'source-in' }} />
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         {eyebrow && <div className="mb-3"><Eyebrow {...eyebrow} /></div>}

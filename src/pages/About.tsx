@@ -3,6 +3,7 @@ import { EnquiryForm, PageHero, Section, SectionTitle } from '../components/Comm
 import { Diamond, DivinePortrait } from '../components/Decor'
 import { Arrow } from '../components/Icons'
 import { site } from '../data/site'
+import { MEDIA } from '../lib/media'
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
 
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_1.2fr]">
-          <DivinePortrait src={import.meta.env.BASE_URL + 'img/guruji-about.webp'} alt="Vasudev Guruji writing at his desk" />
+          <DivinePortrait src={MEDIA + 'img/guruji-about.webp'} alt="Vasudev Guruji writing at his desk" />
           <div>
             <h2 className="section-title">{site.name}</h2>
             <Diamond className="mt-2 h-3 w-28" />

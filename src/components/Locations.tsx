@@ -2,8 +2,9 @@ import { KeywordPair, Eyebrow } from './Common'
 import { Arrow, Phone, Pin, WhatsApp } from './Icons'
 import { places } from '../data/content'
 import { site, whatsappLink } from '../data/site'
+import { MEDIA } from '../lib/media'
 
-const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
+const img = (f: string) => MEDIA + 'img/' + f
 
 /** Guruji's centres: a large main-centre card and a gold "pilgrim route" of the other cities. */
 export function Locations({ heading = true }: { heading?: boolean }) {

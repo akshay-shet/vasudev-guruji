@@ -6,6 +6,7 @@ import { Locations } from '../components/Locations'
 import { products, shopCategories, type ShopCategory } from '../data/content'
 import { site, whatsappLink } from '../data/site'
 import { useLocale } from '../lib/prefs'
+import { MEDIA } from '../lib/media'
 
 /* ───────── Shop ───────── */
 export function Shop() {
@@ -120,7 +121,7 @@ export function Contact() {
           <div className="flex flex-col gap-4 md:gap-6">
             <a href={centrePhotoLink} target="_blank" rel="noopener" aria-label="Samruddhi Astro Center on Google"
               className="card group relative block min-h-[240px] flex-1 overflow-hidden !rounded-2xl">
-              <img src={import.meta.env.BASE_URL + 'img/kollegala-centre.webp'} alt="Samruddhi Astro Center, Srirangapatna, Mandya" loading="lazy"
+              <img src={MEDIA + 'img/kollegala-centre.webp'} alt="Samruddhi Astro Center, Srirangapatna, Mandya" loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
               <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">

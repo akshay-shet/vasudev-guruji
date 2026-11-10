@@ -66,7 +66,7 @@ test('gallery shows media in place without a popup', async ({ page }) => {
   await settle(page)
   await page.locator('figure img').first().click()
   await expect(page.getByRole('dialog')).toHaveCount(0)
-  await expect(page.locator('figure video')).toHaveCount(1)
+  await expect(page.locator('figure video')).toHaveCount(4)
 })
 
 test('JSON-LD on the home page is valid and describes the business', async ({ page }) => {

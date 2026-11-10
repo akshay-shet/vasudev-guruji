@@ -4,10 +4,17 @@
 import { build } from 'esbuild'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { loadEnv } from 'vite'
+
+// Optional Cloudflare R2 / CDN origin for images & videos (see CLOUDFLARE_SETUP.md)
+const env = loadEnv(process.env.MODE || 'production', process.cwd(), 'VITE_')
+const MEDIA_BASE = (env.VITE_MEDIA_BASE_URL || '').trim().replace(/\/?$/, '/')
+const MEDIA = MEDIA_BASE !== '/' ? MEDIA_BASE : '/'
+const MEDIA_ORIGIN = MEDIA === '/' ? '' : new URL(MEDIA).origin
 
 const out = await build({
   stdin: { contents: "export * from './src/data/seo'; export { faqs } from './src/data/faq'; export { services } from './src/data/content'; export { site } from './src/data/site'", resolveDir: process.cwd(), loader: 'ts' },
-  bundle: true, write: false, format: 'esm', platform: 'node', define: { 'import.meta.env.BASE_URL': '"/"' }, logLevel: 'error',
+  bundle: true, write: false, format: 'esm', platform: 'node', define: { 'import.meta.env.BASE_URL': '"/"', 'import.meta.env.VITE_MEDIA_BASE_URL': JSON.stringify(env.VITE_MEDIA_BASE_URL || '') }, logLevel: 'error',
 })
 const m = await import('data:text/javascript;base64,' + Buffer.from(out.outputFiles[0].text).toString('base64'))
 const { SITE_URL, allPaths, seoFor, jsonLdFor, notFoundSeo, faqs, services, site } = m
@@ -37,11 +44,12 @@ function render(path, seo, { notFound = false } = {}) {
     `<meta name="twitter:title" content="${esc(seo.title)}" />`,
     `<meta name="twitter:description" content="${esc(seo.description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
+    MEDIA_ORIGIN ? `<link rel="preconnect" href="${MEDIA_ORIGIN}" />` : '',
     notFound ? '' : `<script type="application/ld+json" id="ld-page">${JSON.stringify(jsonLdFor(path, faq)).replace(/</g, '\\u003c')}</script>`,
     ...(path === '/' ? [
       // LCP: start downloading the correct hero image immediately, before the JS bundle runs
-      '<link rel="preload" as="image" href="/img/hero-mobile.webp" type="image/webp" media="(max-width: 1023.98px)" fetchpriority="high" />',
-      '<link rel="preload" as="image" href="/img/hero-desktop.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />',
+      `<link rel="preload" as="image" href="${MEDIA}img/hero-mobile.webp" type="image/webp" media="(max-width: 1023.98px)" fetchpriority="high" />`,
+      `<link rel="preload" as="image" href="${MEDIA}img/hero-desktop.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />`,
     ] : []),
   ].filter(Boolean).join('\n    ')
   const svc = path.startsWith('/services/') ? services.find((s) => s.slug === path.split('/')[2]) : null
@@ -72,6 +80,17 @@ writeFileSync('dist/404.html', render('/404', notFoundSeo, { notFound: true }))
 
 // Netlify: generate _headers from vercel.json so both hosts send identical security & caching headers.
 const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'))
+if (MEDIA_ORIGIN) {
+  // The strict CSP must allow the media origin, or every image/video would be blocked in production.
+  const csp = vercel.headers.flatMap((h) => h.headers).find((h) => h.key === 'Content-Security-Policy')?.value ?? ''
+  for (const dir of ['img-src', 'media-src']) {
+    const rule = csp.split(';').map((x) => x.trim()).find((x) => x.startsWith(dir + ' ')) ?? ''
+    if (!rule.split(/\s+/).includes(MEDIA_ORIGIN)) {
+      console.error(`\n✗ VITE_MEDIA_BASE_URL is ${MEDIA} but vercel.json Content-Security-Policy "${dir}" does not allow ${MEDIA_ORIGIN}.\n  Add ${MEDIA_ORIGIN} to img-src and media-src in vercel.json (see CLOUDFLARE_SETUP.md).\n`)
+      process.exit(1)
+    }
+  }
+}
 const toNetlify = (src) => src === '/(.*)' ? '/*' : src.replace('(.*)', '*')
 const rules = vercel.headers.flatMap((h) => {
   const m = h.source.match(/^\/\(([^)]+)\)$/)

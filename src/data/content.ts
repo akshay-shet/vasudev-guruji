@@ -1,4 +1,5 @@
 import type { Topic } from './site'
+import { MEDIA } from '../lib/media'
 
 export interface NavItem { label: string; hi: string; to: string; children?: { label: string; hi: string; to: string }[] }
 
@@ -117,7 +118,7 @@ export const shopCategories: { key: ShopCategory; label: string; kn: string; blu
   { key: 'accessories', label: 'Vastu Accessories', kn: 'ವಾಸ್ತು ಪರಿಕರಗಳು', blurb: 'Swastik, AUM and Trishul plates, Vaastu spray and powder, car protection and more.' },
 ]
 
-const shop = (f: string) => import.meta.env.BASE_URL + 'img/shop/' + f
+const shop = (f: string) => MEDIA + 'img/shop/' + f
 
 export const products: Product[] = [
   { id: 'energy-01', name: 'Jiten Pyramid Energy System', category: 'pyramids', img: shop('energy-01.webp') },
