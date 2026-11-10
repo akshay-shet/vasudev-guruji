@@ -48,8 +48,8 @@ function render(path, seo, { notFound = false } = {}) {
     notFound ? '' : `<script type="application/ld+json" id="ld-page">${JSON.stringify(jsonLdFor(path, faq)).replace(/</g, '\\u003c')}</script>`,
     ...(path === '/' ? [
       // LCP: start downloading the correct hero image immediately, before the JS bundle runs
-      `<link rel="preload" as="image" href="${MEDIA}img/hero-mobile.webp" type="image/webp" media="(max-width: 1023.98px)" fetchpriority="high" />`,
-      `<link rel="preload" as="image" href="${MEDIA}img/hero-desktop.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />`,
+      `<link rel="preload" as="image" href="${MEDIA}img/hero-mobile-v2.webp" type="image/webp" media="(max-width: 1023.98px)" fetchpriority="high" />`,
+      `<link rel="preload" as="image" href="${MEDIA}img/hero-desktop-v2.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />`,
     ] : []),
   ].filter(Boolean).join('\n    ')
   const svc = path.startsWith('/services/') ? services.find((s) => s.slug === path.split('/')[2]) : null

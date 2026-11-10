@@ -142,8 +142,8 @@ function MobileHome() {
       {/* HERO ART */}
       <div className="relative aspect-[941/1420] overflow-hidden">
         <picture>
-          <source media="(max-width: 600px)" srcSet={MEDIA + 'img/hero-mobile-600.webp'} type="image/webp" />
-          <img src={MEDIA + 'img/hero-mobile.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
+          <source media="(max-width: 600px)" srcSet={MEDIA + 'img/hero-mobile-600-v2.webp'} type="image/webp" />
+          <img src={MEDIA + 'img/hero-mobile-v2.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
             className="absolute inset-0 h-full w-full object-cover object-top" fetchPriority="high" />
         </picture>
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,250,238,.85), rgba(255,250,238,.45) 55%, transparent)' }} />
@@ -203,7 +203,7 @@ function DesktopHome() {
     <div className="hidden lg:block" style={{ ['--d' as string]: 'min(1vw, 16.8px)' }}>
       {/* HERO */}
       <div className="relative mx-auto h-[100svh] max-h-[1080px] min-h-[640px] w-full max-w-[1920px] overflow-hidden">
-        <img src={MEDIA + 'img/hero-desktop.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
+        <img src={MEDIA + 'img/hero-desktop-v2.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
           className="absolute inset-0 h-full w-full object-cover object-[30%_38%]" fetchPriority="high" />
         {/* soft glow so the headline reads cleanly over the sky */}
         <div className="pointer-events-none absolute left-[30%] top-[10%] h-[56%] w-[54%]" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,250,238,.93) 0%, rgba(255,246,228,.78) 52%, transparent 78%)' }} />
