@@ -51,13 +51,17 @@ export function ServiceBannerCard({ s }: { s: Service }) {
   const I = iconByName[s.icon]
   return (
     <Link to={`/services/${s.slug}`} aria-label={s.title}
-      className="group relative block aspect-[1040/440] w-full overflow-hidden rounded-xl bg-[#FBEAD0] shadow-[0_10px_24px_-14px_rgba(147,96,15,.55)] transition hover:-translate-y-1 hover:shadow-[0_16px_30px_-14px_rgba(147,96,15,.6)] sm:rounded-2xl">
-      <img src={img(`services/home-${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
-      <div className="absolute inset-y-0 left-0 flex w-[54%] flex-col justify-center pl-[5%] pr-1">
-        <span className="flex h-7 w-7 items-center justify-center rounded-full border border-golddark/40 bg-white/60 text-golddark sm:h-8 sm:w-8"><I size={15} /></span>
-        <h3 className="mt-1.5 font-marcellus text-[17px] leading-tight text-maroon sm:text-[19px] xl:text-[18px]">{s.short}</h3>
-        <p className="mt-0.5 font-kn text-[13px] leading-snug text-golddark sm:text-[14px] xl:text-[13px]" lang="kn" data-no-translate>{s.kn}</p>
-        <span className="mt-1.5 inline-flex items-center gap-1 font-marcellus text-[13.5px] text-[#B0321A] group-hover:gap-2 sm:text-[14.5px]">Know more <Arrow size={13} /></span>
+      className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl bg-[#FBEAD0] shadow-[0_10px_24px_-14px_rgba(147,96,15,.55)] transition hover:-translate-y-1 hover:shadow-[0_16px_30px_-14px_rgba(147,96,15,.6)] sm:block sm:aspect-[1040/440] sm:rounded-2xl">
+      {/* phones: the artwork (right part of the banner) on top, the name centred below */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden sm:absolute sm:inset-0 sm:aspect-auto sm:h-full">
+        <img src={img(`services/home-${s.slug}.webp`)} alt="" loading="lazy" decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[100%_50%] transition duration-500 group-hover:scale-[1.03] sm:object-center" />
+      </div>
+      <div className="flex flex-1 flex-col items-center justify-center px-1.5 pb-2.5 pt-2 text-center sm:absolute sm:inset-y-0 sm:left-0 sm:w-[52%] sm:px-3 sm:py-0">
+        <span className="hidden h-8 w-8 items-center justify-center rounded-full border border-golddark/40 bg-white/60 text-golddark sm:flex"><I size={15} /></span>
+        <h3 className="font-marcellus text-[14.5px] leading-tight text-maroon sm:mt-1.5 sm:text-[19px] xl:text-[18px]">{s.short}</h3>
+        <p className="mt-0.5 font-kn text-[12px] leading-snug text-golddark sm:text-[14px] xl:text-[13px]" lang="kn" data-no-translate>{s.kn}</p>
+        <span className="mt-1 inline-flex items-center gap-1 font-marcellus text-[12.5px] text-[#B0321A] group-hover:gap-2 sm:mt-1.5 sm:text-[14.5px]">Know more <Arrow size={12} /></span>
       </div>
     </Link>
   )

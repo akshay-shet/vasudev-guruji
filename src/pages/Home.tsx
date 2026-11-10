@@ -298,8 +298,10 @@ export default function Home() {
       <Section className="lg:pt-16">
         <SectionTitle eyebrow={{ kn: 'ಸೇವೆಗಳು', en: 'OUR SERVICES' }} kn="ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯ ಸೇವೆಗಳು"
           sub="Accurate horoscope reading, Kundali Milan, Vastu and proven remedies for every area of life — choose a service to know more.">Vedic Astrology Services</SectionTitle>
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-5">
-          {services.map((s) => <ServiceBannerCard key={s.slug} s={s} />)}
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 sm:gap-4 xl:gap-5">
+          {services.map((s) => (
+            <div key={s.slug} className="flex w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-1rem)/2)] xl:w-[calc((100%-2.5rem)/3)]"><ServiceBannerCard s={s} /></div>
+          ))}
         </div>
       </Section>
 
