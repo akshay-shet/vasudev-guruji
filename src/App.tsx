@@ -54,7 +54,7 @@ export default function App() {
   useReveal()
   const { pathname } = useLocation()
   return (
-    <>
+    <ErrorBoundary>
       <Stars />
       <SideOrnaments />
       <Seo />
@@ -87,6 +87,6 @@ export default function App() {
       </main>
       <Footer />
       <FloatingContact />
-    </>
+    </ErrorBoundary>
   )
 }
