@@ -12,7 +12,7 @@ const ICONS = { star: Star, lotus: Lotus, play: Play } as const
 function Frame({ item }: { item: GalleryItem }) {
   const jewel = 'absolute h-2.5 w-2.5 rotate-45 border border-[#C58B2D] bg-[#F6DA8E]'
   return (
-    <figure className="h-full">
+    <figure className="h-full w-full">
       <div className="relative flex h-full flex-col rounded-xl bg-[#FFFBF0] p-2.5 shadow-[0_14px_30px_-18px_rgba(122,36,16,.6)] ring-1 ring-[#E7C26A] sm:p-3">
         <div className="pointer-events-none absolute inset-1 rounded-lg border border-[#E7C26A]/70" aria-hidden />
         <span className={`${jewel} left-0 top-0 -translate-x-1/3 -translate-y-1/3`} aria-hidden />
@@ -73,8 +73,11 @@ export default function GalleryPage() {
                 <h2 className="text-center font-cormorant text-[24px] font-bold italic leading-tight text-maroon sm:text-[30px]"><BiText t={{ en: s.label, kn: s.kn }} inline knClass="text-[0.7em]" /></h2>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/60" />
               </div>
-              <div className={`mx-auto gap-4 sm:gap-6 ${items.length === 1 ? 'grid max-w-[260px] sm:max-w-[320px]' : items.length === 2 ? 'grid max-w-2xl grid-cols-2' : 'grid grid-cols-2 lg:grid-cols-3'}`}>
-                {items.map((it) => <Frame key={it.src} item={it} />)}
+              {/* centred rows: a short last row (or a lone item) sits in the middle */}
+              <div className={`mx-auto flex flex-wrap justify-center gap-4 sm:gap-6 ${items.length <= 2 ? 'max-w-2xl' : ''}`}>
+                {items.map((it) => (
+                  <div key={it.src} className={`flex ${items.length === 1 ? 'w-full max-w-[260px] sm:max-w-[320px]' : 'w-[calc((100%-1rem)/2)] sm:w-[calc((100%-1.5rem)/2)]'} ${items.length > 2 ? 'lg:w-[calc((100%-3rem)/3)]' : ''}`}><Frame item={it} /></div>
+                ))}
               </div>
             </div>
           )
