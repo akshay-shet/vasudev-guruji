@@ -263,7 +263,7 @@ export function Footer() {
           <Link to="/legal/privacy">Privacy Policy</Link><Link to="/legal/terms">Terms &amp; Conditions</Link><Link to="/legal/disclaimer">Disclaimer</Link>
         </div>
         <p className="mt-2">© {new Date().getFullYear()} {site.name}. All rights reserved. · Astrology guidance is not a substitute for medical, legal or financial advice.</p>
-        <p className="mt-1.5 text-[12px] text-ink/70 md:text-[13.5px]" data-no-translate>Built by <span className="font-semibold text-golddark">Priority Ads Agency</span> · 2026</p>
+        <p className="mt-1.5 text-[12px] text-ink/70 md:text-[13.5px]" data-no-translate>Designed and Developed by <span className="font-semibold text-golddark">Priority Ads Agency</span> - 2026</p>
       </div>
     </footer>
   )
