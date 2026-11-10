@@ -206,16 +206,16 @@ function DesktopHome() {
         <img src={MEDIA + 'img/hero-desktop-v3.webp'} alt="Vasudev Guruji in prayer before the flower-decked Kamakhya Devi temple at sunset"
           className="absolute inset-0 h-full w-full object-cover object-[18%_40%]" fetchPriority="high" />
         {/* soft glow so the headline reads cleanly over the sky */}
-        <div className="pointer-events-none absolute left-[38%] top-[8%] h-[60%] w-[60%]" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,250,238,.93) 0%, rgba(255,246,228,.78) 52%, transparent 78%)' }} />
+        <div className="pointer-events-none absolute left-[37%] top-[3%] h-[66%] w-[64%]" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,250,238,.95) 0%, rgba(255,247,230,.86) 55%, rgba(255,246,228,.4) 72%, transparent 82%)' }} />
         <div className="fade-cream pointer-events-none absolute inset-x-0 bottom-0 h-[22%]" style={{ background: 'linear-gradient(to bottom, rgba(255,248,234,0) 0%, rgba(255,248,234,.35) 45%, var(--fade) 100%)' }} />
 
         {/* headline */}
         <div className="absolute bottom-[37%] left-[44%] top-[11%] flex w-[50%] flex-col items-center justify-center text-center">
-          <p className="font-deva text-maroon" style={{ fontSize: d(1.85, 20) }}>{site.shloka}</p>
+          <p className="rounded-full bg-[#FFF8EA]/90 px-[1.1em] py-[0.25em] font-deva text-maroon shadow-[0_4px_18px_-6px_rgba(90,30,8,.35)] ring-1 ring-goldlight/70 backdrop-blur-sm" style={{ fontSize: d(1.85, 20) }}>{site.shloka}</p>
           <Diamond className="mx-auto mt-[0.4em] h-[calc(var(--d)*1)] w-[calc(var(--d)*11)]" />
           <h1 className="mt-[0.2em] leading-[1.06]">
-            <span className="block font-cormorant font-semibold italic text-maroon" style={{ fontSize: `calc(${d(4, 42)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h1 : native ? `${s.l1} ${s.l2} ·1` : s.l1}</span>
-            <span className="gold-text block whitespace-nowrap font-cormorant font-bold italic" style={{ fontSize: `calc(${d(4.85, 50)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h2 : native ? `${s.l1} ${s.l2} ·2` : s.l2}</span>
+            <span className="block font-cormorant font-semibold italic text-maroon [text-shadow:0_0_12px_rgba(255,248,234,.95)]" style={{ fontSize: `calc(${d(4, 42)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h1 : native ? `${s.l1} ${s.l2} ·1` : s.l1}</span>
+            <span className="gold-text block whitespace-nowrap font-cormorant font-bold italic [filter:drop-shadow(0_0_5px_rgba(255,248,234,.95))_drop-shadow(0_1px_1px_rgba(90,30,8,.25))]" style={{ fontSize: `calc(${d(4.85, 50)} * var(--hs, 1))` }}>{lang === 'hi' ? s.h2 : native ? `${s.l1} ${s.l2} ·2` : s.l2}</span>
           </h1>
           <div className="mx-auto mt-[calc(var(--d)*1)] flex w-[78%] items-center gap-3" aria-hidden>
             <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold" />
