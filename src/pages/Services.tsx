@@ -10,20 +10,17 @@ const img = (f: string) => import.meta.env.BASE_URL + 'img/' + f
 
 /** Temple-scene banner with Guruji's portrait and the service name in gold. */
 export function ServiceBanner({ s, large = false }: { s: Service; large?: boolean }) {
-  const I = iconByName[s.icon]
   return (
-    <div className={`relative overflow-hidden ${large ? 'aspect-[16/8] rounded-2xl' : 'aspect-[16/8.4] rounded-xl'}`}
-      style={{ padding: 2.5, background: 'linear-gradient(135deg,#F6DA8E,#C58B2D 40%,#F2CF7E 60%,#93600F)' }}>
-      <div className={`relative h-full w-full overflow-hidden ${large ? 'rounded-[14px]' : 'rounded-[10px]'}`}>
-        <img src={img('hero-desktop.webp')} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[88%_38%] scale-125" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(58,20,6,.88) 0%, rgba(90,32,8,.72) 42%, rgba(60,22,8,.35) 75%, rgba(40,14,4,.55) 100%)' }} />
-        <img src={img('guruji-portrait.webp')} alt="" loading="lazy" className="absolute bottom-0 left-[2%] h-[96%] w-[42%] object-cover object-top"
-          style={{ maskImage: 'linear-gradient(to right, #000 70%, transparent), linear-gradient(to top, #000 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, #000 72%, transparent)' }} />
-        <div className="absolute inset-y-0 right-[4%] flex w-[55%] flex-col items-end justify-center text-right">
-          <I size={large ? 34 : 22} className="mb-1 hidden text-goldlight/90 sm:block" />
-          <span className="font-cormorant font-bold italic leading-[1.05] text-[#F7D88A] drop-shadow-[0_2px_4px_rgba(0,0,0,.6)]"
-            style={{ fontSize: large ? 'clamp(24px,3.4vw,44px)' : 'clamp(11px,1.9vw,24px)' }}>{s.short}</span>
-        </div>
+    <div className={`relative overflow-hidden ${large ? 'aspect-[16/8] rounded-2xl' : 'aspect-[16/8.4] rounded-lg sm:rounded-xl'}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_15%_60%,#7A3A12_0%,#3A1408_70%)]" />
+      <img src={img(`services/${s.slug}.webp`)} alt="" loading="lazy" decoding="async" className="absolute inset-y-0 right-0 h-full w-[76%] object-cover"
+        style={{ maskImage: 'linear-gradient(90deg,transparent 0%,#000 30%)', WebkitMaskImage: 'linear-gradient(90deg,transparent 0%,#000 30%)' }} />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, rgba(30,10,2,.6) 0%, rgba(30,10,2,0) 42%)' }} />
+      <img src={img('services/guruji-deepa.webp')} alt="" loading="lazy" decoding="async"
+        className="absolute bottom-0 left-0 h-[94%] w-auto max-w-[50%] object-contain object-left-bottom drop-shadow-[4px_0_10px_rgba(0,0,0,.45)]" />
+      <div className="absolute bottom-[6%] right-[4%] flex w-[50%] justify-end text-right">
+        <span className="font-cormorant font-bold italic leading-[1.05] text-[#F7D88A] [text-shadow:0_2px_6px_rgba(0,0,0,.85)]"
+          style={{ fontSize: large ? 'clamp(24px,3.4vw,44px)' : 'clamp(11px,1.9vw,24px)' }}>{s.short}</span>
       </div>
     </div>
   )
@@ -71,7 +68,7 @@ export function ServiceCard({ s, minimal = false }: { s: Service; minimal?: bool
  *  small red "… IN MANDYA" label, bold title, short description and "Know more". */
 export function ServiceTile({ s }: { s: Service }) {
   return (
-    <article className="group relative flex h-full w-full flex-col rounded-xl bg-paper p-1.5 shadow-[0_10px_26px_-16px_rgba(147,96,15,.55)] ring-1 ring-goldlight/50 transition hover:-translate-y-1 sm:rounded-2xl sm:p-2.5">
+    <article className="group relative flex h-full w-full flex-col rounded-xl bg-paper p-1.5 shadow-[0_10px_26px_-14px_rgba(147,96,15,.45)] transition hover:-translate-y-1 sm:rounded-2xl sm:p-2.5">
       <Link to={`/services/${s.slug}`} aria-label={s.title} className="block"><ServiceBanner s={s} /></Link>
       <a href={site.phoneHref} aria-label={`Call about ${s.short}`}
         className="relative z-[1] -mt-4 ml-1.5 flex h-8 w-8 items-center justify-center rounded-full border-2 border-paper bg-[#F2B91C] text-maroon shadow-md transition hover:scale-110 sm:-mt-5 sm:ml-3 sm:h-10 sm:w-10">
