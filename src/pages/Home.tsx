@@ -141,8 +141,11 @@ function MobileHome() {
     <div className="mx-auto w-full max-w-[480px] overflow-hidden lg:hidden" style={{ ['--u' as string]: 'min(1vw, 4.8px)' }}>
       {/* HERO ART */}
       <div className="relative aspect-[941/1420] overflow-hidden">
-        <img src={MEDIA + 'img/hero-mobile.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
-          className="absolute inset-0 h-full w-full object-cover object-top" fetchPriority="high" />
+        <picture>
+          <source media="(max-width: 600px)" srcSet={MEDIA + 'img/hero-mobile-600.webp'} type="image/webp" />
+          <img src={MEDIA + 'img/hero-mobile.webp'} alt="Vasudev Guruji seated in meditation before the Kamakhya Devi temple at sunrise"
+            className="absolute inset-0 h-full w-full object-cover object-top" fetchPriority="high" />
+        </picture>
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,250,238,.85), rgba(255,250,238,.45) 55%, transparent)' }} />
         <div className="fade-cream pointer-events-none absolute inset-x-0 bottom-0 h-[16%]" style={{ background: 'linear-gradient(to bottom, rgba(255,248,234,0), var(--fade) 88%)' }} />
       </div>
