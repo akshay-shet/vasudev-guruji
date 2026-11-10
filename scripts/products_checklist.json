@@ -1,0 +1,554 @@
+[
+  {
+    "id": "energy-01",
+    "name": "Jiten Pyramid Energy System",
+    "category": "pyramids",
+    "file": "energy-01.webp"
+  },
+  {
+    "id": "jiten1-01",
+    "name": "Opportunity Disc",
+    "category": "pyramids",
+    "file": "jiten1-01.webp"
+  },
+  {
+    "id": "jiten1-02",
+    "name": "Yantron Locket",
+    "category": "pyramids",
+    "file": "jiten1-02.webp"
+  },
+  {
+    "id": "jiten1-03",
+    "name": "Fortune Clock – Gold",
+    "category": "pyramids",
+    "file": "jiten1-03.webp"
+  },
+  {
+    "id": "jiten1-04",
+    "name": "Fortune Door",
+    "category": "pyramids",
+    "file": "jiten1-04.webp"
+  },
+  {
+    "id": "jiten1-05",
+    "name": "Brahmo Max",
+    "category": "pyramids",
+    "file": "jiten1-05.webp"
+  },
+  {
+    "id": "jiten1-06",
+    "name": "Aum 9×9",
+    "category": "pyramids",
+    "file": "jiten1-06.webp"
+  },
+  {
+    "id": "jiten1-07",
+    "name": "Eye 9×9",
+    "category": "pyramids",
+    "file": "jiten1-07.webp"
+  },
+  {
+    "id": "jiten1-08",
+    "name": "Luck 9×9",
+    "category": "pyramids",
+    "file": "jiten1-08.webp"
+  },
+  {
+    "id": "jiten1-09",
+    "name": "Fortune Card – Master",
+    "category": "pyramids",
+    "file": "jiten1-09.webp"
+  },
+  {
+    "id": "jiten1-10",
+    "name": "VIP Fortune Card",
+    "category": "pyramids",
+    "file": "jiten1-10.webp"
+  },
+  {
+    "id": "jiten1-11",
+    "name": "Supreme Card (5G)",
+    "category": "pyramids",
+    "file": "jiten1-11.webp"
+  },
+  {
+    "id": "jiten1-12",
+    "name": "Fortune Card – Copper",
+    "category": "pyramids",
+    "file": "jiten1-12.webp"
+  },
+  {
+    "id": "jiten1-13",
+    "name": "Fortune Key-Chain",
+    "category": "pyramids",
+    "file": "jiten1-13.webp"
+  },
+  {
+    "id": "jiten1-14",
+    "name": "Fortune Chip",
+    "category": "pyramids",
+    "file": "jiten1-14.webp"
+  },
+  {
+    "id": "jiten2-01",
+    "name": "Pyra Fire – Original",
+    "category": "pyramids",
+    "file": "jiten2-01.webp"
+  },
+  {
+    "id": "jiten2-02",
+    "name": "Pyra Fire Handy",
+    "category": "pyramids",
+    "file": "jiten2-02.webp"
+  },
+  {
+    "id": "jiten2-03",
+    "name": "Yantron Fire",
+    "category": "pyramids",
+    "file": "jiten2-03.webp"
+  },
+  {
+    "id": "jiten2-04",
+    "name": "Table Max Gold",
+    "category": "pyramids",
+    "file": "jiten2-04.webp"
+  },
+  {
+    "id": "jiten2-05",
+    "name": "Brahmo 5G",
+    "category": "pyramids",
+    "file": "jiten2-05.webp"
+  },
+  {
+    "id": "jiten2-06",
+    "name": "ZoMid – OMNI",
+    "category": "pyramids",
+    "file": "jiten2-06.webp"
+  },
+  {
+    "id": "jiten2-07",
+    "name": "Wish Pyramid",
+    "category": "pyramids",
+    "file": "jiten2-07.webp"
+  },
+  {
+    "id": "jiten2-08",
+    "name": "Marriage Pyramid",
+    "category": "pyramids",
+    "file": "jiten2-08.webp"
+  },
+  {
+    "id": "jiten2-09",
+    "name": "Harmony Pyramid",
+    "category": "pyramids",
+    "file": "jiten2-09.webp"
+  },
+  {
+    "id": "jiten2-10",
+    "name": "Education Pyramid",
+    "category": "pyramids",
+    "file": "jiten2-10.webp"
+  },
+  {
+    "id": "jiten2-11",
+    "name": "Education Pyramid Gold",
+    "category": "pyramids",
+    "file": "jiten2-11.webp"
+  },
+  {
+    "id": "jiten2-12",
+    "name": "Relax Pyramid Belt",
+    "category": "pyramids",
+    "file": "jiten2-12.webp"
+  },
+  {
+    "id": "jiten2-13",
+    "name": "Pyra Shubh-Labh",
+    "category": "pyramids",
+    "file": "jiten2-13.webp"
+  },
+  {
+    "id": "jiten2-14",
+    "name": "Mega Shubh-Labh",
+    "category": "pyramids",
+    "file": "jiten2-14.webp"
+  },
+  {
+    "id": "jiten2-15",
+    "name": "Pyra Mattress",
+    "category": "pyramids",
+    "file": "jiten2-15.webp"
+  },
+  {
+    "id": "pyracard-01",
+    "name": "Luck & Fortune",
+    "category": "pyracards",
+    "file": "pyracard-01.webp"
+  },
+  {
+    "id": "pyracard-02",
+    "name": "Energy & Vitality",
+    "category": "pyracards",
+    "file": "pyracard-02.webp"
+  },
+  {
+    "id": "pyracard-03",
+    "name": "Job & Promotion",
+    "category": "pyracards",
+    "file": "pyracard-03.webp"
+  },
+  {
+    "id": "pyracard-04",
+    "name": "Foreign & Higher-Study",
+    "category": "pyracards",
+    "file": "pyracard-04.webp"
+  },
+  {
+    "id": "pyracard-05",
+    "name": "Money & Finance",
+    "category": "pyracards",
+    "file": "pyracard-05.webp"
+  },
+  {
+    "id": "pyracard-06",
+    "name": "Fame & Power",
+    "category": "pyracards",
+    "file": "pyracard-06.webp"
+  },
+  {
+    "id": "pyracard-07",
+    "name": "Success & Progress",
+    "category": "pyracards",
+    "file": "pyracard-07.webp"
+  },
+  {
+    "id": "pyracard-08",
+    "name": "Memory & Concentration",
+    "category": "pyracards",
+    "file": "pyracard-08.webp"
+  },
+  {
+    "id": "pyracard-09",
+    "name": "Protection & Safe-Guard",
+    "category": "pyracards",
+    "file": "pyracard-09.webp"
+  },
+  {
+    "id": "pyracard-10",
+    "name": "Peace & Relaxation",
+    "category": "pyracards",
+    "file": "pyracard-10.webp"
+  },
+  {
+    "id": "pyracard-11",
+    "name": "Marriage & Love",
+    "category": "pyracards",
+    "file": "pyracard-11.webp"
+  },
+  {
+    "id": "pyracard-12",
+    "name": "Strength & Confidence",
+    "category": "pyracards",
+    "file": "pyracard-12.webp"
+  },
+  {
+    "id": "pyracard-13",
+    "name": "Family & Children",
+    "category": "pyracards",
+    "file": "pyracard-13.webp"
+  },
+  {
+    "id": "pyracard-14",
+    "name": "Business & Career",
+    "category": "pyracards",
+    "file": "pyracard-14.webp"
+  },
+  {
+    "id": "pyracard-15",
+    "name": "Positivity & Happiness",
+    "category": "pyracards",
+    "file": "pyracard-15.webp"
+  },
+  {
+    "id": "pyracard-16",
+    "name": "Legal & Court-Case",
+    "category": "pyracards",
+    "file": "pyracard-16.webp"
+  },
+  {
+    "id": "pyron-01",
+    "name": "Pyron Gold",
+    "category": "pyron",
+    "file": "pyron-01.webp"
+  },
+  {
+    "id": "pyron-02",
+    "name": "Sun Vitality",
+    "category": "pyron",
+    "file": "pyron-02.webp"
+  },
+  {
+    "id": "pyron-03",
+    "name": "Saturn Happiness",
+    "category": "pyron",
+    "file": "pyron-03.webp"
+  },
+  {
+    "id": "pyron-04",
+    "name": "Green Family Relationship",
+    "category": "pyron",
+    "file": "pyron-04.webp"
+  },
+  {
+    "id": "pyron-05",
+    "name": "Moon Calm Mind",
+    "category": "pyron",
+    "file": "pyron-05.webp"
+  },
+  {
+    "id": "pyron-06",
+    "name": "Rahu Status",
+    "category": "pyron",
+    "file": "pyron-06.webp"
+  },
+  {
+    "id": "pyron-07",
+    "name": "Brown Education",
+    "category": "pyron",
+    "file": "pyron-07.webp"
+  },
+  {
+    "id": "pyron-08",
+    "name": "Mars Courage",
+    "category": "pyron",
+    "file": "pyron-08.webp"
+  },
+  {
+    "id": "pyron-09",
+    "name": "Ketu Prosperity",
+    "category": "pyron",
+    "file": "pyron-09.webp"
+  },
+  {
+    "id": "pyron-10",
+    "name": "Blue Career",
+    "category": "pyron",
+    "file": "pyron-10.webp"
+  },
+  {
+    "id": "pyron-11",
+    "name": "Mercury Business",
+    "category": "pyron",
+    "file": "pyron-11.webp"
+  },
+  {
+    "id": "pyron-12",
+    "name": "Pink Love",
+    "category": "pyron",
+    "file": "pyron-12.webp"
+  },
+  {
+    "id": "pyron-13",
+    "name": "Metallic Helpful Friends",
+    "category": "pyron",
+    "file": "pyron-13.webp"
+  },
+  {
+    "id": "pyron-14",
+    "name": "Jupiter Spirituality",
+    "category": "pyron",
+    "file": "pyron-14.webp"
+  },
+  {
+    "id": "pyron-15",
+    "name": "Red Fame",
+    "category": "pyron",
+    "file": "pyron-15.webp"
+  },
+  {
+    "id": "pyron-16",
+    "name": "Gray Children",
+    "category": "pyron",
+    "file": "pyron-16.webp"
+  },
+  {
+    "id": "pyron-17",
+    "name": "Venus Luxury",
+    "category": "pyron",
+    "file": "pyron-17.webp"
+  },
+  {
+    "id": "pyron-18",
+    "name": "Live Green Wealth",
+    "category": "pyron",
+    "file": "pyron-18.webp"
+  },
+  {
+    "id": "pyron-19",
+    "name": "Yellow Health",
+    "category": "pyron",
+    "file": "pyron-19.webp"
+  },
+  {
+    "id": "bracelet-01",
+    "name": "Dhan Lakshmi Crystal Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-01.webp"
+  },
+  {
+    "id": "bracelet-02",
+    "name": "Triple Protection Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-02.webp"
+  },
+  {
+    "id": "bracelet-03",
+    "name": "Original 7 Chakra Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-03.webp"
+  },
+  {
+    "id": "bracelet-04",
+    "name": "Business Success Bracelet (Tiger Eye)",
+    "category": "bracelets",
+    "file": "bracelet-04.webp"
+  },
+  {
+    "id": "bracelet-05",
+    "name": "Love & Relationship Protect (Rose Quartz with Evil Eye)",
+    "category": "bracelets",
+    "file": "bracelet-05.webp"
+  },
+  {
+    "id": "bracelet-06",
+    "name": "Love Marriage Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-06.webp"
+  },
+  {
+    "id": "bracelet-07",
+    "name": "Success & Protection Energy (Citrine, Smoky Quartz)",
+    "category": "bracelets",
+    "file": "bracelet-07.webp"
+  },
+  {
+    "id": "bracelet-08",
+    "name": "Premium Education Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-08.webp"
+  },
+  {
+    "id": "bracelet-09",
+    "name": "Career Growth Combo",
+    "category": "bracelets",
+    "file": "bracelet-09.webp"
+  },
+  {
+    "id": "bracelet-10",
+    "name": "General Good Health Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-10.webp"
+  },
+  {
+    "id": "bracelet-11",
+    "name": "Energised Dhan Yog Bracelet",
+    "category": "bracelets",
+    "file": "bracelet-11.webp"
+  },
+  {
+    "id": "bracelet-12",
+    "name": "Sacred Potli (Vastu & Prosperity)",
+    "category": "bracelets",
+    "file": "bracelet-12.webp"
+  },
+  {
+    "id": "acc-01",
+    "name": "Protect – Car",
+    "category": "accessories",
+    "file": "acc-01.webp"
+  },
+  {
+    "id": "acc-02",
+    "name": "Reiki Card Set",
+    "category": "accessories",
+    "file": "acc-02.webp"
+  },
+  {
+    "id": "acc-03",
+    "name": "Swastik – Ultra",
+    "category": "accessories",
+    "file": "acc-03.webp"
+  },
+  {
+    "id": "acc-04",
+    "name": "Swastik – Mini",
+    "category": "accessories",
+    "file": "acc-04.webp"
+  },
+  {
+    "id": "acc-05",
+    "name": "Swastik – Mini (Copper)",
+    "category": "accessories",
+    "file": "acc-05.webp"
+  },
+  {
+    "id": "acc-06",
+    "name": "Pyron Special Series",
+    "category": "accessories",
+    "file": "acc-06.webp"
+  },
+  {
+    "id": "acc-07",
+    "name": "Brahmo Rocket",
+    "category": "accessories",
+    "file": "acc-07.webp"
+  },
+  {
+    "id": "acc-08",
+    "name": "Vaastu Spray",
+    "category": "accessories",
+    "file": "acc-08.webp"
+  },
+  {
+    "id": "acc-09",
+    "name": "Vaastu Powder",
+    "category": "accessories",
+    "file": "acc-09.webp"
+  },
+  {
+    "id": "acc-10",
+    "name": "Gold AUM",
+    "category": "accessories",
+    "file": "acc-10.webp"
+  },
+  {
+    "id": "acc-11",
+    "name": "Gold Cross",
+    "category": "accessories",
+    "file": "acc-11.webp"
+  },
+  {
+    "id": "acc-12",
+    "name": "Gold Trishul",
+    "category": "accessories",
+    "file": "acc-12.webp"
+  },
+  {
+    "id": "acc-13",
+    "name": "Ganesh Disc",
+    "category": "accessories",
+    "file": "acc-13.webp"
+  },
+  {
+    "id": "acc-14",
+    "name": "Gold Fortune Arrow",
+    "category": "accessories",
+    "file": "acc-14.webp"
+  },
+  {
+    "id": "acc-15",
+    "name": "Education Pyramid (Gold)",
+    "category": "accessories",
+    "file": "acc-15.webp"
+  }
+]
